@@ -1,0 +1,52 @@
+@import "../../../scss/variables";
+
+.welcome {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $text-color;
+
+  &__text {
+    max-width: 404px;
+    width: 100%;
+
+    h2 {
+      margin-bottom: 26px;
+    }
+
+    p {
+      line-height: 1.35;
+      font-weight: $thin;
+    }
+  }
+}
+
+.steps-block {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    max-width: 153px;
+    margin: 30px 30px;
+  }
+}
+
+.step {
+  &__number {
+    color: #ebebeb;
+    font-size: 69px;
+    font-weight: $regular;
+  }
+
+  &__title {
+    color: $text-color;
+    margin-bottom: 5px;
+    font-weight: $regular;
+  }
+
+  &__desc {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,91 @@
+@import "../../../scss/variables";
+
+.footer {
+  padding: 75px 0;
+  background-color: $color2;
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  color: $color1;
+}
+
+.footer__nav {
+  width: 45%;
+  margin: 0 10% 0 0;
+  align-items: center;
+}
+
+.footer__contacts {
+  margin-left: auto;
+}
+
+.footer__dev-desc {
+  width: 55%;
+  margin-bottom: 5px;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.footer {
+  .nav__list {
+    flex-direction: column;
+  }
+
+  .nav__item {
+    margin: 0 0 10px 0;
+  }
+
+  .nav__link {
+    color: $color1;
+  }
+}
+
+.footer__contacts {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__contacts-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 190px;
+}
+
+.footer__contacts-name {
+  width: 100%;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 600;
+}
+
+.footer__contacts-list {
+  display: flex;
+}
+
+.footer__contacts-list span {
+  margin: 0 5px 0 0;
+}
+
+.footer__contacts-github {
+  margin-right: 10px;
+}
+
+.footer__contacts-list a {
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: none;
+  color: $color1;
+  transition: 0.9s;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+}

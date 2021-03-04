@@ -1,0 +1,43 @@
+@import "../../../scss/variables";
+
+.intro {
+  padding: 0 650px 173px 0;
+  background-image: url("../../../assets/hero-image.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right top;
+  color: $text-color;
+}
+
+.intro__title {
+  margin-bottom: 25px;
+  padding-top: 50px;
+  font-weight: bold;
+  font-size: 48.83px;
+  line-height: 53px;
+}
+
+.intro__description {
+  margin-bottom: 55px;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.intro__button {
+  padding: 5px 20px;
+  font-weight: $thin;
+  font-size: 27px;
+  text-align: center;
+  line-height: 33px;
+  color: #fff;
+  background-color: $color2;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: 0.2s;
+  white-space: nowrap;
+
+  &:focus,
+  &:hover {
+    background-color: $color2-hover;
+  }
+}
