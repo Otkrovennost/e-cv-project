@@ -1,14 +1,29 @@
 @import "./variables";
 
+html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   padding: 0;
   margin: 0;
   background-color: $color1;
+  height: 100%;
 }
 
 * {
   box-sizing: border-box;
+}
+
+iframe {
+  height: 100%;
+  width: 50%;
+  margin-left: auto;
 }
 
 .container {
@@ -16,8 +31,8 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+  height: 100%;
 }
-
 
 .visually-hidden {
   position: absolute;
