@@ -6,6 +6,7 @@ import MainPage from "../Pages/MainPage/MainPage";
 import { AppRoute } from "../../constants";
 
 import "./App.scss";
+import BuilderPage from "../Pages/BuilderPage/Form/BuilderPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           path={AppRoute.CV_TEMPLATES_PAGE}
           component={CvTemplatesPage}
         />
+        <Route path="/builder/:id" render={(props) => <BuilderPage {...props} />} />
         <Redirect to={AppRoute.MAIN_PAGE} />
       </Switch>
     </HashRouter>
