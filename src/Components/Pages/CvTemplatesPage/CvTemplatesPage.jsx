@@ -3,8 +3,8 @@ import React from 'react'
 import Header from '../../Common/Header/Header';
 import Footer from '../../Common/Footer/Footer';
 import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection'
-import CvCardList from './CvCardList/CvCardList'
 import "./CvTemplatesPage.scss"
+import CvCardList from "../../CvCardList/CvCardList"
 
 function CvTemplatesPage() {
   return (

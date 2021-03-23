@@ -1,5 +1,5 @@
 import React from 'react'
-import example_cv from "../../../../assets/example-cv.svg"
+import example_cv from "../../assets/example-cv.svg"
 import "./CvCard.scss"
 
 function CvCard() {

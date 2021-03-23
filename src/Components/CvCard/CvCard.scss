@@ -1,4 +1,4 @@
-@import "../../../../scss/variables";
+@import "../../scss/variables";
 
 .cv-card {
   margin: 20px;
@@ -12,11 +12,6 @@
   }
 
   &:hover .cv-card__body {
-    // background: radial-gradient(
-    //   222.33% 123.41% at 50% 50%,
-    //   rgba(53, 167, 85, 0.29) 0%,
-    //   rgba(235, 235, 235, 0) 100%
-    // );
     background-color: #cfcfcf;
   }
 
