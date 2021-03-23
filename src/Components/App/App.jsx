@@ -6,7 +6,7 @@ import MainPage from "../Pages/MainPage/MainPage";
 import { AppRoute } from "../../constants";
 
 import "./App.scss";
-import BuilderPage from "../Pages/BuilderPage/Form/BuilderPage";
+import BuilderPage from "../Pages/BuilderPage/BuilderPage";
 
 function App() {
   return (

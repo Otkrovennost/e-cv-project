@@ -11,7 +11,6 @@ const CvTemplate = () => {
           <Image
             style={styles.intro__image}
           />
-
           {/* Intro Section  */}
           <View>
             <View style={styles.intro__name_job}>

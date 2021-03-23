@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Form.scss";
+import "./BuilderForm.scss";
 import {
   Button,
   Box,
@@ -7,7 +7,7 @@ import {
   TextField,
 } from "@material-ui/core";
 
-export default function Form() {
+export default function BuilderForm() {
   return (
     <div className="form">
       <Grid container direction="column" spacing={1} alignItems="stretch">
