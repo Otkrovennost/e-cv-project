@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-export default function BusinessCardsPage() {
+import Footer from '../../Common/Footer/Footer';
+import Header from '../../Common/Header/Header';
+import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection'
+
+const BusinessCardsPage = () => {
+
   return (
     <div>
-      BusinessCardsPage
+      <Header />
+
+      <div className="container">
+        <WelcomeSection />
+
+      </div>
+      <Footer />
     </div>
+
   )
 }
+export default BusinessCardsPage;

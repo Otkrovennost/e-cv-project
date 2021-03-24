@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
 import CvTemplatesPage from "../Pages/CvTemplatesPage/CvTemplatesPage";
 import MainPage from "../Pages/MainPage/MainPage";
+import BusinessCardsPage from '../Pages/BusinessCardsPage/BusinessCardsPage'
 
 import { AppRoute } from "../../constants";
 
@@ -13,6 +14,8 @@ function App() {
     <HashRouter>
       <Switch>
         <Route exact path={AppRoute.MAIN_PAGE} component={MainPage} />
+        <Route exact path={AppRoute.BUSINESS_CARD_TEMPLATES_PAGE}
+          component={BusinessCardsPage} />
         <Route
           exact
           path={AppRoute.CV_TEMPLATES_PAGE}
