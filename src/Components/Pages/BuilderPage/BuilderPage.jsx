@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 
 import Header from '../../Common/Header/Header';
@@ -9,14 +9,34 @@ import BuilderForm from "../../BuilderForm/BuilderForm";
 import "./BuilderPage.scss";
 
 export default function BuilderPage() {
+  const cvDataInit = {
+    avatar: '',
+    title: '',
+    name: '',
+    surname: '',
+    email: '',
+    phone: '',
+    summary: '',
+    employmentHistory: [],
+    educationHistory: [],
+    skills: []
+  };
+
+  const [cvData, setCvData] = useState(cvDataInit);
+
   return (
     <div className="builder-page">
       <Header />
       <div className="container">
         <div className="builder-page__inner">
-          <BuilderForm />
+          <BuilderForm 
+            setCvData={setCvData}
+            cvData={cvData}
+          />
           <PDFViewer>
-            <CvTemplate />
+            <CvTemplate 
+              cvData={cvData}
+            />
           </PDFViewer>
         </div>
       </div>

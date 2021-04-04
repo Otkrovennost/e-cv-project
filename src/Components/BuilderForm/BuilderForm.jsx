@@ -6,6 +6,9 @@ import {
   Grid,
   Icon,
   IconButton,
+  List,
+  ListItem,
+  ListItemText,
   TextField,
   Typography
 } from "@material-ui/core";
@@ -122,8 +125,12 @@ const NewUserSkill = ({addSkill}) => {
   )
 };
 
-export default function BuilderForm() {
+export default function BuilderForm({cvData, setCvData}) {
   const classes = useStyles();
+
+  const setKey = (key, value) => {
+    setCvData({ ...cvData, [key]: value })
+  }
 
   const initialFileState = {
     mainState: "initial",
@@ -133,6 +140,79 @@ export default function BuilderForm() {
 
   const [fileState, setFileState] = useState(initialFileState);
   const [skillsArray, setSkillsArray] = useState([]);
+  const initEmployment = {
+    title: '',
+    company: '',
+    dateStart: '',
+    dateEnd: ''
+  };
+  const initEducation = {
+    place: '',
+    degree: '',
+    dateStart: '',
+    dateEnd: ''
+  };
+  const [employmentHistory, setEmploymentHistory] = useState([]);
+  const [educationHistory, setEducationHistory] = useState([]);
+  const [employment, setEmployment] = useState(initEmployment);
+  const [education, setEducation] = useState(initEducation);
+
+  const setEmploymentData = (key, value) => {
+    setEmployment({ ...employment, [key]: value })
+  };
+
+  const setEducationData = (key, value) => {
+    setEducation({ ...education, [key]: value })
+  };
+
+
+  const setEmploymentHistoryData = () => {
+    setEmploymentHistory( prev => [...employmentHistory, employment])
+    setCvData({ ...cvData, employmentHistory: [...employmentHistory, employment] })
+    setEmployment(initEmployment)
+    console.log(employment)
+    console.log(employmentHistory)
+  }
+
+  const setEducationHistoryData = () => {
+    setEducationHistory( prev => [...educationHistory, education])
+    setCvData({ ...cvData, educationHistory: [...educationHistory, education] })
+    setEducation(initEducation)
+    console.log(education)
+    console.log(educationHistory)
+  }
+
+  const employmentItem = (p, i) => {
+    const { title, company, dateStart, dateEnd} = p;
+    return (
+      <ListItem key={i}>
+        <Grid container justify='space-between'>
+          <Grid item>
+            <ListItemText primary={title} secondary={company} />
+          </Grid>
+          <Grid item>
+            <ListItemText primary={dateStart} secondary={dateEnd} />
+          </Grid>
+        </Grid>
+      </ListItem>
+    )
+  };
+
+  const educationItem = (p, i) => {
+    const { place, degree, dateStart, dateEnd} = p;
+    return (
+      <ListItem key={i}>
+        <Grid container justify='space-between'>
+          <Grid item>
+            <ListItemText primary={place} secondary={degree} />
+          </Grid>
+          <Grid item>
+            <ListItemText primary={dateStart} secondary={dateEnd} />
+          </Grid>
+        </Grid>
+      </ListItem>
+    )
+  };
 
   const addSkill = (value) => {
     setSkillsArray(prev => [...prev, value])
@@ -141,6 +221,8 @@ export default function BuilderForm() {
   const deleteSkill = (value) => {
     setSkillsArray(prev => prev.filter(elem => elem !== value));
   };
+
+  const { title,  name, surname, email, phone, summary } = cvData;
 
   return (
     <form className="form">
@@ -153,12 +235,16 @@ export default function BuilderForm() {
               fileState={fileState}
               setFileState={setFileState}
               avatarSrc={fileState.selectedFile}
+              cvData={cvData} 
+              setCvData={setCvData}
             />
         </Grid>
         <div className="form-group">
           <TextField
             id="desired-job"
             label="Job title"
+            value={title}
+            onChange={({ target: { value } }) => { setKey('title', value) }}
             variant="outlined"
             style={{width: '100%'}}
           />
@@ -167,12 +253,16 @@ export default function BuilderForm() {
           <TextField
             id="first-name"
             label="First Name"
+            value={name}
+            onChange={({ target: { value } }) => { setKey('name', value) }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
             id="last-name"
             label="Last Name"
+            value={surname}
+            onChange={({ target: { value } }) => { setKey('surname', value) }}
             variant="outlined"
             className={classes.formItem}
           />
@@ -181,12 +271,16 @@ export default function BuilderForm() {
           <TextField
             id="email"
             label="Email"
+            value={email}
+            onChange={({ target: { value } }) => { setKey('email', value) }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
             id="phone"
             label="Phone"
+            value={phone}
+            onChange={({ target: { value } }) => { setKey('phone', value) }}
             variant="outlined"
             className={classes.formItem}
           />
@@ -198,6 +292,8 @@ export default function BuilderForm() {
           <TextField
             id="about"
             label="About yourself"
+            value={summary}
+            onChange={({ target: { value } }) => { setKey('summary', value) }}
             placeholder="About yourself"
             multiline
             variant="outlined"
@@ -205,12 +301,14 @@ export default function BuilderForm() {
           />
         </div>
         <Typography variant="h6" className={classes.sectionTitle}>
-          Employment History
+          Experience History
         </Typography>
         <div className="form-group">
           <TextField
             id="job-title"
             label="Job Title"
+            value={employment.title}
+            onChange={({ target: { value } }) => { setEmploymentData('title', value) }}
             variant="outlined"
             className={classes.formItem}
           />
@@ -218,6 +316,8 @@ export default function BuilderForm() {
             id="organization"
             label="Organization"
             variant="outlined"
+            value={employment.company}
+            onChange={({ target: { value } }) => { setEmploymentData('company', value) }}
             className={classes.formItem}
           />
         </div>
@@ -226,6 +326,8 @@ export default function BuilderForm() {
             id="date-from"
             type="date"
             variant="outlined"
+            value={employment.dateStart}
+            onChange={({ target: { value } }) => { setEmploymentData('dateStart', value) }}
             className={classes.formItem}
           />
           <TextField
@@ -233,9 +335,22 @@ export default function BuilderForm() {
             type="date"
             size="normal"
             variant="outlined"
+            value={employment.dateEnd}
+            onChange={({ target: { value } }) => { setEmploymentData('dateEnd', value) }}
             className={classes.formItem}
           />
         </div>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{marginBottom: '20px'}}
+          onClick={setEmploymentHistoryData}
+        >
+          Add employment
+        </Button>
+        <List>
+          {employmentHistory.map(employmentItem)}
+        </List>
         <Typography variant="h6" className={classes.sectionTitle}>
           Education
         </Typography>
@@ -243,12 +358,16 @@ export default function BuilderForm() {
           <TextField
             id="education-place"
             label="Place"
+            value={education.place}
+            onChange={({ target: { value } }) => {setEducationData('place', value) }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
             id="education-degree"
             label="Degree"
+            value={education.degree}
+            onChange={({ target: { value } }) => {setEducationData('degree', value) }}
             variant="outlined"
             className={classes.formItem}
           />
@@ -257,17 +376,32 @@ export default function BuilderForm() {
           <TextField
             id="date-from"
             type="date"
+            value={education.dateStart}
+            onChange={({ target: { value } }) => {setEducationData('dateStart', value) }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
             id="date-to"
             type="date"
+            value={education.dateEnd}
+            onChange={({ target: { value } }) => {setEducationData('dateEnd', value) }}
             size="normal"
             variant="outlined"
             className={classes.formItem}
           />
         </div>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{marginBottom: '20px'}}
+          onClick={setEducationHistoryData}
+        >
+          Add education
+        </Button>
+        <List>
+          {educationHistory.map(educationItem)}
+        </List>
         <Typography variant="h6" className={classes.sectionTitle}>
           Skills
         </Typography>
@@ -289,9 +423,22 @@ export default function BuilderForm() {
             />
           ))}
           {skillsArray.length !== 0 ? 
-            <NewUserSkill
-              addSkill={addSkill}
-            />
+            <React.Fragment>
+              <NewUserSkill
+                addSkill={addSkill}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setCvData({ 
+                    ...cvData, 
+                    skills: skillsArray })
+                }}
+              >
+                Add skills in cv
+              </Button>
+            </React.Fragment>
             :
             <React.Fragment/>
           }

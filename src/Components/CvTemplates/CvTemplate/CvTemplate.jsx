@@ -1,37 +1,37 @@
 import React from 'react';
 import { Page, Text, Document, StyleSheet, View, Image } from '@react-pdf/renderer';
+import { waitForElementToBeRemoved } from '@testing-library/dom';
 
-const CvTemplate = () => {
-
-
+const CvTemplate = ({cvData}) => {
   return (
     <Document title="Nazar" subject="CV" style={styles.document}>
       <Page wrap size="A4" style={styles.body}>
         <View style={styles.intro}>
           <Image
             style={styles.intro__image}
+            src={cvData.avatar[0]}
           />
           {/* Intro Section  */}
           <View>
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
-                Archakov Nazar
+                {cvData.name} {cvData.surname}
               </Text>
               <Text style={styles.intro__job}>
-                Front-end Developer
+                {cvData.title}
               </Text>
             </View>
 
 
             <View style={styles.intro__info}>
-              <Text style={styles.intro__info_item}>
+              {/* <Text style={styles.intro__info_item}>
                 Maksima Bogdanovicha 136/141
+              </Text> */}
+              <Text style={styles.intro__info_item}>
+                {cvData.phone}
               </Text>
               <Text style={styles.intro__info_item}>
-                + 375 29 533 63 19
-              </Text>
-              <Text style={styles.intro__info_item}>
-                nazar.archakov222@gmail.com
+                {cvData.email}
               </Text>
             </View>
           </View>
@@ -44,109 +44,56 @@ const CvTemplate = () => {
             About
           </Text>
           <Text style={styles.about__description}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, repellat ab, tempora dicta numquam quibusdam aspernatur, perferendis quis asperiores excepturi modi quisquam odit pariatur? Excepturi necessitatibus sapiente quidem quas harum.
+            {cvData.summary}
           </Text>
         </View>
         {/* About Section End  */}
         {/* Education Section Start  */}
         <View style={styles.edu}>
           <Text style={styles.edu__title}>
-            Education
+            Experience
           </Text>
           <View style={styles.edu__items}>
-            {/* Education Item  */}
-            <View style={styles.edu__item}>
-              <Text style={styles.edu__item_date} >
-                Sep 2020 - March 2021
-            </Text>
-              <View style={styles.edu__item_info}>
-                <Text>
-                  Wild Code School
-              </Text>
-                <Text>
-                  Front-end remote course
-              </Text>
+            {cvData.employmentHistory.map(elem =>  (
+              <View style={styles.edu__item}>
+                <Text style={styles.edu__item_date} >
+                  {elem.dateStart} - {elem.dateEnd}
+                </Text>
+                <View style={styles.edu__item_info}>
+                  <Text>
+                    {elem.company}
+                  </Text>
+                  <Text>
+                    {elem.title}
+                  </Text>
+                </View>
               </View>
-            </View>
-            {/* Education Item  */}
-            <View style={styles.edu__item}>
-              <Text style={styles.edu__item_date} >
-                Sep 2020 - March 2021
-            </Text>
-              <View style={styles.edu__item_info}>
-                <Text>
-                  Wild Code School
-              </Text>
-                <Text>
-                  Front-end remote course
-              </Text>
-              </View>
-            </View>
-            {/* Education Item  */}
-            <View style={styles.edu__item}>
-              <Text style={styles.edu__item_date} >
-                Sep 2020 - March 2021
-            </Text>
-              <View style={styles.edu__item_info}>
-                <Text>
-                  Wild Code School
-              </Text>
-                <Text>
-                  Front-end remote course
-              </Text>
-              </View>
-            </View>
+            ))}
           </View>
         </View>
         {/* Education Section End  */}
         {/* Exp Section Start  */}
         <View style={styles.exp}>
           <Text style={styles.exp__title}>
-            Experience
+            Education
           </Text>
           {/* Experience Items  */}
           <View style={styles.exp__items}>
-            <View style={styles.edu__item}>
-              <Text style={styles.edu__item_date} >
-                Sep 2020 - March 2021
-            </Text>
-              <View style={styles.edu__item_info}>
-                <Text>
-                  Wild Code School
-              </Text>
-                <Text>
-                  Front-end remote course
-              </Text>
+            {cvData.educationHistory.map(elem =>  (
+              <View style={styles.edu__item}>
+                <Text style={styles.edu__item_date} >
+                  {elem.dateStart} - {elem.dateEnd}
+                </Text>
+                <View style={styles.edu__item_info}>
+                  <Text>
+                    {elem.place}
+                  </Text>
+                  <Text>
+                    {elem.degree}
+                  </Text>
+                </View>
               </View>
-            </View>
-            {/* Experience Item  */}
-            <View style={styles.edu__item}>
-              <Text style={styles.edu__item_date} >
-                Sep 2020 - March 2021
-            </Text>
-              <View style={styles.edu__item_info}>
-                <Text>
-                  Wild Code School
-              </Text>
-                <Text>
-                  Front-end remote course
-              </Text>
-              </View>
-            </View>
-            {/* Experience Item  */}
-            <View style={styles.edu__item}>
-              <Text style={styles.edu__item_date} >
-                Sep 2020 - March 2021
-            </Text>
-              <View style={styles.edu__item_info}>
-                <Text>
-                  Wild Code School
-              </Text>
-                <Text>
-                  Front-end remote course
-              </Text>
-              </View>
-            </View>
+            ))}
           </View>
         </View>
         {/* Exp Section End  */}
@@ -157,43 +104,13 @@ const CvTemplate = () => {
             Skills
           </Text>
           <View style={styles.skills__list} >
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
-            <Text style={styles.skills__item}>
-              Lorem
-            </Text>
+            {cvData.skills.map(elem =>  (
+              <Text style={styles.skills__title}>
+                {elem}
+              </Text>
+            ))}
           </View>
+
         </View>
         {/* Skills Section End  */}
         {/* Info Sections End  */}
@@ -213,7 +130,8 @@ const styles = StyleSheet.create({
   intro__image: {
     width: "100px",
     height: "100px",
-    marginRight: "40px"
+    marginRight: "40px",
+    objectFit: "cover"
   },
 
   intro__job: {

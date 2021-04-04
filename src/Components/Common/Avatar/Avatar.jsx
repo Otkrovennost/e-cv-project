@@ -83,6 +83,8 @@ const AvatarCustom = ({
   fileState,
   setFileState,
   avatarSrc,
+  cvData,
+  setCvData
 }) => {
   const classes = useStyles();
 
@@ -98,6 +100,7 @@ const AvatarCustom = ({
         setFileState({
           selectedFile: [reader.result]
         });
+        setCvData({ ...cvData, avatar: [reader.result] })
       };
 
       setFileState({
