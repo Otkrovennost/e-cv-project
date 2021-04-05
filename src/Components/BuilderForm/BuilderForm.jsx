@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,  useEffect, useRef} from 'react'
 import "./BuilderForm.scss";
 import {
   Button,
@@ -185,15 +185,16 @@ export default function BuilderForm({cvData, setCvData}) {
   const employmentItem = (p, i) => {
     const { title, company, dateStart, dateEnd} = p;
     return (
-      <ListItem key={i}>
-        <Grid container justify='space-between'>
-          <Grid item>
-            <ListItemText primary={title} secondary={company} />
-          </Grid>
-          <Grid item>
-            <ListItemText primary={dateStart} secondary={dateEnd} />
-          </Grid>
-        </Grid>
+      <ListItem key={i} style={{border: '1px solid rgba(0, 0, 0, 0.23)', marginBottom: '15px'}}>
+        <Box style={{display: 'flex', flexDirection: 'column'}}>
+          <Typography style={{fontWeight: '600', fontSize: '20px', fontStyle:'italic'}}>{title}</Typography>
+          <ListItemText primary={company} />
+          <Box style={{display: 'flex', alignItems: 'center'}}>
+            <ListItemText primary={dateStart} style={{marginRight: '10px'}}/>
+            <span style={{marginRight: '10px'}}>-</span>
+            <ListItemText primary={dateEnd} />
+          </Box>
+        </Box>
       </ListItem>
     )
   };
@@ -201,15 +202,16 @@ export default function BuilderForm({cvData, setCvData}) {
   const educationItem = (p, i) => {
     const { place, degree, dateStart, dateEnd} = p;
     return (
-      <ListItem key={i}>
-        <Grid container justify='space-between'>
-          <Grid item>
-            <ListItemText primary={place} secondary={degree} />
-          </Grid>
-          <Grid item>
-            <ListItemText primary={dateStart} secondary={dateEnd} />
-          </Grid>
-        </Grid>
+      <ListItem key={i} style={{border: '1px solid rgba(0, 0, 0, 0.23)', marginBottom: '15px'}}>
+        <Box style={{display: 'flex', flexDirection: 'column'}}>
+          <Typography style={{fontWeight: '600', fontSize: '20px', fontStyle:'italic'}}>{place}</Typography>
+          <ListItemText primary={degree} />
+          <Box style={{display: 'flex', alignItems: 'center'}}>
+            <ListItemText primary={dateStart} style={{marginRight: '10px'}}/>
+            <span style={{marginRight: '10px'}}>-</span>
+            <ListItemText primary={dateEnd} />
+          </Box>
+        </Box>
       </ListItem>
     )
   };
@@ -221,6 +223,17 @@ export default function BuilderForm({cvData, setCvData}) {
   const deleteSkill = (value) => {
     setSkillsArray(prev => prev.filter(elem => elem !== value));
   };
+
+  const skillsEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    skillsEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  };
+
+  
+  useEffect(() => {
+    scrollToBottom()
+  }, [skillsArray]);
 
   const { title,  name, surname, email, phone, summary } = cvData;
 
@@ -343,12 +356,12 @@ export default function BuilderForm({cvData, setCvData}) {
         <Button
           variant="contained"
           color="primary"
-          style={{marginBottom: '20px'}}
+          style={{marginBottom: '20px', width:'45%'}}
           onClick={setEmploymentHistoryData}
         >
           Add employment
         </Button>
-        <List>
+        <List style={{marginBottom: '15px'}}>
           {employmentHistory.map(employmentItem)}
         </List>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -394,12 +407,12 @@ export default function BuilderForm({cvData, setCvData}) {
         <Button
           variant="contained"
           color="primary"
-          style={{marginBottom: '20px'}}
+          style={{marginBottom: '20px', width:'45%'}}
           onClick={setEducationHistoryData}
         >
           Add education
         </Button>
-        <List>
+        <List style={{marginBottom: '15px'}}>
           {educationHistory.map(educationItem)}
         </List>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -430,6 +443,7 @@ export default function BuilderForm({cvData, setCvData}) {
               <Button
                 variant="contained"
                 color="primary"
+                style={{marginBottom: '20px', width:'45%'}}
                 onClick={() => {
                   setCvData({ 
                     ...cvData, 
@@ -442,6 +456,7 @@ export default function BuilderForm({cvData, setCvData}) {
             :
             <React.Fragment/>
           }
+          <div ref={skillsEndRef} />
         </Grid>
       </Grid>
     </form >
