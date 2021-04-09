@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
-
 import Header from '../../Common/Header/Header';
 import Footer from '../../Common/Footer/Footer';
 import CvTemplate from '../../CvTemplates/CvTemplate/CvTemplate.jsx';
+import CvTemplate2 from '../../CvTemplates/CvTemplate2/CvTemplate2.jsx';
 import BuilderForm from "../../BuilderForm/BuilderForm";
-
 import "./BuilderPage.scss";
 
 export default function BuilderPage() {
+  
   const cvDataInit = {
     avatar: '',
     title: '',
@@ -34,7 +34,7 @@ export default function BuilderPage() {
             cvData={cvData}
           />
           <PDFViewer>
-            <CvTemplate 
+            <CvTemplate2 
               cvData={cvData}
             />
           </PDFViewer>

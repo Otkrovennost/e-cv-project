@@ -6,14 +6,14 @@ import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection'
 import "./CvTemplatesPage.scss"
 import CvCardList from "../../CvCardList/CvCardList"
 
-function CvTemplatesPage() {
+function CvTemplatesPage(props) {
   return (
     <>
       <Header />
       <div className="cv-page">
         <div className="container">
           <WelcomeSection />
-          <CvCardList />
+          <CvCardList props={props}/>
         </div>
       </div>
       <Footer />

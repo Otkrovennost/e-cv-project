@@ -39,7 +39,7 @@ const CvTemplate = ({cvData}) => {
         {/* About Section Start  */}
         <View style={styles.about}>
           <Text style={styles.about__title}>
-            About
+            About 2
           </Text>
           <Text style={styles.about__description}>
             {cvData.summary}
