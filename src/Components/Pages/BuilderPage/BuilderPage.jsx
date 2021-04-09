@@ -1,23 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import { PDFViewer, BlobProvider, usePDF } from '@react-pdf/renderer';
-import Header from '../../Common/Header/Header';
-import CvTemplate from '../../CvTemplates/CvTemplate/CvTemplate.jsx';
+import React, { useEffect, useState } from "react";
+import { PDFViewer } from "@react-pdf/renderer";
+import Header from "../../Common/Header/Header";
+import CvTemplate from "../../CvTemplates/CvTemplate/CvTemplate.jsx";
 import BuilderForm from "../../BuilderForm/BuilderForm";
 import "./BuilderPage.scss";
 
-export default function BuilderPage({chosenTemplate}) {
-  
+export default function BuilderPage({ chosenTemplate }) {
   const cvDataInit = {
-    avatar: '',
-    title: '',
-    name: '',
-    surname: '',
-    email: '',
-    phone: '',
-    summary: '',
+    avatar: "",
+    title: "",
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+    summary: "",
     employmentHistory: [],
     educationHistory: [],
-    skills: []
+    skills: [],
   };
 
   const [cvData, setCvData] = useState(cvDataInit);
@@ -27,18 +26,12 @@ export default function BuilderPage({chosenTemplate}) {
       <Header />
       <div className="container">
         <div className="builder-page__inner">
-          <BuilderForm 
-            setCvData={setCvData}
-            cvData={cvData}
-          />
-          <BlobProvider>
-            <CvTemplate 
-              cvData={cvData}
-              styles={chosenTemplate[0].style}
-            />
-          </BlobProvider>
+          <BuilderForm setCvData={setCvData} cvData={cvData} />
+          <PDFViewer>
+            <CvTemplate cvData={cvData} styles={chosenTemplate[0].style} />
+          </PDFViewer>
         </div>
       </div>
     </div>
-  )
+  );
 }
