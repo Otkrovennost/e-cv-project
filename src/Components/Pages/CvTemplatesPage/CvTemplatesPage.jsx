@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import Header from '../../Common/Header/Header';
 import Footer from '../../Common/Footer/Footer';
@@ -13,7 +13,7 @@ function CvTemplatesPage(props) {
       <div className="cv-page">
         <div className="container">
           <WelcomeSection />
-          <CvCardList props={props}/>
+          <CvCardList props={props} cvClickHandler={props.cvClickHandler}/>
         </div>
       </div>
       <Footer />

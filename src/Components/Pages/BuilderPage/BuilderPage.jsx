@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
-import { PDFViewer } from '@react-pdf/renderer';
+import React, {useEffect, useState} from 'react';
+import { PDFViewer, BlobProvider, usePDF } from '@react-pdf/renderer';
 import Header from '../../Common/Header/Header';
-import Footer from '../../Common/Footer/Footer';
 import CvTemplate from '../../CvTemplates/CvTemplate/CvTemplate.jsx';
-import CvTemplate2 from '../../CvTemplates/CvTemplate2/CvTemplate2.jsx';
 import BuilderForm from "../../BuilderForm/BuilderForm";
 import "./BuilderPage.scss";
 
-export default function BuilderPage() {
+export default function BuilderPage({chosenTemplate}) {
   
   const cvDataInit = {
     avatar: '',
@@ -33,11 +31,12 @@ export default function BuilderPage() {
             setCvData={setCvData}
             cvData={cvData}
           />
-          <PDFViewer>
-            <CvTemplate2 
+          <BlobProvider>
+            <CvTemplate 
               cvData={cvData}
+              styles={chosenTemplate[0].style}
             />
-          </PDFViewer>
+          </BlobProvider>
         </div>
       </div>
     </div>
