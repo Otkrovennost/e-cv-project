@@ -1,19 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import Header from '../../Common/Header/Header';
 import Footer from '../../Common/Footer/Footer';
 import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection'
-import CvCardList from './CvCardList/CvCardList'
 import "./CvTemplatesPage.scss"
+import CvCardList from "../../CvCardList/CvCardList"
 
-function CvTemplatesPage() {
+function CvTemplatesPage(props) {
   return (
     <>
       <Header />
       <div className="cv-page">
         <div className="container">
           <WelcomeSection />
-          <CvCardList />
+          <CvCardList props={props} cvClickHandler={props.cvClickHandler}/>
         </div>
       </div>
       <Footer />

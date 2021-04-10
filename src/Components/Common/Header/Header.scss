@@ -1,10 +1,31 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .header {
-  margin-bottom: 30px;
   padding: 30px 0 0 0;
 }
 
 .nav {
   display: flex;
+  font-weight: 300;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  text-decoration: none;
+
+  img {
+    max-width: 90px;
+  }
+
+  p {
+    color: $text-color;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.1;
+  }
 }
