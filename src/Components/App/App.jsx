@@ -11,15 +11,14 @@ import './App.scss';
 import BuilderPage from '../Pages/BuilderPage/BuilderPage';
 
 function App(props) {
-  const [chosenTemplate, setChosenTemplate] = useState(cvCards[0].style);
+  const [chosenTemplate, setChosenTemplate] = useState(cvCards[0]);
 
   // Getting Id of a CV and pushing it to history.
   const cvClickHandler = (e, cvItem) => {
-    const chosenTemplate = cvCards.filter((item) => {
-      return item.id === cvItem.id;
-    });
-    setChosenTemplate(chosenTemplate);
+    setChosenTemplate(cvCards.find(item => item.id === cvItem.id));
+    localStorage.setItem('cv', JSON.stringify(cvCards.find(item => item.id === cvItem.id)));
   };
+
   return (
     <HashRouter>
       <Switch>
@@ -43,7 +42,7 @@ function App(props) {
         <Route
           path='/builder/:id'
           render={(props) => (
-            <BuilderPage {...props} chosenTemplate={chosenTemplate[0]} />
+            <BuilderPage {...props} chosenTemplate={chosenTemplate} />
           )}
         />
         <Redirect to={AppRoute.MAIN_PAGE} />

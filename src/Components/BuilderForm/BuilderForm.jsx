@@ -292,8 +292,8 @@ export default function BuilderForm({ cvData, setCvData }) {
           <TextField
             id='desired-job'
             label='Job title'
-            value={title}
-            onChange={({ target: { value } }) => {
+            // value={title}
+            onBlur={({ target: { value } }) => {
               setKey('title', value);
             }}
             variant='outlined'
@@ -304,8 +304,8 @@ export default function BuilderForm({ cvData, setCvData }) {
           <TextField
             id='first-name'
             label='First Name'
-            value={name}
-            onChange={({ target: { value } }) => {
+            // value={name}
+            onBlur={({ target: { value } }) => {
               setKey('name', value);
             }}
             variant='outlined'
@@ -314,8 +314,8 @@ export default function BuilderForm({ cvData, setCvData }) {
           <TextField
             id='last-name'
             label='Last Name'
-            value={surname}
-            onChange={({ target: { value } }) => {
+            // value={surname}
+            onBlur={({ target: { value } }) => {
               setKey('surname', value);
             }}
             variant='outlined'
@@ -326,8 +326,8 @@ export default function BuilderForm({ cvData, setCvData }) {
           <TextField
             id='email'
             label='Email'
-            value={email}
-            onChange={({ target: { value } }) => {
+            // value={email}
+            onBlur={({ target: { value } }) => {
               setKey('email', value);
             }}
             variant='outlined'
@@ -336,8 +336,8 @@ export default function BuilderForm({ cvData, setCvData }) {
           <TextField
             id='phone'
             label='Phone'
-            value={phone}
-            onChange={({ target: { value } }) => {
+            // value={phone}
+            onBlur={({ target: { value } }) => {
               setKey('phone', value);
             }}
             variant='outlined'
@@ -351,8 +351,8 @@ export default function BuilderForm({ cvData, setCvData }) {
           <TextField
             id='about'
             label='About yourself'
-            value={summary}
-            onChange={({ target: { value } }) => {
+            // value={summary}
+            onBlur={({ target: { value } }) => {
               setKey('summary', value);
             }}
             placeholder='About yourself'
@@ -504,11 +504,11 @@ export default function BuilderForm({ cvData, setCvData }) {
                 }}>
                 Add skills in cv
               </Button>
+              <div ref={skillsEndRef} />
             </React.Fragment>
           ) : (
             <React.Fragment />
           )}
-          <div ref={skillsEndRef} />
         </Grid>
       </Grid>
     </form>

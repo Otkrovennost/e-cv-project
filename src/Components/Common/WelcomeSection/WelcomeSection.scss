@@ -18,6 +18,7 @@
     p {
       line-height: 1.35;
       font-weight: $thin;
+      font-weight: 300;
     }
   }
 }
@@ -49,5 +50,6 @@
 
   &__desc {
     font-size: 13px;
+    font-weight: 300;
   }
 }
