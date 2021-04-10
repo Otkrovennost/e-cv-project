@@ -1,11 +1,18 @@
-import React from "react";
-import { Page, Text, Document, View, Image } from "@react-pdf/renderer";
+import React from 'react';
+import { Page, Text, Document, View, Image } from '@react-pdf/renderer';
 const CvTemplate = ({ cvData, styles }) => {
   return (
-    <Document title="Nazar" subject="CV">
-      <Page wrap size="A4" style={styles.body}>
+    <Document title='Nazar' subject='CV'>
+      <Page wrap size='A4' style={styles.body}>
         <View style={styles.intro}>
-          <Image style={styles.intro__image} src={cvData.avatar[0]} />
+          <Image
+            style={styles.intro__image}
+            src={
+              cvData.avatar === ''
+                ? 'https://react-pdf.org/test.jpg'
+                : cvData.avatar[0]
+            }
+          />
           {/* Intro Section  */}
           <View>
             <View style={styles.intro__name_job}>
