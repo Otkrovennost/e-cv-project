@@ -43,7 +43,7 @@ function App(props) {
         <Route
           path='/builder/:id'
           render={(props) => (
-            <BuilderPage {...props} chosenTemplate={chosenTemplate} />
+            <BuilderPage {...props} chosenTemplate={chosenTemplate[0]} />
           )}
         />
         <Redirect to={AppRoute.MAIN_PAGE} />
