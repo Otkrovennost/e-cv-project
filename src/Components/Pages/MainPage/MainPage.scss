@@ -1,18 +1,19 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .intro {
-  padding: 0 650px 173px 0;
-  background-image: url("../../../assets/hero-image.png");
+  padding: 0 800px 173px 0;
+  background-image: url('../../../assets/hero-2.svg');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 60;
   background-position: right top;
   color: $text-color;
+  height: 100%;
 }
 
 .intro__title {
   margin-bottom: 25px;
   padding-top: 50px;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 48.83px;
   line-height: 53px;
 }

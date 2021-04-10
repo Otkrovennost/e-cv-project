@@ -1,4 +1,4 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .welcome {
   display: flex;
@@ -12,6 +12,7 @@
 
     h2 {
       margin-bottom: 26px;
+      font-weight: 500;
     }
 
     p {
