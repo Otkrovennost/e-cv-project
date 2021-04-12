@@ -3,6 +3,7 @@ import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
 import CvTemplatesPage from "../Pages/CvTemplatesPage/CvTemplatesPage";
 import MainPage from "../Pages/MainPage/MainPage";
 import BusinessCardsPage from '../Pages/BusinessCardsPage/BusinessCardsPage'
+import BusinessCardsBuilderPage from '../Pages/BusinessCardsPage/BusinessCardBuilder/BusinessCardBuilder'
 
 import { AppRoute } from "../../constants";
 
@@ -16,6 +17,9 @@ function App() {
         <Route exact path={AppRoute.MAIN_PAGE} component={MainPage} />
         <Route exact path={AppRoute.BUSINESS_CARD_TEMPLATES_PAGE}
           component={BusinessCardsPage} />
+        <Route exact path={AppRoute.BUSINESS_CARD_BUILDER_PAGE}
+          component={BusinessCardsBuilderPage} />
+
         <Route
           exact
           path={AppRoute.CV_TEMPLATES_PAGE}
