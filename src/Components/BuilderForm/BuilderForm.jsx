@@ -191,8 +191,6 @@ export default function BuilderForm({ cvData, setCvData }) {
       educationHistory: [...educationHistory, education],
     });
     setEducation(initEducation);
-    console.log(education);
-    console.log(educationHistory);
   };
 
   const employmentItem = (p, i) => {
