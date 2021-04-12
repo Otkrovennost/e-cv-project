@@ -1,4 +1,4 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .welcome {
   display: flex;
@@ -12,11 +12,13 @@
 
     h2 {
       margin-bottom: 26px;
+      font-weight: 500;
     }
 
     p {
       line-height: 1.35;
       font-weight: $thin;
+      font-weight: 300;
     }
   }
 }
@@ -48,5 +50,6 @@
 
   &__desc {
     font-size: 13px;
+    font-weight: 300;
   }
 }

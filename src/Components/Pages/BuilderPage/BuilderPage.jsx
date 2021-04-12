@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
-
 import Header from '../../Common/Header/Header';
-import Footer from '../../Common/Footer/Footer';
 import CvTemplate from '../../CvTemplates/CvTemplate/CvTemplate.jsx';
-import BuilderForm from "../../BuilderForm/BuilderForm";
+import BuilderForm from '../../BuilderForm/BuilderForm';
+import './BuilderPage.scss';
 
-import "./BuilderPage.scss";
+export default function BuilderPage({ chosenTemplate }) {
 
-export default function BuilderPage() {
+  console.log(chosenTemplate);
+
   const cvDataInit = {
     avatar: '',
     title: '',
@@ -19,27 +19,22 @@ export default function BuilderPage() {
     summary: '',
     employmentHistory: [],
     educationHistory: [],
-    skills: []
+    skills: [],
   };
 
   const [cvData, setCvData] = useState(cvDataInit);
 
   return (
-    <div className="builder-page">
+    <div className='builder-page'>
       <Header />
-      <div className="container">
-        <div className="builder-page__inner">
-          <BuilderForm 
-            setCvData={setCvData}
-            cvData={cvData}
-          />
+      <div className='container'>
+        <div className='builder-page__inner'>
+          <BuilderForm setCvData={setCvData} cvData={cvData} />
           <PDFViewer>
-            <CvTemplate 
-              cvData={cvData}
-            />
+            <CvTemplate cvData={cvData} chosenTemplate={JSON.parse(localStorage.getItem('cv'))} />
           </PDFViewer>
         </div>
       </div>
     </div>
-  )
+  );
 }
