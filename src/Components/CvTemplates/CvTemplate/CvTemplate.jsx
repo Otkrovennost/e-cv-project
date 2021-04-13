@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { Page, Text, Document, View, Image } from '@react-pdf/renderer';
 import userImage from '../../../assets/user-image.png';
+
 const CvTemplate = ({ cvData, chosenTemplate }) => {
   const { styles, cvTitle, subject } = chosenTemplate;
   console.log(cvData);
   console.log(chosenTemplate);
+
   return (
+
     <Document title={cvTitle} subject={subject}>
       <Page wrap size='A4' style={styles.body}>
         <View style={styles.intro}>
@@ -14,13 +17,16 @@ const CvTemplate = ({ cvData, chosenTemplate }) => {
             src={cvData.avatar === '' ? userImage : cvData.avatar[0]}
           />
           {/* Intro Section  */}
+
           <View>
+
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
                 {cvData.name} {cvData.surname}
               </Text>
               <Text style={styles.intro__job}>{cvData.title}</Text>
             </View>
+
             <View style={styles.intro__info}>
               {/* <Text style={styles.intro__info_item}>
                 Maksima Bogdanovicha 136/141

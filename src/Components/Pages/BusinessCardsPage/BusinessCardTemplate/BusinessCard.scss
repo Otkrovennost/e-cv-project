@@ -20,11 +20,13 @@
 }
     .section_name{
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        
     }
     .first-name{
-            font-size: smaller;   
+            font-size: small;   
             font-weight: bold;
+            text-decoration: none;
 
     }
     .last-name{

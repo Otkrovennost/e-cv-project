@@ -9,6 +9,7 @@ import { cvCards } from '../../data';
 
 import './App.scss';
 import BuilderPage from '../Pages/BuilderPage/BuilderPage';
+import BusinessCardsBuilderPage from "../Pages/BusinessCardsPage/BusinessCardBuilder/BusinessCardBuilder"
 
 function App(props) {
   const [chosenTemplate, setChosenTemplate] = useState(cvCards[0]);
