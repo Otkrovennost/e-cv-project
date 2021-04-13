@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App/App.jsx';
 import './index.scss';
-import CardsContext from './Components/context/CvContext';
 
 ReactDOM.render(
-  <CardsContext>
+  <React.StrictMode>
     <App />
-  </CardsContext>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
