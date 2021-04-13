@@ -4,8 +4,6 @@ import { cvCards } from '../../data';
 export const CardsContext = createContext();
 const ContextProvider = ({ children }) => {
   const [chosenTemplate, setChosenTemplate] = useState(cvCards[0]);
-
-  // Getting Id of a CV and pushing it to history.
   const cvClickHandler = (e, cvItem) => {
     setChosenTemplate(cvCards.find((item) => item.id === cvItem.id));
     localStorage.setItem(
