@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CvCard from '../CvCard/CvCard';
-import "./CvCardList.scss";
-import {cvCards} from "../../data";
+import './CvCardList.scss';
+import { cvCards } from '../../data';
+import { CardsContext } from '../context/CvContext';
 
-function CvCardList({cvClickHandler, props}) {
-
-
-const cvClickRedirection = (event,item) => {
-  console.log('click')
-}
+function CvCardList({ props }) {
+  const { cvClickHandler } = useContext(CardsContext);
   return (
-    <div className="cv-card_list">
-      {cvCards.map(item => {
-        return <CvCard getId={(e) => {
-          cvClickHandler(e, item)
-          props.history.push(`/builder/${item.id}`)
-        }} key={item.id} name={item.cvTitle} image={item.cvImage} colors={item.cvColors} />
+    <div className='cv-card_list'>
+      {cvCards.map((item) => {
+        return (
+          <CvCard
+            getId={(e) => {
+              cvClickHandler(e, item);
+              props.history.push(`/builder/${item.id}`);
+            }}
+            key={item.id}
+            name={item.cvTitle}
+            image={item.cvImage}
+            colors={item.cvColors}
+          />
+        );
       })}
     </div>
-  )
+  );
 }
 
-export default CvCardList
+export default CvCardList;

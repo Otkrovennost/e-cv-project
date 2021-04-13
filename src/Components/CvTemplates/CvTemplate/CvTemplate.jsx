@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Page, Text, Document, View, Image } from '@react-pdf/renderer';
 import userImage from '../../../assets/user-image.png';
+import './CvTemplate.scss';
+
 const CvTemplate = ({ cvData, chosenTemplate }) => {
   const { styles, cvTitle, subject } = chosenTemplate;
-  console.log(cvData);
-  console.log(chosenTemplate);
   return (
     <Document title={cvTitle} subject={subject}>
       <Page wrap size='A4' style={styles.body}>
@@ -78,7 +78,7 @@ const CvTemplate = ({ cvData, chosenTemplate }) => {
 
         {/* Skills Section Start  */}
         <View style={styles.skills}>
-          <Text style={styles.skills__title}>Skills</Text>
+          <Text style={styles.skills__title}>Skills </Text>
           <View style={styles.skills__list}>
             {cvData.skills.map((elem) => (
               <Text style={styles.skills__title}>{elem}</Text>
