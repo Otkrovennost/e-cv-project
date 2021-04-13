@@ -1,13 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 import Header from '../../Common/Header/Header';
 import CvTemplate from '../../CvTemplates/CvTemplate/CvTemplate.jsx';
 import BuilderForm from '../../BuilderForm/BuilderForm';
 import './BuilderPage.scss';
-import { CardsContext } from '../../context/CvContext';
 
 export default function BuilderPage() {
-  const { chosenTemplate } = useContext(CardsContext);
   const cvDataInit = {
     avatar: '',
     title: '',
