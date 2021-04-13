@@ -15,8 +15,11 @@ function App(props) {
 
   // Getting Id of a CV and pushing it to history.
   const cvClickHandler = (e, cvItem) => {
-    setChosenTemplate(cvCards.find(item => item.id === cvItem.id));
-    localStorage.setItem('cv', JSON.stringify(cvCards.find(item => item.id === cvItem.id)));
+    setChosenTemplate(cvCards.find((item) => item.id === cvItem.id));
+    localStorage.setItem(
+      'cv',
+      JSON.stringify(cvCards.find((item) => item.id === cvItem.id))
+    );
   };
 
   return (
