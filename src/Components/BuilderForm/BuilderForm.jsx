@@ -4,7 +4,6 @@ import {
   Button,
   Box,
   Grid,
-  Icon,
   IconButton,
   List,
   ListItem,
@@ -268,8 +267,6 @@ export default function BuilderForm({ cvData, setCvData }) {
   useEffect(() => {
     scrollToBottom();
   }, [skillsArray]);
-
-  const { title, name, surname, email, phone, summary } = cvData;
 
   return (
     <form className='form'>

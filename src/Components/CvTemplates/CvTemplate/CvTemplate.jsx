@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Page, Text, Document, View, Image } from '@react-pdf/renderer';
 import userImage from '../../../assets/user-image.png';
+import './CvTemplate.scss';
+
 const CvTemplate = ({ cvData, chosenTemplate }) => {
   const { styles, cvTitle, subject } = chosenTemplate;
   return (
