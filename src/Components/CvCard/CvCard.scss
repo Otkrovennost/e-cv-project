@@ -1,4 +1,16 @@
-@import "../../scss/variables";
+@import '../../scss/variables';
+
+.cv-card__button {
+  position: absolute;
+  border: none;
+  background-color: $color2;
+  color: white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1000;
+  transition: 0.4s;
+}
 
 .cv-card {
   margin: 20px;
@@ -12,16 +24,22 @@
   }
 
   &:hover .cv-card__body {
-    background-color: #cfcfcf;
+    background-color: rgba($color2, 0.6);
+  }
+
+  &:hover .cv-card__button {
+    opacity: 1;
+  }
+
+  &__image {
+    img {
+      max-width: 200px;
+      width: 100%;
+    }
   }
 
   &__body {
     position: relative;
-    // background: radial-gradient(
-    //   222.33% 123.41% at 50% 50%,
-    //   rgba(63, 200, 101, 0.29) 0%,
-    //   rgba(235, 235, 235, 0) 100%
-    // );
     background-color: #ebebeb;
     border-radius: 7px;
     display: flex;

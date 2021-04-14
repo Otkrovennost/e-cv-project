@@ -11,7 +11,7 @@ import { AnimatePresence } from 'framer-motion';
 function App(props) {
   return (
     <HashRouter>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter initial={false}>
         <Switch>
           <Route exact path={AppRoute.MAIN_PAGE} component={MainPage} />
           <Route
