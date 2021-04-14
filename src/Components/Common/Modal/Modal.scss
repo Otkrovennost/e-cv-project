@@ -1,12 +1,4 @@
-.modal {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background-color: white;
-  padding: 3em;
-}
+@import '../../../scss/variables';
 
 .modal-overlay {
   position: fixed;
@@ -16,4 +8,56 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: white;
+  border-radius: 0.4em;
+
+  &__content {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image-wrapper {
+    flex-basis: 50%;
+    transform: scale(1.2) translateX(-40px);
+
+    img {
+      -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      max-width: 1000px;
+      width: 100%;
+    }
+  }
+
+  &__exit-btn {
+    color: $text-color;
+    border: none;
+    font-size: 40px;
+    background: none;
+    cursor: pointer;
+    display: block;
+    max-width: 100px;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+  }
+}
+
+.modal__text {
+  padding: 1em;
+  flex-basis: 50%;
+}
+
+.modal__inner {
+  position: relative;
 }

@@ -1,4 +1,5 @@
-import exampleCV from '../src/assets/example-cv.svg';
+import exampleCV from '../src/assets/cv-previews/yellow.svg';
+import violetCv from '../src/assets/cv-previews/violet.png';
 
 export const cvCards = [
   {
@@ -12,8 +13,8 @@ export const cvCards = [
   {
     id: '2',
     cvName: 'CvTemplate2',
-    cvTitle: 'Something',
-    cvImage: exampleCV,
+    cvTitle: 'Violet',
+    cvImage: violetCv,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
   },
   {

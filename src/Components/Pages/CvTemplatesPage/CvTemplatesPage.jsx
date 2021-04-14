@@ -9,12 +9,9 @@ import CvCardList from '../../CvCardList/CvCardList';
 import { motion } from 'framer-motion';
 function CvTemplatesPage(props) {
   return (
-    <motion.div
-      initial={{ translateX: '-200%' }}
-      animate={{ translateX: '0%' }}
-      transition={{ type: 'tween', duration: 1, delay: 0.2 }}>
+    <motion.div className='cv-page'>
       <Header />
-      <div className='cv-page'>
+      <div>
         <div className='container'>
           <WelcomeSection />
           <CvCardList props={props} />
