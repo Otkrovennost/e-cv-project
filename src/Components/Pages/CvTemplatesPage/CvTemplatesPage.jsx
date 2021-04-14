@@ -5,7 +5,6 @@ import Footer from '../../Common/Footer/Footer';
 import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection';
 import './CvTemplatesPage.scss';
 import CvCardList from '../../CvCardList/CvCardList';
-
 function CvTemplatesPage(props) {
   return (
     <>
@@ -13,7 +12,7 @@ function CvTemplatesPage(props) {
       <div className='cv-page'>
         <div className='container'>
           <WelcomeSection />
-          <CvCardList props={props} cvClickHandler={props.cvClickHandler} />
+          <CvCardList props={props} />
         </div>
       </div>
       <Footer />

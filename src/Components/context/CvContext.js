@@ -1,20 +1,48 @@
 import { createContext, useState } from 'react';
-import { cvCards } from '../../data';
+import Loader from '../Common/loader/Loader';
+import * as Cards from '../CvTemplates/index';
 
 export const CardsContext = createContext();
+
+const cvDataInit = {
+  avatar: '',
+  title: '',
+  name: '',
+  surname: '',
+  email: '',
+  phone: '',
+  summary: '',
+  employmentHistory: [],
+  educationHistory: [],
+  skills: [],
+};
+
 const ContextProvider = ({ children }) => {
-  const [chosenTemplate, setChosenTemplate] = useState(cvCards[0]);
+  const [cvData, setCvData] = useState(cvDataInit);
+  const [selectedCv, setSelectedCv] = useState('');
+
   const cvClickHandler = (e, cvItem) => {
-    setChosenTemplate(cvCards.find((item) => item.id === cvItem.id));
-    localStorage.setItem(
-      'cv',
-      JSON.stringify(cvCards.find((item) => item.id === cvItem.id))
-    );
-    console.log(chosenTemplate);
+    setSelectedCv(cvItem.cvName);
+  };
+  localStorage.setItem('chosenTemplate', JSON.stringify(selectedCv));
+
+  const renderCard = (selectedCard) => {
+    if (!selectedCard) {
+      return <Loader />;
+    }
+    const CvTemplate = Cards[selectedCard];
+    return <CvTemplate cvData={cvData} />;
   };
   return (
     <CardsContext.Provider
-      value={{ chosenTemplate, setChosenTemplate, cvClickHandler }}>
+      value={{
+        selectedCv,
+        setSelectedCv,
+        cvClickHandler,
+        renderCard,
+        cvData,
+        setCvData,
+      }}>
       {children}
     </CardsContext.Provider>
   );

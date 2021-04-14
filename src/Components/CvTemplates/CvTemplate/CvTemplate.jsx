@@ -1,12 +1,17 @@
 import React from 'react';
-import { Page, Text, Document, View, Image } from '@react-pdf/renderer';
+import {
+  Page,
+  Text,
+  Document,
+  View,
+  Image,
+  StyleSheet,
+} from '@react-pdf/renderer';
 import userImage from '../../../assets/user-image.png';
-import './CvTemplate.scss';
 
-const CvTemplate = ({ cvData, chosenTemplate }) => {
-  const { styles, cvTitle, subject } = chosenTemplate;
+const CvTemplate = ({ cvData }) => {
   return (
-    <Document title={cvTitle} subject={subject}>
+    <Document>
       <Page wrap size='A4' style={styles.body}>
         <View style={styles.intro}>
           <Image
@@ -91,5 +96,108 @@ const CvTemplate = ({ cvData, chosenTemplate }) => {
     </Document>
   );
 };
+
+const styles = StyleSheet.create({
+  body: {
+    padding: '50px',
+  },
+  intro: {
+    flexDirection: 'row',
+  },
+
+  intro__image: {
+    width: '100px',
+    height: '100px',
+    marginRight: '40px',
+    objectFit: 'cover',
+  },
+
+  intro__job: {
+    color: '#5E5E5E',
+    fontSize: '14pt',
+  },
+
+  intro__info: {
+    marginTop: '10px',
+    fontSize: '12pt',
+  },
+
+  intro__info_item: {
+    marginBottom: '3px',
+  },
+
+  about: {
+    marginTop: '40px',
+    flexDirection: 'row',
+    marginBottom: '40px',
+  },
+
+  about__title: {
+    width: '100px',
+  },
+
+  about__description: {
+    fontSize: '13pt',
+    lineHeight: '1.4',
+    maxWidth: '380px',
+  },
+
+  edu__item: {
+    flexDirection: 'row',
+    display: 'flex',
+    fontSize: '12pt',
+    marginBottom: '15px',
+  },
+
+  edu: {
+    flexDirection: 'row',
+    marginBottom: '40px',
+  },
+
+  edu__title: {
+    marginBottom: '10px',
+    width: '100px',
+  },
+
+  edu__item_date: {
+    width: '100px',
+    marginRight: '60px',
+  },
+
+  exp: {
+    marginBottom: '40px',
+    flexDirection: 'row',
+  },
+
+  exp__title: {
+    marginBottom: '10px',
+    width: '100px',
+  },
+
+  skills: {
+    marginBottom: '40px',
+    flexDirection: 'row',
+  },
+
+  skills__title: {
+    marginBottom: '10px',
+    width: '100px',
+  },
+
+  skills__list: {
+    flexDirection: 'row',
+    maxWidth: '400px',
+    flexWrap: 'wrap',
+  },
+
+  skills__item: {
+    backgroundColor: 'black',
+    color: 'white',
+    padding: '8px',
+    fontSize: '12pt',
+    borderRadius: '5pt',
+    margin: '5px',
+  },
+});
 
 export default CvTemplate;
