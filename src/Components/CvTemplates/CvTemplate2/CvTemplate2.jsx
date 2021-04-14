@@ -19,7 +19,6 @@ Font.register({
 });
 
 const CvTemplate2 = ({ cvData }) => {
-  console.log(cvData);
   return (
     <Document>
       <Page wrap size='A4' style={styles.body}>

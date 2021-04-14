@@ -24,7 +24,6 @@ const ContextProvider = ({ children }) => {
   const cvClickHandler = (e, cvItem) => {
     setSelectedCv(cvItem.cvName);
   };
-  localStorage.setItem('chosenTemplate', JSON.stringify(selectedCv));
 
   const renderCard = (selectedCard) => {
     if (!selectedCard) {

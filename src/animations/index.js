@@ -6,3 +6,12 @@ export const mainPageAnimations = {
     opacity: 0,
   },
 };
+
+export const titleAnimation = {
+  in: {
+    transformX: 0,
+  },
+  out: {
+    transformX: -100,
+  },
+};

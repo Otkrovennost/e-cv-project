@@ -1,7 +1,7 @@
 import React from 'react';
 import './CvCard.scss';
 
-function CvCard({ name, image, getId }) {
+function CvCard({ name, image, getId, setIsOpened, isOpened }) {
   return (
     <div onClick={getId} className='cv-card'>
       <div className='cv-card__text-content'>
@@ -24,6 +24,11 @@ function CvCard({ name, image, getId }) {
             <div className='cv-card__color-inner'></div>
           </div>
         </div>
+        <button
+          onClick={() => setIsOpened(!isOpened)}
+          className='cv-card__button'>
+          Preview
+        </button>
       </div>
     </div>
   );

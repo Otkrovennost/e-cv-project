@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 import React from 'react';
 import { mainPageAnimations } from '../../../animations';
 import Header from '../../Common/Header/Header';
@@ -14,18 +14,30 @@ const MainPage = () => {
       <Header />
       <div className='container'>
         <div className='intro'>
-          <h1 className='visually-hidden'>Welcom</h1>
-          <p className='intro__title'>
+          <motion.h1
+            initial={{ translateX: '-200%' }}
+            animate={{ translateX: '0%' }}
+            transition={{ type: 'tween', duration: 1 }}
+            className='intro__title'>
             Choose and build your own CV in just 20 minutes!
-          </p>
-          <p className='intro__description'>
+          </motion.h1>
+          <motion.p
+            initial={{ translateX: '-200%' }}
+            animate={{ translateX: '0%' }}
+            transition={{ type: 'tween', duration: 1, delay: 0.2 }}
+            className='intro__description'>
             I'm baby schlitz hammock wayfarers sustainable coloring book ennui.
             Tacos roof party organic art party. Art party woke flannel pabst
             keffiyeh.
-          </p>
-          <a className='intro__button' href='#nowhear'>
+          </motion.p>
+          <motion.a
+            initial={{ translateX: '-200%' }}
+            animate={{ translateX: '0%' }}
+            transition={{ type: 'tween', duration: 1, delay: 0.4 }}
+            className='intro__button'
+            href='#nowhear'>
             Get Template
-          </a>
+          </motion.a>
         </div>
       </div>
     </motion.div>
