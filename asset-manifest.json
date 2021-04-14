@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/e-cv-project/static/css/main.710ba746.chunk.css",
-    "main.js": "/e-cv-project/static/js/main.492b392a.chunk.js",
-    "main.js.map": "/e-cv-project/static/js/main.492b392a.chunk.js.map",
+    "main.css": "/e-cv-project/static/css/main.c4920baf.chunk.css",
+    "main.js": "/e-cv-project/static/js/main.c15ac9a6.chunk.js",
+    "main.js.map": "/e-cv-project/static/js/main.c15ac9a6.chunk.js.map",
     "runtime-main.js": "/e-cv-project/static/js/runtime-main.44527e0b.js",
     "runtime-main.js.map": "/e-cv-project/static/js/runtime-main.44527e0b.js.map",
-    "static/js/2.6197ac45.chunk.js": "/e-cv-project/static/js/2.6197ac45.chunk.js",
-    "static/js/2.6197ac45.chunk.js.map": "/e-cv-project/static/js/2.6197ac45.chunk.js.map",
+    "static/js/2.aa0b3c10.chunk.js": "/e-cv-project/static/js/2.aa0b3c10.chunk.js",
+    "static/js/2.aa0b3c10.chunk.js.map": "/e-cv-project/static/js/2.aa0b3c10.chunk.js.map",
     "index.html": "/e-cv-project/index.html",
-    "static/css/main.710ba746.chunk.css.map": "/e-cv-project/static/css/main.710ba746.chunk.css.map",
-    "static/js/2.6197ac45.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.6197ac45.chunk.js.LICENSE.txt",
-    "static/media/example-cv.ca26bf1f.svg": "/e-cv-project/static/media/example-cv.ca26bf1f.svg",
-    "static/media/MainPage.scss": "/e-cv-project/static/media/hero-2.26c5190c.svg",
-    "static/media/icons.83c3a342.svg": "/e-cv-project/static/media/icons.83c3a342.svg",
-    "static/media/logo2.0f38259a.svg": "/e-cv-project/static/media/logo2.0f38259a.svg",
-    "static/media/user-image.5cc7c627.png": "/e-cv-project/static/media/user-image.5cc7c627.png"
+    "static/css/main.c4920baf.chunk.css.map": "/e-cv-project/static/css/main.c4920baf.chunk.css.map",
+    "static/js/2.aa0b3c10.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.aa0b3c10.chunk.js.LICENSE.txt",
+    "static/media/Roboto-Light.8be2d148.ttf": "/e-cv-project/static/media/Roboto-Light.8be2d148.ttf",
+    "static/media/CvTemplatesPage.scss": "/e-cv-project/static/media/layer-bg.3a9b3e76.svg",
+    "static/media/logo2.4122443a.svg": "/e-cv-project/static/media/logo2.4122443a.svg",
+    "static/media/user-image.5cc7c627.png": "/e-cv-project/static/media/user-image.5cc7c627.png",
+    "static/media/violet.8320810e.png": "/e-cv-project/static/media/violet.8320810e.png",
+    "static/media/yellow.60cc6621.svg": "/e-cv-project/static/media/yellow.60cc6621.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.44527e0b.js",
-    "static/js/2.6197ac45.chunk.js",
-    "static/css/main.710ba746.chunk.css",
-    "static/js/main.492b392a.chunk.js"
+    "static/js/2.aa0b3c10.chunk.js",
+    "static/css/main.c4920baf.chunk.css",
+    "static/js/main.c15ac9a6.chunk.js"
   ]
 }
