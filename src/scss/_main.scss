@@ -24,7 +24,9 @@ iframe {
   height: 100%;
   width: 100%;
   margin-left: auto;
-  background-color: white;
+  background: $color1;
+  border-style: none;
+  border-width: 0;
 }
 
 .container {
