@@ -1,7 +1,6 @@
 import { createContext, useState } from 'react';
-import Loader from '../Common/loader/Loader';
-import * as Cards from '../CvTemplates/index';
-
+import Loader from '../Components/Common/loader/Loader';
+import * as Cards from '../Components/CvTemplates/index';
 export const CardsContext = createContext();
 
 const cvDataInit = {
@@ -22,7 +21,7 @@ const ContextProvider = ({ children }) => {
   const [selectedCv, setSelectedCv] = useState('');
 
   const cvClickHandler = (e, cvItem) => {
-    setSelectedCv(cvItem.cvName);
+    setSelectedCv(cvItem);
   };
 
   const renderCard = (selectedCard) => {

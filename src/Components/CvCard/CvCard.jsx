@@ -24,9 +24,7 @@ function CvCard({ name, image, getId, setIsOpened, isOpened }) {
             <div className='cv-card__color-inner'></div>
           </div>
         </div>
-        <button
-          onClick={() => setIsOpened(!isOpened)}
-          className='cv-card__button'>
+        <button onClick={() => setIsOpened(true)} className='cv-card__button'>
           Preview
         </button>
       </div>
