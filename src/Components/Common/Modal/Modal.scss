@@ -51,13 +51,37 @@
     right: 0;
     z-index: 1000;
   }
-}
 
-.modal__text {
-  padding: 1em;
-  flex-basis: 50%;
-}
+  &__text {
+    padding: 1em;
+    flex-basis: 50%;
+  }
 
-.modal__inner {
-  position: relative;
+  &__inner {
+    position: relative;
+  }
+
+  &__title {
+    color: $text-color;
+    margin-bottom: 15px;
+  }
+
+  &__btn {
+    padding: 0.3em 1em;
+    border: none;
+    background-color: $color2;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: darken($color2, 5%);
+    }
+  }
+
+  &__description {
+    font-weight: 300;
+  }
 }
