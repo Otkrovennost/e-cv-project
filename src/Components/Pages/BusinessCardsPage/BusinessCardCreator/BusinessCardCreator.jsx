@@ -1,8 +1,8 @@
 import React from 'react';
-//components
+// components
 // import Footer from '../../../Common/Footer/Footer';
 // import Header from '../../../Common/Header/Header';
-//libraries
+// libraries
 // import {
 //     Page,
 //     Text,
