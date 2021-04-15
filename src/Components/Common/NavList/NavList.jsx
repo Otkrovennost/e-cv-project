@@ -1,39 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import { AppRoute } from "../../../constants";
+import { AppRoute } from '../../../constants';
 
-import "./NavList.scss";
+import './NavList.scss';
 
 const NavList = () => {
   return (
-    <ul className="nav__list">
-      <li className="nav__item">
-        <Link
-          className="nav__link"
-          to={AppRoute.CV_TEMPLATES_PAGE}
-        >
+    <ul className='nav__list'>
+      <li className='nav__item'>
+        <NavLink className='nav__link' to={AppRoute.CV_TEMPLATES_PAGE}>
           CV Templates
-          </Link>
+        </NavLink>
       </li>
-      <li className="nav__item">
-        <Link
-          className="nav__link"
-          to={AppRoute.BUSINESS_CARD_TEMPLATES_PAGE}
-        >
+      <li className='nav__item'>
+        <NavLink
+          className='nav__link'
+          to={AppRoute.BUSINESS_CARD_TEMPLATES_PAGE}>
           Business Cards
-          </Link>
+        </NavLink>
       </li>
-      <li className="nav__item">
-        <Link
-          className="nav__link"
-          to={AppRoute.MAIN_PAGE}
-        >
+      <li className='nav__item'>
+        <NavLink className='nav__link' to={AppRoute.ABOUT_PAGE}>
           About
-          </Link>
+        </NavLink>
       </li>
     </ul>
-  )
-}
+  );
+};
 
 export default NavList;

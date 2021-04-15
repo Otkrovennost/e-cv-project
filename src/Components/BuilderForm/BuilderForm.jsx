@@ -4,7 +4,6 @@ import {
   Button,
   Box,
   Grid,
-  Icon,
   IconButton,
   List,
   ListItem,
@@ -191,8 +190,6 @@ export default function BuilderForm({ cvData, setCvData }) {
       educationHistory: [...educationHistory, education],
     });
     setEducation(initEducation);
-    console.log(education);
-    console.log(educationHistory);
   };
 
   const employmentItem = (p, i) => {
@@ -270,8 +267,6 @@ export default function BuilderForm({ cvData, setCvData }) {
   useEffect(() => {
     scrollToBottom();
   }, [skillsArray]);
-
-  const { title, name, surname, email, phone, summary } = cvData;
 
   return (
     <form className='form'>
