@@ -16,7 +16,7 @@ const NavList = () => {
       <li className='nav__item'>
         <NavLink
           className='nav__link'
-          to={AppRoute.BUSINESS_CARD_TEMPLATES_PAGE}>
+          to={AppRoute.BUSINESS_CARD_PAGE}>
           Business Cards
         </NavLink>
       </li>
