@@ -6,7 +6,11 @@ import BusinessCardsPage from '../Pages/BusinessCardsPage/BusinessCardsPage';
 import { AppRoute } from '../../constants';
 import './App.scss';
 import BuilderPage from '../Pages/BuilderPage/BuilderPage';
+
 import { AnimatePresence } from 'framer-motion';
+
+import BusinessCardsBuilderPage from "../Pages/BusinessCardsPage/BusinessCardBuilder/BusinessCardBuilder"
+
 
 function App(props) {
   return (
@@ -31,6 +35,7 @@ function App(props) {
           <Redirect to={AppRoute.MAIN_PAGE} />
         </Switch>
       </AnimatePresence>
+
     </HashRouter>
   );
 }
