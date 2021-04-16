@@ -13,7 +13,7 @@ import { motion } from 'framer-motion';
 const BusinessCardsPage = () => {
   const [infoState, setInfostate] = useState(
     {
-      name: 'zabenko',
+      name: 'ibanko',
       profession: 'zaja',
       phone: '+654543',
       email: 'mail@mail.com',
@@ -33,9 +33,9 @@ const BusinessCardsPage = () => {
       <div className='container'>
         <WelcomeSection />
 
-
-        <BusinessCardTemplate card={infoState} />
-
+        <BusinessCardTemplate
+          card={infoState}
+        />
 
       </div>
       <Footer />
