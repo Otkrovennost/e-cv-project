@@ -9,9 +9,11 @@ import {
 } from '@react-pdf/renderer';
 import userImage from '../../../assets/user-image.png';
 
+
 const CvTemplate = ({ cvData }) => {
   return (
     <Document>
+
       <Page wrap size='A4' style={styles.body}>
         <View style={styles.intro}>
           <Image
@@ -19,13 +21,16 @@ const CvTemplate = ({ cvData }) => {
             src={cvData.avatar === '' ? userImage : cvData.avatar[0]}
           />
           {/* Intro Section  */}
+
           <View>
+
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
                 {cvData.name} {cvData.surname}
               </Text>
               <Text style={styles.intro__job}>{cvData.title}</Text>
             </View>
+
             <View style={styles.intro__info}>
               {/* <Text style={styles.intro__info_item}>
                 Maksima Bogdanovicha 136/141

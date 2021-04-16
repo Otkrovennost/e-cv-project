@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Switch, Route, HashRouter, Redirect } from 'react-router-dom';
 import { AppRoute } from '../../constants';
+import './App.scss';
 import { AnimatePresence } from 'framer-motion';
 //components
 import BuilderPage from '../Pages/BuilderPage/BuilderPage';
@@ -13,6 +14,9 @@ import MainPage from '../Pages/MainPage/MainPage';
 
 
 
+
+
+import BusinessCardsBuilderPage from "../Pages/BusinessCardsPage/BusinessCardBuilder/BusinessCardBuilder"
 
 
 function App(props) {
@@ -41,6 +45,7 @@ function App(props) {
           <Redirect to={AppRoute.MAIN_PAGE} />
         </Switch>
       </AnimatePresence>
+
     </HashRouter>
   );
 }
