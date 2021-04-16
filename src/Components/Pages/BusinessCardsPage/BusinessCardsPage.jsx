@@ -9,7 +9,6 @@ import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection';
 import BusinessCardTemplate from './BisnessCardTemplate/BusinessCardTemplate';
 // libraries 
 import { motion } from 'framer-motion';
-import BusinessCardList from './BusinessCardList/BusinessCardList'
 
 
 
@@ -39,12 +38,12 @@ const BusinessCardsPage = () => {
       <div className='container'>
         <WelcomeSection />
 
+      </div>
+      <div>
+        <BusinessCardTemplate card={infoState} />
 
-        <div>
-          <BusinessCardList card={infoState} />
-
-        </div>
-        <Footer />
+      </div>
+      <Footer />
     </motion.div>
   );
 };

@@ -13,12 +13,6 @@ import MainPage from '../Pages/MainPage/MainPage';
 
 
 
-
-
-
-import BusinessCardsBuilderPage from "../Pages/BusinessCardsPage/BusinessCardBuilder/BusinessCardBuilder"
-
-
 function App(props) {
   return (
     <HashRouter>
