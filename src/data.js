@@ -1,10 +1,12 @@
-import exampleCV from "../src/assets/cv-previews/yellow.svg";
+import exampleCV from '../src/assets/cv-previews/yellow.svg';
+// import violetCv from '../src/assets/cv-previews/violet.png';
+import steelBlueCV from '../src/assets/cv-previews/cv-1.png';
+import blueColdCV from '../src/assets/cv-previews/cv-3.png';
+import greenCV from '../src/assets/cv-previews/cv-4.png';
 import cv_2_violet from "../src/assets/cv-previews/violet.png";
 import cv_2_red from "../src/assets/cv2-assets/red-1.png";
 import cv_2_green from "../src/assets/cv2-assets/green-1.png";
 import cv_2_blue from "../src/assets/cv2-assets/blue-1.png";
-import steelBlueCV from "../src/assets/cv-previews//cv-1.png";
-import greenCV from "../src/assets/cv-previews/cv-4.jpg";
 
 export const cvCards = [
   {
@@ -47,12 +49,12 @@ export const cvCards = [
     subject: "CV",
   },
   {
-    id: "3",
-    cvName: "CvTemplate3",
-    cvTitle: "Something more",
-    cvImage: exampleCV,
-    cvColors: ["#dskflf", "#dfd445", "#dfd445"],
-    subject: "CV",
+    id: '3',
+    cvName: 'CvTemplate3',
+    cvTitle: 'Blue Cold',
+    cvImage: blueColdCV,
+    cvColors: ['#dskflf', '#dfd445', '#dfd445'],
+    subject: 'CV',
   },
   {
     id: "4",

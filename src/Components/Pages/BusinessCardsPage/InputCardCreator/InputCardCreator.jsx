@@ -12,26 +12,34 @@ import {
     // Typography,
 } from '@material-ui/core';
 
-const InputCardCreator = ({ value, onChange, ind }) => {
+const InputCardCreator = ({ person, setPerson }) => {
 
-    const [person, setPerson] = useState(
-        {
-            name: 'its your name',
-            profession: 'profession',
-            phone: 'phone call',
-            email: 'email',
-            extra: 'extra info',
-        }
-    )
-    const [newPerson, setNewPerson] = useState({});
-    const personArrKeys = Object.keys(person);
+    // const [person, setPerson] = useState(
+    //     {
+    //         name: 'its your name',
+    //         profession: 'profession',
+    //         phone: 'phone call',
+    //         email: 'email',
+    //         extra: 'extra info',
+    //     }
+    // )
+    // const [newPerson, setNewPerson] = useState({});
+    const personArrKeys = [ "name", "profession", "phone", "email", "extra"];
+    console.log(personArrKeys)
 
-    let changeInput = (event, el) => {
-        let input = newPerson;
-        input[el] = event.target.value;
-        setNewPerson(input)
-    }
+    // let changeInput = (event, el) => {
+    //     let input = newPerson;
+    //     input[el] = event.target.value;
+    //     setNewPerson(input)
+    // }
 
+    const setKey = (key, value) => {
+      console.log(key)
+      setPerson({ ...person, [key]: value });
+    };
+
+    console.log(person)
+  
 
     return (
         <div style={{
@@ -40,7 +48,7 @@ const InputCardCreator = ({ value, onChange, ind }) => {
             width: '30%',
             height: '500px',
             justifyContent: 'space-around',
-            padding: '20px'
+            padding: '0 20px 20px 20px'
         }}>
 
             {personArrKeys.map(
@@ -50,7 +58,10 @@ const InputCardCreator = ({ value, onChange, ind }) => {
                     variant="outlined"
                     autoComplete="off"
                     type="text"
-                    onChange={(event) => changeInput(event, el)}
+                    // onChange={(event) => changeInput(event, el)}
+                    onBlur={({ target: { value } }) => {
+                      setKey(el, value);
+                    }}
                 />)
             }
 
