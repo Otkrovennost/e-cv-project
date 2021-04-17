@@ -3,5 +3,5 @@ export const AppRoute = {
   CV_TEMPLATES_PAGE: `/cv_templates`,
   ABOUT_PAGE: `/about`,
   BUSINESS_CARD_TEMPLATES_PAGE: `/bisn_card`,
-  BUSINESS_CARD_BUILDER_PAGE: `/bisn_builder`
+  BUSINESS_CARD_BUILDER_PAGE: `/bisn_builder`,
 };
