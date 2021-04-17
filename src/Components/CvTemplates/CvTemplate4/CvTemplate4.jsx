@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Font,
 } from '@react-pdf/renderer';
-import userImage from '../../../assets/user-image.png';
+import userImage from '../../../assets/avatar.jpg';
 
 import loraFont from '../../../assets/fonts/Lora-Regular.ttf';
 
@@ -19,11 +19,11 @@ Font.register({
 
 const DefaultExpirienceItem = () => {
   return (
-    <View style={styles.edu__item}>
-      <Text style={styles.edu__item_date}>2020 sep - 2021 sep</Text>
-      <View style={styles.edu__item_info}>
+    <View style={styles.exp__item}>
+      <Text style={styles.exp__item_date}>2020 sep - 2021 sep</Text>
+      <View style={styles.exp__item_info}>
         <Text>Google Co.</Text>
-        <Text>Frontend-devlop</Text>
+        <Text>Frontend-developer</Text>
       </View>
     </View>
   );
@@ -34,7 +34,7 @@ const DefaultEducationItem = () => {
     <View style={styles.edu__item}>
       <Text style={styles.edu__item_date}>2019 sep - 2020 sep</Text>
       <View style={styles.edu__item_info}>
-        <Text>Wild code School</Text>
+        <Text>Wild Code School</Text>
         <Text>Frontend-developer</Text>
       </View>
     </View>
@@ -53,15 +53,11 @@ const DefaultSkillAray = [
   "TypeScript",
 ];
 
-const CvTemplate = ({ cvData }) => {
+const CvTemplate4 = ({ cvData }) => {
   return (
     <Document>
       <Page wrap size="A4" style={styles.body}>
         <View style={styles.intro}>
-          <Image
-            style={styles.intro__image}
-            src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
-          />
           <View style={styles.intro__block}>
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
@@ -73,14 +69,18 @@ const CvTemplate = ({ cvData }) => {
               </Text>
             </View>
             <View style={styles.intro__info}>
-              <Text style={styles.intro__info_item}>
+              <Text style={styles.intro__info_item_phone}>
                 {cvData.phone === "" ? "80291844880" : cvData.phone}
               </Text>
-              <Text style={styles.intro__info_item}>
+              <Text style={styles.intro__info_item_email}>
                 {cvData.email === "" ? "Email@mail.ru" : cvData.email}
               </Text>
             </View>
           </View>
+          <Image
+            style={styles.intro__image}
+            src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
+          />
         </View>
         <View style={styles.about}>
           <Text style={styles.about__title}>About</Text>
@@ -90,18 +90,21 @@ const CvTemplate = ({ cvData }) => {
               : cvData.summary}
           </Text>
         </View>
-        <View style={styles.edu}>
-          <Text style={styles.edu__title}>Experience</Text>
-          <View style={styles.edu__items}>
+        <View style={styles.exp}>
+          <Text style={styles.exp__title}>Experience</Text>
+          <View style={styles.exp__items}>
             {cvData.employmentHistory.length === 0 ? (
-              <DefaultExpirienceItem />
+              <React.Fragment>
+                <DefaultExpirienceItem />
+                <DefaultExpirienceItem />
+              </React.Fragment>
             ) : (
               cvData.employmentHistory.map((elem) => (
-                <View style={styles.edu__item}>
-                  <Text style={styles.edu__item_date}>
+                <View style={styles.exp__item}>
+                  <Text style={styles.exp__item_date}>
                     {elem.dateStart} - {elem.dateEnd}
                   </Text>
-                  <View style={styles.edu__item_info}>
+                  <View style={styles.exp__item_info}>
                     <Text>{elem.company}</Text>
                     <Text>{elem.title}</Text>
                   </View>
@@ -110,11 +113,14 @@ const CvTemplate = ({ cvData }) => {
             )}
           </View>
         </View>
-        <View style={styles.exp}>
-          <Text style={styles.exp__title}>Education</Text>
-          <View style={styles.exp__items}>
+        <View style={styles.edu}>
+          <Text style={styles.edu__title}>Education</Text>
+          <View style={styles.edu__items}>
             {cvData.educationHistory.length === 0 ? (
-              <DefaultEducationItem />
+              <React.Fragment>
+                <DefaultEducationItem />
+                <DefaultEducationItem />
+              </React.Fragment>
             ) : (
               cvData.educationHistory.map((elem) => (
                 <View style={styles.edu__item}>
@@ -149,13 +155,12 @@ const CvTemplate = ({ cvData }) => {
 
 const styles = StyleSheet.create({
   body: {
-    padding: '10px',
+    padding: '25px',
     fontFamily: 'Lora',
-    // backgroundColor: '#E6E6FA'
   },
+
   intro: {
     flexDirection: "row",
-    backgroundColor: '#4682B4',
     padding: "10px",
     color: "white",
     alignItems: "center",
@@ -164,8 +169,19 @@ const styles = StyleSheet.create({
   intro__image: {
     width: "100px",
     height: "100px",
+    marginLeft: 'auto',
     marginRight: "40px",
     objectFit: "cover",
+  },
+
+  intro__block: {
+    minWidth: '350px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '15px',
+    backgroundColor: '#9ebda6',
+    borderRadius: '5px'
   },
 
   intro__job: {
@@ -179,86 +195,126 @@ const styles = StyleSheet.create({
   },
 
   intro__info: {
-    marginTop: "10px",
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    paddingTop: "10px",
     fontSize: "12pt",
   },
 
-  intro__info_item: {
-    marginBottom: "3px",
+  intro__info_item_email: {
+    marginLeft: 'auto'
   },
 
   about: {
-    marginTop: "40px",
-    flexDirection: "row",
-    marginBottom: "40px",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: "20px",
+    marginBottom: "20px",
     borderBottomWidth: "2px",
-    borderBottomColor: "#4682B4",
-    borderBottomStyle: 'dotted',
+    borderBottomColor: "#9ebda6",
     paddingBottom: "20px",
   },
 
   about__title: {
-    width: "120px",
-    color: '#4682B4'
+    marginBottom: '20px',
+    color: '#2F4F4F'
   },
 
   about__description: {
     fontSize: "13pt",
     lineHeight: "1.4",
-    maxWidth: "380px",
-  },
-
-  edu__item: {
-    flexDirection: "row",
-    display: "flex",
-    fontSize: "12pt",
-    marginBottom: "15px",
+    width: '100%'
   },
 
   edu: {
-    flexDirection: "row",
+    flexDirection: 'column',
+    alignItems: 'center',
     marginBottom: "40px",
     borderBottomWidth: "2px",
-    borderBottomColor: "#4682B4",
-    borderBottomStyle: 'dotted',
-    paddingBottom: "20px",
+    borderBottomColor: "#9ebda6",
+    paddingBottom: "15px",
+  },
+
+  edu__items: {
+    width: '100%',
+    flexDirection: "column",
+  },
+
+  edu__item: {
+    width: '100%',
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    display: "flex",
+    fontSize: "12pt",
+    paddingBottom: '10px',
+    marginBottom: "10px",
+    borderBottomWidth: "2px",
+    borderBottomColor: "#2F4F4F",
+    borderBottomStyle: 'dotted'
   },
 
   edu__title: {
-    marginBottom: "10px",
-    width: "120px",
-    color: '#4682B4'
+    marginBottom: "20px",
+    color: '#2F4F4F'
   },
 
   edu__item_date: {
-    width: "100px",
     marginRight: "60px",
+    color: '#4B0082'
   },
 
   exp: {
-    marginBottom: "40px",
-    flexDirection: "row",
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: "20px",
     borderBottomWidth: "2px",
-    borderBottomColor: "#4682B4",
-    borderBottomStyle: 'dotted',
+    borderBottomColor: "#9ebda6",
     paddingBottom: "20px",
   },
 
-  exp__title: {
+  exp__items: {
+    width: '100%',
+    flexDirection: "column",
+  },
+
+  exp__item: {
+    width: '100%',
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    display: "flex",
+    fontSize: "12pt",
+    paddingBottom: '10px',
     marginBottom: "10px",
-    width: "120px",
-    color: '#4682B4'
+    borderBottomWidth: "2px",
+    borderBottomColor: "#2F4F4F",
+    borderBottomStyle: 'dotted'
+  },
+
+  exp__title: {
+    marginBottom: "20px",
+    color: '#2F4F4F'
+  },
+
+  exp__item_date: {
+    marginRight: "60px",
+    color: '#4B0082'
   },
 
   skills: {
     marginBottom: "40px",
+    padding: ' 0 15px',
     flexDirection: "row",
+    alignItems: 'center',
+    backgroundColor: '#9ebda6',
+    borderRadius: '10px'
   },
 
   skills__title__main: {
     marginBottom: "10px",
     width: "120px",
-    color: '#4682B4'
+    color: '#2F4F4F'
   },
 
   skills__title: {
@@ -268,18 +324,15 @@ const styles = StyleSheet.create({
 
   skills__list: {
     flexDirection: "row",
-    maxWidth: "400px",
-    flexWrap: "wrap",
+    flexWrap: "wrap"
   },
 
   skills__item: {
-    backgroundColor: "#4682B4",
-    color: "white",
-    padding: "8px",
-    fontSize: "12pt",
-    borderRadius: "5pt",
+    color: "#fff",
+    padding: "10px",
+    fontSize: "14pt",
     margin: "5px",
   },
 });
 
-export default CvTemplate;
+export default CvTemplate4;

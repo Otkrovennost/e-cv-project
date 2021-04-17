@@ -40,7 +40,7 @@ const CvTemplate3 = ({ cvData }) => {
               </Text>
             </View>
             {/* Skills  */}
-            <View style={styles.contact}>
+            <View style={styles.skills}>
               <Text style={styles.skills__title}>Skills</Text>
               <View style={styles.skills__list}>
                 {!cvData.skills.length === 0 ? (
@@ -78,7 +78,7 @@ const CvTemplate3 = ({ cvData }) => {
                 <Text style={styles.about__description}>
                   {cvData.summary
                     ? cvData.summary
-                    : "An “about me” section is a brief segment in your resume that highlights who you are as a professional, describes your greatest strengths and showcases your greatest professional accomplishments. The “about me” section in a resume should briefly provide the reader with an answer to the question, “Why should we hire you? An dhello why me"}
+                    : "An “about me” section is a brief segment in your resume that highlights who you are as a professional, describes your greatest strengths and showcases your greatest professional accomplishments. The “about me” section in a resume should briefly provide the reader with an answer to the question, “Why should we hire you?"}
                 </Text>
               </View>
               {/* Education  */}
@@ -153,18 +153,6 @@ const CvTemplate3 = ({ cvData }) => {
                           </Text>
                         </View>
                       </View>
-                      <View style={styles.exp__item}>
-                        <Text style={styles.exp__item_date}>
-                          september 2020 - january 2021
-                        </Text>
-                        <View style={styles.exp__item_info}>
-                          <Text>Google</Text>
-                          <Text>
-                            Working as a Frontend developer at one of the main
-                            offices
-                          </Text>
-                        </View>
-                      </View>
                     </>
                   )}
                 </View>
@@ -189,11 +177,13 @@ const styles = StyleSheet.create({
   },
 
   left__bar: {
-    backgroundColor: "#9EB2BD",
+    display: 'flex',
+    flexDirection: 'column',
     height: "840px",
-    width: "180px",
-    padding: "20px",
+    width: "250px",
+    padding: "10px",
     alignItems: "center",
+    backgroundColor: "#9EB2BD",
   },
 
   right__bar: {
@@ -204,28 +194,148 @@ const styles = StyleSheet.create({
     padding: "20px",
   },
 
+  contact: {
+    display: 'flex',
+    fontSize: '12px',
+    marginBottom: '20px'
+  },
+
+  contact__title: {
+    fontSize: '20px',
+    color: '#000080',
+    marginBottom: '15px',
+    paddingBottom: '10px',
+    borderBottomColor: '#2F4F4F',
+    borderBottomWidth: '2px',
+    textAlign: 'center'
+  },
+
+  contact__item: {
+    marginBottom: '15px',
+    color: '#2F4F4F',
+  },
+
+  skills: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+
+  skills__list: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+
+  skills__title: {
+    fontSize: '20px',
+    color: '#000080',
+    marginBottom: '15px',
+    paddingBottom: '10px',
+    borderBottomColor: '#2F4F4F',
+    borderBottomWidth: '2px',
+    // textAlign: 'center'
+  },
+
+  skills__item: {
+    marginBottom: '15px',
+    fontSize: '16px',
+    color: '#191970'
+  },
+
   intro: {
     backgroundColor: "#C4D4D7",
     width: "100%",
     padding: "20px",
-    paddingTop: "40px",
-    paddingBottom: "40px",
     textAlign: "center",
     justifyContent: "center",
   },
 
   intro__name: {
+    paddingBottom: '15px',
     borderBottom: "2px",
     borderBottomColor: "#4C2C69",
+    color: '#191970',
+    fontSize: '22px'
+  },
+
+  intro__job: {
+    paddingTop: '15px'
   },
 
   intro__image: {
     width: "100px",
     height: "100px",
     marginRight: "40px",
+    marginBottom: '30px',
     objectFit: "cover",
     borderRadius: "50%",
   },
+
+  about__title: {
+    marginBottom: '15px',
+    fontSize: '20px',
+    textAlign: 'center', 
+    color: '#191970',
+  },
+
+  about__description: {
+    textAlign: 'center',
+    color: '#696969',
+    marginBottom: '15px',
+    paddingBottom: '15px',
+    borderBottomWidth: "2px",
+    borderBottomColor: "#191970",
+    borderBottomStyle: 'dotted',
+  },
+
+  edu: {
+    paddingBottom: '15px',
+    marginBottom: '15px',
+    borderBottomWidth: "2px",
+    borderBottomColor: "#191970",
+    borderBottomStyle: 'dotted',
+  },
+
+  edu__title: {
+    marginBottom: '15px',
+    fontSize: '20px',
+    textAlign: 'center', 
+    color: '#191970',
+  },
+
+  edu__item: {
+    marginBottom: '15px',
+    color: '#696969',
+  }, 
+
+  edu__item_date: {
+    marginBottom: '10px',
+    color: '#778899'
+  },
+
+  exp: {
+    paddingBottom: '15px',
+    marginBottom: '15px',
+    borderBottomWidth: "2px",
+    borderBottomColor: "#191970",
+    borderBottomStyle: 'dotted',
+  },
+
+  exp__title: {
+    marginBottom: '15px',
+    fontSize: '20px',
+    textAlign: 'center', 
+    color: '#191970',
+  },
+
+  exp__item: {
+    marginBottom: '15px',
+    color: '#696969',
+  }, 
+
+  exp__item_date: {
+    marginBottom: '10px',
+    color: '#778899'
+  }
 });
 
 export default CvTemplate3;
