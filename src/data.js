@@ -1,7 +1,8 @@
 import exampleCV from '../src/assets/cv-previews/yellow.svg';
 import violetCv from '../src/assets/cv-previews/violet.png';
 import steelBlueCV from '../src/assets/cv-previews/cv-1.png';
-import greenCV from '../src/assets/cv-previews/cv-4.jpg';
+import blueColdCV from '../src/assets/cv-previews/cv-3.png';
+import greenCV from '../src/assets/cv-previews/cv-4.png';
 
 export const cvCards = [
   {
@@ -23,8 +24,8 @@ export const cvCards = [
   {
     id: '3',
     cvName: 'CvTemplate3',
-    cvTitle: 'Something more',
-    cvImage: exampleCV,
+    cvTitle: 'Blue Cold',
+    cvImage: blueColdCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
     subject: 'CV',
   },
