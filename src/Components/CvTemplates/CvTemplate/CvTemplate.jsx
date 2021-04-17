@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Page,
   Text,
@@ -6,24 +6,21 @@ import {
   View,
   Image,
   StyleSheet,
-} from '@react-pdf/renderer';
-import userImage from '../../../assets/user-image.png';
-
+} from "@react-pdf/renderer";
+import userImage from "../../../assets/user-image.png";
 
 const CvTemplate = ({ cvData }) => {
   return (
     <Document>
-
-      <Page wrap size='A4' style={styles.body}>
+      <Page wrap size="A4" style={styles.body}>
         <View style={styles.intro}>
           <Image
             style={styles.intro__image}
-            src={cvData.avatar === '' ? userImage : cvData.avatar[0]}
+            src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
           />
           {/* Intro Section  */}
 
           <View>
-
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
                 {cvData.name} {cvData.surname}
@@ -104,104 +101,104 @@ const CvTemplate = ({ cvData }) => {
 
 const styles = StyleSheet.create({
   body: {
-    padding: '50px',
+    padding: "50px",
   },
   intro: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
 
   intro__image: {
-    width: '100px',
-    height: '100px',
-    marginRight: '40px',
-    objectFit: 'cover',
+    width: "100px",
+    height: "100px",
+    marginRight: "40px",
+    objectFit: "cover",
   },
 
   intro__job: {
-    color: '#5E5E5E',
-    fontSize: '14pt',
+    color: "#5E5E5E",
+    fontSize: "14pt",
   },
 
   intro__info: {
-    marginTop: '10px',
-    fontSize: '12pt',
+    marginTop: "10px",
+    fontSize: "12pt",
   },
 
   intro__info_item: {
-    marginBottom: '3px',
+    marginBottom: "3px",
   },
 
   about: {
-    marginTop: '40px',
-    flexDirection: 'row',
-    marginBottom: '40px',
+    marginTop: "40px",
+    flexDirection: "row",
+    marginBottom: "40px",
   },
 
   about__title: {
-    width: '100px',
+    width: "100px",
   },
 
   about__description: {
-    fontSize: '13pt',
-    lineHeight: '1.4',
-    maxWidth: '380px',
+    fontSize: "13pt",
+    lineHeight: "1.4",
+    maxWidth: "380px",
   },
 
   edu__item: {
-    flexDirection: 'row',
-    display: 'flex',
-    fontSize: '12pt',
-    marginBottom: '15px',
+    flexDirection: "row",
+    display: "flex",
+    fontSize: "12pt",
+    marginBottom: "15px",
   },
 
   edu: {
-    flexDirection: 'row',
-    marginBottom: '40px',
+    flexDirection: "row",
+    marginBottom: "40px",
   },
 
   edu__title: {
-    marginBottom: '10px',
-    width: '100px',
+    marginBottom: "10px",
+    width: "100px",
   },
 
   edu__item_date: {
-    width: '100px',
-    marginRight: '60px',
+    width: "100px",
+    marginRight: "60px",
   },
 
   exp: {
-    marginBottom: '40px',
-    flexDirection: 'row',
+    marginBottom: "40px",
+    flexDirection: "row",
   },
 
   exp__title: {
-    marginBottom: '10px',
-    width: '100px',
+    marginBottom: "10px",
+    width: "100px",
   },
 
   skills: {
-    marginBottom: '40px',
-    flexDirection: 'row',
+    marginBottom: "40px",
+    flexDirection: "row",
   },
 
   skills__title: {
-    marginBottom: '10px',
-    width: '100px',
+    marginBottom: "10px",
+    width: "100px",
   },
 
   skills__list: {
-    flexDirection: 'row',
-    maxWidth: '400px',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    maxWidth: "400px",
+    flexWrap: "wrap",
   },
 
   skills__item: {
-    backgroundColor: 'black',
-    color: 'white',
-    padding: '8px',
-    fontSize: '12pt',
-    borderRadius: '5pt',
-    margin: '5px',
+    backgroundColor: "black",
+    color: "white",
+    padding: "8px",
+    fontSize: "12pt",
+    borderRadius: "5pt",
+    margin: "5px",
   },
 });
 
