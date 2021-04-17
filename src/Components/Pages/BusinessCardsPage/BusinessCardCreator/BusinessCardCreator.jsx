@@ -1,39 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // components
-import Footer from '../../../Common/Footer/Footer';
-import Header from '../../../Common/Header/Header';
-import InputCardCreator from '../InputCardCreator/InputCardCreator';
+import Footer from "../../../Common/Footer/Footer";
+import Header from "../../../Common/Header/Header";
+import InputCardCreator from "../InputCardCreator/InputCardCreator";
 // libraries
-import {
-    // Page,
-    // Text,
-    // Document,
-    // View,
-    // Image,
-    // StyleSheet,
-    // PDFViewer,
-} from '@react-pdf/renderer';
-
-
-
+import // Page,
+// Text,
+// Document,
+// View,
+// Image,
+// StyleSheet,
+// PDFViewer,
+"@react-pdf/renderer";
 
 const BusinessCardsCreator = () => {
+  const [personStatePdf, setPersonStatePdf] = useState("");
 
+  console.log(personStatePdf);
+  return (
+    <div>
+      <Header />
 
-    const [personStatePdf, setPersonStatePdf] = useState('')
+      <InputCardCreator />
 
-    console.log(personStatePdf)
-    return (
-        <div>
-            <Header />
-
-            <InputCardCreator />
-
-            {/* <PDFViewer>
+      {/* <PDFViewer>
                 <BusinessCardTemplate />
             </PDFViewer> */}
-            <Footer />
-        </div>
-    )
-}
+      <Footer />
+    </div>
+  );
+};
 export default BusinessCardsCreator;

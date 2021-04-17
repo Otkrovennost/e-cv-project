@@ -11,7 +11,6 @@ export default function BuilderPage() {
   );
   return (
     <div className="builder-page">
-      <Header />
       <div className="container">
         <div className="builder-page__inner">
           <BuilderForm cvData={cvData} setCvData={setCvData} />

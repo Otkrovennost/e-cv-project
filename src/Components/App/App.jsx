@@ -1,17 +1,16 @@
-import React from 'react';
-import './App.scss';
-import { Switch, Route, HashRouter, Redirect } from 'react-router-dom';
-import { AppRoute } from '../../constants';
-import './App.scss';
-import { AnimatePresence } from 'framer-motion';
+import React from "react";
+import "./App.scss";
+import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
+import { AppRoute } from "../../constants";
+import "./App.scss";
+import { AnimatePresence } from "framer-motion";
 //components
-import BuilderPage from '../Pages/BuilderPage/BuilderPage';
-import BusinessCardsPage from '../Pages/BusinessCardsPage/BusinessCardsPage';
-import BusinessCardsCreator from '../Pages/BusinessCardsPage/BusinessCardCreator/BusinessCardCreator';
-import CvTemplatesPage from '../Pages/CvTemplatesPage/CvTemplatesPage';
-import MainPage from '../Pages/MainPage/MainPage';
-
-
+import BuilderPage from "../Pages/BuilderPage/BuilderPage";
+import BusinessCardsPage from "../Pages/BusinessCardsPage/BusinessCardsPage";
+import BusinessCardsCreator from "../Pages/BusinessCardsPage/BusinessCardCreator/BusinessCardCreator";
+import CvTemplatesPage from "../Pages/CvTemplatesPage/CvTemplatesPage";
+import MainPage from "../Pages/MainPage/MainPage";
+import HelpAndTips from "../Pages/HelpAndTips/HelpAndTips";
 
 function App(props) {
   return (
@@ -20,7 +19,6 @@ function App(props) {
         <Switch>
           <Route exact path={AppRoute.MAIN_PAGE} component={MainPage} />
           <Route
-
             path={AppRoute.CV_TEMPLATES_PAGE}
             render={(props) => <CvTemplatesPage {...props} />}
           />
@@ -33,13 +31,16 @@ function App(props) {
             render={(props) => <BusinessCardsCreator {...props} />}
           />
           <Route
-            path='/builder/:id'
+            path="/builder/:id"
             render={(props) => <BuilderPage {...props} />}
+          />
+          <Route
+            path={AppRoute.HELP_PAGE}
+            render={(props) => <HelpAndTips {...props} />}
           />
           <Redirect to={AppRoute.MAIN_PAGE} />
         </Switch>
       </AnimatePresence>
-
     </HashRouter>
   );
 }

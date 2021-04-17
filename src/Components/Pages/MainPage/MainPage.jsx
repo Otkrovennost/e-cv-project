@@ -1,44 +1,48 @@
-import { motion } from 'framer-motion';
-import React, { useEffect, useRef } from 'react';
-import { mainPageAnimations } from '../../../animations';
-import Header from '../../Common/Header/Header';
-import './MainPage.scss';
-import lottie from 'lottie-web';
+import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { mainPageAnimations } from "../../../animations";
+import Header from "../../Common/Header/Header";
+import "./MainPage.scss";
+import lottie from "lottie-web";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { AppRoute } from "../../../constants";
 
 const MainPage = () => {
   const lottieContainer = useRef();
   useEffect(() => {
     lottie.loadAnimation({
       container: lottieContainer.current,
-      renderer: 'svg',
+      renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: require('../../../animations/resume-animation.json'),
+      animationData: require("../../../animations/resume-animation.json"),
     });
   }, []);
   return (
     <motion.div
-      initial='out'
-      animate='in'
-      exit='out'
-      variants={mainPageAnimations}>
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={mainPageAnimations}
+      className="hero-wrapper"
+    >
       <Header />
-      <div className='container'>
-        <div className='hero'>
-          <div className='hero__intro'>
-            <motion.h1 className='intro__title'>
-              Choose and build your own CV in just 20 minutes!
+      <div className="container">
+        <div className="hero">
+          <div className="hero__intro">
+            <motion.h1 className="intro__title">
+              Choose and build your CV.
             </motion.h1>
-            <motion.p className='intro__description'>
-              I'm baby schlitz hammock wayfarers sustainable coloring book
-              ennui. Tacos roof party organic art party. Art party woke flannel
-              pabst keffiyeh.
+            <motion.p className="intro__description">
+              Writing a resume feels hard. And yet your future depends on it.
+              Stop putting it off — E-CV resume builder is here to help.
             </motion.p>
-            <motion.a className='intro__button' href='#nowhear'>
+            <NavLink className="intro__button" to={AppRoute.CV_TEMPLATES_PAGE}>
               Get Template
-            </motion.a>
+            </NavLink>
           </div>
-          <div ref={lottieContainer} className='hero__lottie'></div>
+          <div ref={lottieContainer} className="hero__lottie"></div>
         </div>
       </div>
     </motion.div>
