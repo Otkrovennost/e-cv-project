@@ -201,6 +201,7 @@ const styles = StyleSheet.create({
     height: "100px",
     marginRight: "40px",
     objectFit: "cover",
+    borderRadius: "50%",
   },
 
   intro__job: {
