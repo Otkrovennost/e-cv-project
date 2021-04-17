@@ -1,14 +1,13 @@
 import React from 'react'
 import './BusinessCardList.scss'
 
-import BusinessCard from '../BusinessCardTemplate/BusinessCard';
 
 
 const BusinessCardList = () => {
 
     return (
         <div className="BusinessCardList">
-            <BusinessCard props={[
+            {/* <BusinessCard props={[
                 {
                     firstName: 'Michael',
                     lastName: 'Jackson',
@@ -59,7 +58,7 @@ const BusinessCardList = () => {
                 }
 
             ]
-            } />
+            } /> */}
 
         </div>
     )
