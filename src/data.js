@@ -3,6 +3,8 @@ import exampleCV from '../src/assets/cv-previews/yellow.svg';
 import steelBlueCV from '../src/assets/cv-previews/cv-1.png';
 import blueColdCV from '../src/assets/cv-previews/cv-3.png';
 import greenCV from '../src/assets/cv-previews/cv-4.png';
+import blueDarkCV from '../src/assets/cv-previews/cv-5.png';
+import goldDarkCV from '../src/assets/cv-previews/cv-6.png';
 import cv_2_violet from "../src/assets/cv-previews/violet.png";
 import cv_2_red from "../src/assets/cv2-assets/red-1.png";
 import cv_2_green from "../src/assets/cv2-assets/green-1.png";
@@ -12,7 +14,7 @@ export const cvCards = [
   {
     id: "1",
     cvName: "CvTemplate",
-    cvTitle: "Steel Blue",
+    cvTitle: "Dublin",
     cvImage: steelBlueCV,
     cvColors: ["#dskflf", "#dfd445", "#dfd445"],
     subject: "CV",
@@ -20,7 +22,7 @@ export const cvCards = [
   {
     id: "2",
     cvName: "CvTemplate2",
-    cvTitle: "Violet",
+    cvTitle: "Stockholm",
     cvImage: cv_2_violet,
     cvModalImages: {
       purple: cv_2_violet,
@@ -51,7 +53,7 @@ export const cvCards = [
   {
     id: '3',
     cvName: 'CvTemplate3',
-    cvTitle: 'Blue Cold',
+    cvTitle: 'Santiago',
     cvImage: blueColdCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
     subject: 'CV',
@@ -59,7 +61,7 @@ export const cvCards = [
   {
     id: "4",
     cvName: "CvTemplate4",
-    cvTitle: "Green Light",
+    cvTitle: "Amsterdam",
     cvImage: greenCV,
     cvColors: ["#dskflf", "#dfd445", "#dfd445"],
     subject: "CV",
@@ -67,16 +69,16 @@ export const cvCards = [
   {
     id: "5",
     cvName: "CvTemplate5",
-    cvTitle: "Yellow Bee",
-    cvImage: exampleCV,
+    cvTitle: "Sydney",
+    cvImage: blueDarkCV,
     cvColors: ["#dskflf", "#dfd445", "#dfd445"],
     subject: "CV",
   },
   {
     id: "6",
     cvName: "CvTemplate6",
-    cvTitle: "Yellow Bee",
-    cvImage: exampleCV,
+    cvTitle: "London",
+    cvImage: goldDarkCV,
     cvColors: ["#dskflf", "#dfd445", "#dfd445"],
     subject: "CV",
   },
