@@ -6,8 +6,16 @@ import {
   View,
   Image,
   StyleSheet,
-} from "@react-pdf/renderer";
-import userImage from "../../../assets/user-image.png";
+  Font,
+} from '@react-pdf/renderer';
+import userImage from '../../../assets/user-image.png';
+
+import loraFont from '../../../assets/fonts/Lora-Regular.ttf';
+
+Font.register({
+  family: 'Lora',
+  src: loraFont,
+});
 
 const DefaultExpirienceItem = () => {
   return (
@@ -54,7 +62,7 @@ const CvTemplate = ({ cvData }) => {
             style={styles.intro__image}
             src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
           />
-          <View>
+          <View style={styles.intro__block}>
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
                 {cvData.name === "" ? "Nazar" : cvData.name}{" "}
@@ -123,14 +131,14 @@ const CvTemplate = ({ cvData }) => {
           </View>
         </View>
         <View style={styles.skills}>
-          <Text style={styles.skills__title}>Skills </Text>
+          <Text style={styles.skills__title__main}>Skills </Text>
           <View style={styles.skills__list}>
             {cvData.skills.length === 0
               ? DefaultSkillAray.map((elem) => (
-                  <Text style={styles.skills__title}>{elem}</Text>
+                  <Text style={styles.skills__item}>{elem}</Text>
                 ))
               : cvData.skills.map((elem) => (
-                  <Text style={styles.skills__title}>{elem}</Text>
+                  <Text style={styles.skills__item}>{elem}</Text>
                 ))}
           </View>
         </View>
@@ -141,10 +149,16 @@ const CvTemplate = ({ cvData }) => {
 
 const styles = StyleSheet.create({
   body: {
-    padding: "50px",
+    padding: '10px',
+    fontFamily: 'Lora',
+    // backgroundColor: '#E6E6FA'
   },
   intro: {
     flexDirection: "row",
+    backgroundColor: '#4682B4',
+    padding: "10px",
+    color: "white",
+    alignItems: "center",
   },
 
   intro__image: {
@@ -155,8 +169,13 @@ const styles = StyleSheet.create({
   },
 
   intro__job: {
-    color: "#5E5E5E",
+    color: "white",
     fontSize: "14pt",
+  },
+
+  intro__name :{
+    marginBottom: '10pt',
+    fontWeight: '700',
   },
 
   intro__info: {
@@ -172,10 +191,15 @@ const styles = StyleSheet.create({
     marginTop: "40px",
     flexDirection: "row",
     marginBottom: "40px",
+    borderBottomWidth: "2px",
+    borderBottomColor: "#4682B4",
+    borderBottomStyle: 'dotted',
+    paddingBottom: "20px",
   },
 
   about__title: {
-    width: "100px",
+    width: "120px",
+    color: '#4682B4'
   },
 
   about__description: {
@@ -194,11 +218,16 @@ const styles = StyleSheet.create({
   edu: {
     flexDirection: "row",
     marginBottom: "40px",
+    borderBottomWidth: "2px",
+    borderBottomColor: "#4682B4",
+    borderBottomStyle: 'dotted',
+    paddingBottom: "20px",
   },
 
   edu__title: {
     marginBottom: "10px",
-    width: "100px",
+    width: "120px",
+    color: '#4682B4'
   },
 
   edu__item_date: {
@@ -209,16 +238,27 @@ const styles = StyleSheet.create({
   exp: {
     marginBottom: "40px",
     flexDirection: "row",
+    borderBottomWidth: "2px",
+    borderBottomColor: "#4682B4",
+    borderBottomStyle: 'dotted',
+    paddingBottom: "20px",
   },
 
   exp__title: {
     marginBottom: "10px",
-    width: "100px",
+    width: "120px",
+    color: '#4682B4'
   },
 
   skills: {
     marginBottom: "40px",
     flexDirection: "row",
+  },
+
+  skills__title__main: {
+    marginBottom: "10px",
+    width: "120px",
+    color: '#4682B4'
   },
 
   skills__title: {
@@ -233,7 +273,7 @@ const styles = StyleSheet.create({
   },
 
   skills__item: {
-    backgroundColor: "black",
+    backgroundColor: "#4682B4",
     color: "white",
     padding: "8px",
     fontSize: "12pt",
