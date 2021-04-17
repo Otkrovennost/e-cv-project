@@ -77,7 +77,7 @@ const CvTemplate2 = ({ cvData }) => {
         <View style={styles.exp}>
           <Text style={styles.exp__title}>Experience</Text>
           <View style={styles.exp__items}>
-            {!cvData.employmentHistory.length === 0 ? (
+            {!cvData.employmentHistory.length !== 0 ? 
               cvData.employmentHistory.map((elem) => (
                 <View style={styles.exp__item}>
                   <Text style={styles.exp__item_date}>
@@ -89,7 +89,7 @@ const CvTemplate2 = ({ cvData }) => {
                   </View>
                 </View>
               ))
-            ) : (
+             : 
               <>
                 <View style={styles.exp__item}>
                   <Text style={styles.exp__item_date}>
@@ -114,7 +114,7 @@ const CvTemplate2 = ({ cvData }) => {
                   </View>
                 </View>
               </>
-            )}
+            }
           </View>
         </View>
         {/* Education Section End  */}
@@ -164,7 +164,7 @@ const CvTemplate2 = ({ cvData }) => {
         <View style={styles.skills}>
           <Text style={styles.skills__title}>Skills </Text>
           <View style={styles.skills__list}>
-            {!cvData.skills.length === 0 ? (
+            {cvData.skills.length !== 0 ? (
               cvData.skills.map((elem) => (
                 <Text style={styles.skills__title}>{elem}</Text>
               ))
