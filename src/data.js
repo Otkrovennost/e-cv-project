@@ -1,12 +1,14 @@
 import exampleCV from '../src/assets/cv-previews/yellow.svg';
 import violetCv from '../src/assets/cv-previews/violet.png';
+import steelBlueCV from '../src/assets/cv-previews/cv-1.png';
+import greenCV from '../src/assets/cv-previews/cv-4.jpg';
 
 export const cvCards = [
   {
     id: '1',
     cvName: 'CvTemplate',
-    cvTitle: 'Yellow Bee',
-    cvImage: exampleCV,
+    cvTitle: 'Steel Blue',
+    cvImage: steelBlueCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
     subject: 'CV',
   },
@@ -16,6 +18,7 @@ export const cvCards = [
     cvTitle: 'Violet',
     cvImage: violetCv,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
+    subject: 'CV',
   },
   {
     id: '3',
@@ -23,13 +26,15 @@ export const cvCards = [
     cvTitle: 'Something more',
     cvImage: exampleCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
+    subject: 'CV',
   },
   {
     id: '4',
     cvName: 'CvTemplate4',
-    cvTitle: 'Yellow Bee',
-    cvImage: exampleCV,
+    cvTitle: 'Green Light',
+    cvImage: greenCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
+    subject: 'CV',
   },
   {
     id: '5',
@@ -37,6 +42,7 @@ export const cvCards = [
     cvTitle: 'Yellow Bee',
     cvImage: exampleCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
+    subject: 'CV',
   },
   {
     id: '6',
@@ -44,5 +50,6 @@ export const cvCards = [
     cvTitle: 'Yellow Bee',
     cvImage: exampleCV,
     cvColors: ['#dskflf', '#dfd445', '#dfd445'],
+    subject: 'CV',
   },
 ];
