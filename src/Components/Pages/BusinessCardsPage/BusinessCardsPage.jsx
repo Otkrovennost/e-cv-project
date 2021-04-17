@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 //  components
 import './BusinessCardPage.scss'
-
-import Footer from "../../Common/Footer/Footer";
-import Header from "../../Common/Header/Header";
-
 import Footer from '../../Common/Footer/Footer';
 import Header from '../../Common/Header/Header';
 import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection';
