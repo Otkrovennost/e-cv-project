@@ -1,4 +1,10 @@
-@import '../../../scss/variables';
+@import "../../../scss/variables";
+
+.hero-wrapper {
+  background-image: url("../../../assets/layer-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .hero {
   display: flex;
@@ -6,35 +12,30 @@
 }
 
 .hero__intro {
-  // padding: 0 800px 173px 0;
-  // background-image: url('../../../assets/hero-2.svg');
-  // background-repeat: no-repeat;
-  // background-size: 100%;
-  // background-position: 500px top;
-  // color: $text-color;
-  // height: 100vh;
-  max-width: 400px;
-  margin-top: 70px;
+  max-width: 450px;
+  margin-top: 40px;
 }
 
 .intro__title {
   margin-bottom: 25px;
   padding-top: 50px;
-  font-weight: 500;
-  font-size: 2.5rem;
+  font-weight: 600;
+  font-size: 5rem;
   line-height: 1;
   max-width: 400px;
+  color: black;
 }
 
 .intro__description {
   margin-bottom: 30px;
-  font-size: 20px;
-  line-height: 27px;
-  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: black;
 }
 
 .intro__button {
-  padding: 0.5em 1.3em;
+  padding: 0.5em 1.6em;
   font-weight: 300;
   font-size: 27px;
   text-align: center;
