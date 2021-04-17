@@ -86,7 +86,7 @@ const CvTemplate = ({ cvData }) => {
           <Text style={styles.about__title}>About</Text>
           <Text style={styles.about__description}>
             {cvData.summary === ""
-              ? "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore suscipit neque earum repellat laudantium dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium deserunt cum qui veniam alias laboriosam nesciunt."
+              ? "An “about me” section is a brief segment in your resume that highlights who you are as a professional, describes your greatest strengths and showcases your greatest professional accomplishments. The “about me” section in a resume should briefly provide the reader with an answer to the question, “Why should we hire you?"
               : cvData.summary}
           </Text>
         </View>

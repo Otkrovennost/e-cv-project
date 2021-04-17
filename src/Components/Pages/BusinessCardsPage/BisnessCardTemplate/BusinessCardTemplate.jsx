@@ -38,10 +38,12 @@ const BusinessCardTemplate = ({ card }) => {
 
 
     return (
-
+        // <Link
+        //     to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}
+        // >
 
         <Document>
-            <Page wrap size='A4' style={styles.body} >
+            <Page wrap size='A5' style={styles.body} >
                 <View style={styles.card}>
                     <Text style={styles.name}>{card.name}</Text>
                     <Text style={styles.profession}>{card.profession}</Text>
@@ -51,6 +53,7 @@ const BusinessCardTemplate = ({ card }) => {
                 </View>
             </Page>
         </Document>
+        // </Link>
     )
 }
 

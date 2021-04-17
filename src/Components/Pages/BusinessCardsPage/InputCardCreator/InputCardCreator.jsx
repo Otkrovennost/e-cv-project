@@ -24,6 +24,8 @@ const InputCardCreator = ({ person, setPerson }) => {
         setPerson({ ...person, [key]: value });
     };
 
+    console.log(person)
+
 
     return (
         <div style={{
@@ -32,7 +34,7 @@ const InputCardCreator = ({ person, setPerson }) => {
             width: '30%',
             height: '500px',
             justifyContent: 'space-around',
-            padding: '20px'
+            padding: '0 20px 20px 20px'
         }}>
 
             {personArrKeys.map(

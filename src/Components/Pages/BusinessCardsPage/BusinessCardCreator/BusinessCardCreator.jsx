@@ -30,17 +30,19 @@ const BusinessCardsCreator = () => {
   return (
     <div>
       <Header />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <InputCardCreator
-          person={person}
-          setPerson={setPerson}
-        />
-
-        <PDFViewer>
-          <BusinessCardTemplate
-            card={person}
+      <div className="container">
+        <div style={{ height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <InputCardCreator
+            person={person}
+            setPerson={setPerson}
           />
-        </PDFViewer>
+
+          <PDFViewer style={{ height: '400px' }}>
+            <BusinessCardTemplate
+              card={person}
+            />
+          </PDFViewer>
+        </div>
       </div>
       <Footer />
     </div>

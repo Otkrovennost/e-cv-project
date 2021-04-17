@@ -55,7 +55,7 @@ const Footer = () => {
                 <span role='separator'>|</span>
                 <a
                   className='footer__contacts-linkedin'
-                  href='https://www.linkedin.com/in/anastasiya-ivanova-1b3bba207/'
+                  href='https://www.linkedin.com/in/otkrovennost/'
                   target='_blank'
                   rel='noreferrer'>
                   LinkedIn

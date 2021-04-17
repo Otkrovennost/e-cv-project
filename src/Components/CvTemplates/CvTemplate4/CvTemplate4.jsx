@@ -34,7 +34,7 @@ const DefaultEducationItem = () => {
     <View style={styles.edu__item}>
       <Text style={styles.edu__item_date}>2019 sep - 2020 sep</Text>
       <View style={styles.edu__item_info}>
-        <Text>Wild code School</Text>
+        <Text>Wild Code School</Text>
         <Text>Frontend-developer</Text>
       </View>
     </View>
@@ -86,7 +86,7 @@ const CvTemplate4 = ({ cvData }) => {
           <Text style={styles.about__title}>About</Text>
           <Text style={styles.about__description}>
             {cvData.summary === ""
-              ? "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore suscipit neque earum repellat laudantium dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium deserunt cum qui veniam alias laboriosam nesciunt."
+              ? "An “about me” section is a brief segment in your resume that highlights who you are as a professional, describes your greatest strengths and showcases your greatest professional accomplishments. The “about me” section in a resume should briefly provide the reader with an answer to the question, “Why should we hire you?"
               : cvData.summary}
           </Text>
         </View>
@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
 
   intro: {
     flexDirection: "row",
-    backgroundColor: '#9ebda6',
     padding: "10px",
     color: "white",
     alignItems: "center",
@@ -179,7 +178,10 @@ const styles = StyleSheet.create({
     minWidth: '350px',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: '15px',
+    backgroundColor: '#9ebda6',
+    borderRadius: '5px'
   },
 
   intro__job: {
@@ -196,7 +198,7 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    paddingTop: "30px",
+    paddingTop: "10px",
     fontSize: "12pt",
   },
 
@@ -302,8 +304,11 @@ const styles = StyleSheet.create({
 
   skills: {
     marginBottom: "40px",
+    padding: ' 0 15px',
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#9ebda6',
+    borderRadius: '10px'
   },
 
   skills__title__main: {
@@ -319,15 +324,13 @@ const styles = StyleSheet.create({
 
   skills__list: {
     flexDirection: "row",
-    flexWrap: "wrap",
+    flexWrap: "wrap"
   },
 
   skills__item: {
-    backgroundColor: "#778899",
-    color: "white",
+    color: "#fff",
     padding: "10px",
     fontSize: "14pt",
-    borderRadius: "50%",
     margin: "5px",
   },
 });

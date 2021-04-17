@@ -1,7 +1,15 @@
 import React from "react";
 import "./CvCard.scss";
 
-function CvCard({ name, image, getId, setIsOpened, isOpened }) {
+function CvCard({
+  name,
+  image,
+  getId,
+  setIsOpened,
+  isOpened,
+  setCvData,
+  cvData,
+}) {
   return (
     <div onClick={getId} className="cv-card">
       <div className="cv-card__text-content">
@@ -12,20 +20,16 @@ function CvCard({ name, image, getId, setIsOpened, isOpened }) {
           <div className="cv-card__image">
             <img src={image} alt="CV Template" />
           </div>
-          {/* <div className="cv-card__colors">
-            <div className="cv-card__color-outer">
-              <div className="cv-card__color-inner"></div>
-            </div>
-
-            <div className="cv-card__color-outer">
-              <div className="cv-card__color-inner"></div>
-            </div>
-
-            <div className="cv-card__color-outer">
-              <div className="cv-card__color-inner"></div>
-            </div>
-          </div> */}
-          <button onClick={() => setIsOpened(true)} className="cv-card__button">
+          <button
+            onClick={() => {
+              setIsOpened(true);
+              setCvData({
+                ...cvData,
+                color: "",
+              });
+            }}
+            className="cv-card__button"
+          >
             Preview
           </button>
         </div>

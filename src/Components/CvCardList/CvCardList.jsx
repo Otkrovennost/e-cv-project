@@ -6,9 +6,11 @@ import { CardsContext } from "../../context/CvContext";
 import Modal from "../Common/Modal/Modal";
 
 function CvCardList({ props }) {
-  const { cvClickHandler, selectedCv } = useContext(CardsContext);
+  const { cvClickHandler, selectedCv, setCvData, cvData } = useContext(
+    CardsContext
+  );
   const [isOpened, setIsOpened] = useState(false);
-  console.log(selectedCv);
+  console.log(cvData.color);
   return (
     <div className="cv-card_list">
       {cvCards.map((item) => {
@@ -22,13 +24,23 @@ function CvCardList({ props }) {
             image={item.cvImage}
             colors={item.cvColors}
             setIsOpened={setIsOpened}
+            setCvData={setCvData}
+            cvData={cvData}
           />
         );
       })}
       <Modal setIsOpened={setIsOpened} open={isOpened}>
         <div className="modal__content">
           <div className="modal__image-wrapper">
-            <img src={selectedCv?.cvImage} alt="" className="modal__img" />
+            <img
+              src={
+                cvData.color
+                  ? selectedCv?.cvModalImages[cvData.color]
+                  : selectedCv?.cvImage
+              }
+              alt="CV"
+              className="modal__img"
+            />
           </div>
           <div className="modal__text">
             <h3 className="modal__title">{selectedCv?.cvTitle}</h3>
@@ -46,6 +58,28 @@ function CvCardList({ props }) {
             >
               Start Editing
             </button>
+            <div className="cv-card__colors">
+              {selectedCv?.cvColors.map((color) => {
+                return (
+                  <div
+                    key={color.hash}
+                    onClick={() =>
+                      setCvData({
+                        ...cvData,
+                        colorHash: color.hash,
+                        color: color.color,
+                      })
+                    }
+                    className="cv-card__color-outer"
+                  >
+                    <div
+                      style={{ backgroundColor: color.hash }}
+                      className="cv-card__color-inner"
+                    ></div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </Modal>
