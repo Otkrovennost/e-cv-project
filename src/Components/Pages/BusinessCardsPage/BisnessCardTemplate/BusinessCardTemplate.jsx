@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { AppRoute } from '../../../../constants';
+// import { Link } from 'react-router-dom'
+// import { AppRoute } from '../../../../constants';
 import {
     Page,
     Text,
@@ -38,21 +38,19 @@ const BusinessCardTemplate = ({ card }) => {
 
 
     return (
-        <Link
-            to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}>
 
-            <Document>
-                <Page wrap size='A4' style={styles.body} >
-                    <View style={styles.card}>
-                        <Text style={styles.name}>{card.name}</Text>
-                        <Text style={styles.profession}>{card.profession}</Text>
-                        <Text style={styles.phone}>{card.phone}</Text>
-                        <Text style={styles.email}>{card.email}</Text>
-                        <Text style={styles.extra}>{card.extra}</Text>
-                    </View>
-                </Page>
-            </Document>
-        </Link>
+
+        <Document>
+            <Page wrap size='A4' style={styles.body} >
+                <View style={styles.card}>
+                    <Text style={styles.name}>{card.name}</Text>
+                    <Text style={styles.profession}>{card.profession}</Text>
+                    <Text style={styles.phone}>{card.phone}</Text>
+                    <Text style={styles.email}>{card.email}</Text>
+                    <Text style={styles.extra}>{card.extra}</Text>
+                </View>
+            </Page>
+        </Document>
     )
 }
 

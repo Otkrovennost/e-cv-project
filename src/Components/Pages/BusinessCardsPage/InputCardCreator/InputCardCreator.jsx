@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react';
 
 import {
     // Button,
@@ -8,29 +8,21 @@ import {
     // List,
     // ListItem,
     // ListItemText,
-    TextField,
+    TextField
     // Typography,
 } from '@material-ui/core';
 
-const InputCardCreator = ({ value, onChange, ind }) => {
 
-    const [person, setPerson] = useState(
-        {
-            name: 'its your name',
-            profession: 'profession',
-            phone: 'phone call',
-            email: 'email',
-            extra: 'extra info',
-        }
-    )
-    const [newPerson, setNewPerson] = useState({});
+
+const InputCardCreator = ({ person, setPerson }) => {
+
+
     const personArrKeys = Object.keys(person);
 
-    let changeInput = (event, el) => {
-        let input = newPerson;
-        input[el] = event.target.value;
-        setNewPerson(input)
-    }
+
+    const setKey = (key, value) => {
+        setPerson({ ...person, [key]: value });
+    };
 
 
     return (
@@ -50,7 +42,9 @@ const InputCardCreator = ({ value, onChange, ind }) => {
                     variant="outlined"
                     autoComplete="off"
                     type="text"
-                    onChange={(event) => changeInput(event, el)}
+                    onBlur={({ target: { value } }) => {
+                        setKey(el, value);
+                    }}
                 />)
             }
 

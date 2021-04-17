@@ -3,29 +3,45 @@ import React, { useState } from "react";
 import Footer from "../../../Common/Footer/Footer";
 import Header from "../../../Common/Header/Header";
 import InputCardCreator from "../InputCardCreator/InputCardCreator";
+import BusinessCardTemplate from '../BisnessCardTemplate/BusinessCardTemplate';
+
 // libraries
-import // Page,
-// Text,
-// Document,
-// View,
-// Image,
-// StyleSheet,
-// PDFViewer,
-"@react-pdf/renderer";
+import {
+  // Page,
+  // Text,
+  // Document,
+  // View,
+  // Image,
+  // StyleSheet,
+  PDFViewer,
+} from "@react-pdf/renderer";
 
 const BusinessCardsCreator = () => {
-  const [personStatePdf, setPersonStatePdf] = useState("");
+  const [person, setPerson] = useState(
+    {
+      name: 'its your name',
+      profession: 'profession',
+      phone: 'phone call',
+      email: 'email',
+      extra: 'extra info',
+    }
+  );
 
-  console.log(personStatePdf);
   return (
     <div>
       <Header />
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <InputCardCreator
+          person={person}
+          setPerson={setPerson}
+        />
 
-      <InputCardCreator />
-
-      {/* <PDFViewer>
-                <BusinessCardTemplate />
-            </PDFViewer> */}
+        <PDFViewer>
+          <BusinessCardTemplate
+            card={person}
+          />
+        </PDFViewer>
+      </div>
       <Footer />
     </div>
   );

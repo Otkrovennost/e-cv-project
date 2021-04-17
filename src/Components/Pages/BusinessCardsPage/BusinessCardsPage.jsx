@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'
+import { AppRoute } from '../../../constants';
 //  components
 import "./BusinessCardPage.scss";
 import Footer from "../../Common/Footer/Footer";
@@ -8,8 +10,8 @@ import BusinessCardTemplate from "./BisnessCardTemplate/BusinessCardTemplate";
 // libraries
 
 const BusinessCardsPage = () => {
-  const [infoState, setInfostate] = useState({
-    name: "ibanko",
+  const [infoState] = useState({
+    name: "ivanko",
     profession: "zaja",
     phone: "+654543",
     email: "mail@mail.com",
@@ -24,7 +26,10 @@ const BusinessCardsPage = () => {
         <WelcomeSection />
       </div>
       <div>
-        <BusinessCardTemplate card={infoState} />
+        <Link
+          to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}>
+          <BusinessCardTemplate card={infoState} />
+        </Link>
       </div>
       <Footer />
     </div>
