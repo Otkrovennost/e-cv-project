@@ -24,6 +24,8 @@ function CvCardList({ props }) {
             image={item.cvImage}
             colors={item.cvColors}
             setIsOpened={setIsOpened}
+            setCvData={setCvData}
+            cvData={cvData}
           />
         );
       })}
