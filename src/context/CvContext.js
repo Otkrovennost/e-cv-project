@@ -21,10 +21,12 @@ const ContextProvider = ({ children }) => {
   const [selectedCv, setSelectedCv] = useState(
     JSON.parse(localStorage.getItem("chosenTemplate"))
   );
+  console.log(selectedCv);
 
   const cvClickHandler = (e, cvItem) => {
     setSelectedCv(cvItem);
     localStorage.setItem("chosenTemplate", JSON.stringify(cvItem));
+    console.log("lol");
   };
 
   const renderCard = (selectedCard) => {
