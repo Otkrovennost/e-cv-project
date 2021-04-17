@@ -9,7 +9,7 @@ import {
   Font,
 } from "@react-pdf/renderer";
 
-import userImage from "../../../assets/user-image.png";
+import userImage from "../../../assets/user-image.jpeg";
 
 import robotoLightFont from "../../../assets/fonts/Roboto-Light.ttf";
 
@@ -22,7 +22,15 @@ const CvTemplate2 = ({ cvData }) => {
   return (
     <Document>
       <Page wrap size="A4" style={styles.body}>
-        <View style={styles.intro}>
+        <View
+          style={{
+            backgroundColor: `${cvData.colorHash}`,
+            flexDirection: "row",
+            padding: "20px",
+            color: "white",
+            alignItems: "center",
+          }}
+        >
           <Image
             style={styles.intro__image}
             src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
@@ -183,14 +191,6 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     backgroundColor: "#F3F3F3",
   },
-  intro: {
-    flexDirection: "row",
-    backgroundColor: "#4C2C69",
-    padding: "10px",
-    color: "white",
-    alignItems: "center",
-  },
-
   intro__row: {
     flexDirection: "row",
     justifyContent: "space-around",
