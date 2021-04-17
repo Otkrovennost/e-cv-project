@@ -6,14 +6,9 @@ import {
   View,
   Image,
   StyleSheet,
-<<<<<<< HEAD
   Font,
 } from '@react-pdf/renderer';
 import userImage from '../../../assets/user-image.png';
-=======
-} from "@react-pdf/renderer";
-import userImage from "../../../assets/user-image.png";
->>>>>>> develop
 
 import loraFont from '../../../assets/fonts/Lora-Regular.ttf';
 
@@ -154,12 +149,8 @@ const CvTemplate = ({ cvData }) => {
 
 const styles = StyleSheet.create({
   body: {
-<<<<<<< HEAD
     padding: '50px',
     fontFamily: 'Lora',
-=======
-    padding: "50px",
->>>>>>> develop
   },
   intro: {
     flexDirection: "row",
