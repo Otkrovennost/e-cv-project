@@ -35,8 +35,8 @@ function CvCardList({ props }) {
             <img
               src={
                 cvData.color
-                  ? selectedCv.cvModalImages[cvData.color]
-                  : selectedCv.cvImage
+                  ? selectedCv?.cvModalImages[cvData.color]
+                  : selectedCv?.cvImage
               }
               alt="CV"
               className="modal__img"
@@ -59,7 +59,7 @@ function CvCardList({ props }) {
               Start Editing
             </button>
             <div className="cv-card__colors">
-              {selectedCv.cvColors.map((color) => {
+              {selectedCv?.cvColors.map((color) => {
                 return (
                   <div
                     key={color.hash}
