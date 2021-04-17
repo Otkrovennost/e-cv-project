@@ -9,58 +9,22 @@ import {
   Font,
 } from "@react-pdf/renderer";
 
-import userImage from "../../../assets/user-image.png";
+import userImage from '../../../assets/avatar.jpg';
 
-import robotoLightFont from "../../../assets/fonts/Roboto-Light.ttf";
+import loraFont from '../../../assets/fonts/Lora-Regular.ttf';
 
 Font.register({
-  family: "Roboto",
-  src: robotoLightFont,
+  family: 'Lora',
+  src: loraFont,
 });
 
-const CvTemplate3 = ({ cvData }) => {
+const CvTemplate5 = ({ cvData }) => {
   return (
     <Document>
       <Page wrap size="A4" style={styles.body}>
         <View style={styles.wrapper}>
           {/* Left Side */}
           <View style={styles.left__bar}>
-            <Image
-              style={styles.intro__image}
-              src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
-            />
-            {/* Contact Info  */}
-            <View style={styles.contact}>
-              <Text style={styles.contact__title}>Contact</Text>
-              <Text style={styles.contact__item}>
-                {cvData.phone ? cvData.phone : "+375 29 533 63 19"}
-              </Text>
-              <Text style={styles.contact__item}>
-                {cvData.email ? cvData.email : "nazar.archakov@gmail.com"}
-              </Text>
-            </View>
-            {/* Skills  */}
-            <View style={styles.skills}>
-              <Text style={styles.skills__title}>Skills</Text>
-              <View style={styles.skills__list}>
-                {cvData.skills.length !== 0 ? (
-                  cvData.skills.map((elem) => (
-                    <Text style={styles.skills__item}>{elem}</Text>
-                  ))
-                ) : (
-                  <>
-                    <Text style={styles.skills__item}>HTML</Text>
-                    <Text style={styles.skills__item}>CSS</Text>
-                    <Text style={styles.skills__item}>JS</Text>
-                    <Text style={styles.skills__item}>React</Text>
-                    <Text style={styles.skills__item}>Photoshop</Text>
-                  </>
-                )}
-              </View>
-            </View>
-          </View>
-          {/* Left Side */}
-          <View style={styles.right__bar}>
             {/* INTRO    */}
             <View style={styles.intro}>
               <Text style={styles.intro__name}>
@@ -158,6 +122,42 @@ const CvTemplate3 = ({ cvData }) => {
               </View>
             </View>
           </View>
+          <View style={styles.right__bar}>
+            <Image
+              style={styles.intro__image}
+              src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
+            />
+            {/* Contact Info  */}
+            <View style={styles.contact}>
+              <Text style={styles.contact__title}>Contact</Text>
+              <Text style={styles.contact__item}>
+                {cvData.phone ? cvData.phone : "+375 29 533 63 19"}
+              </Text>
+              <Text style={styles.contact__item}>
+                {cvData.email ? cvData.email : "nazar.archakov@gmail.com"}
+              </Text>
+            </View>
+            {/* Skills  */}
+            <View style={styles.skills}>
+              <Text style={styles.skills__title}>Skills</Text>
+              <View style={styles.skills__list}>
+                {cvData.skills.length !== 0 ? (
+                  cvData.skills.map((elem) => (
+                    <Text style={styles.skills__item}>{elem}</Text>
+                  ))
+                ) : (
+                  <>
+                    <Text style={styles.skills__item}>HTML</Text>
+                    <Text style={styles.skills__item}>CSS</Text>
+                    <Text style={styles.skills__item}>JS</Text>
+                    <Text style={styles.skills__item}>React</Text>
+                    <Text style={styles.skills__item}>Photoshop</Text>
+                  </>
+                )}
+              </View>
+            </View>
+          </View>
+          {/* Left Side */}
         </View>
       </Page>
     </Document>
@@ -167,7 +167,7 @@ const CvTemplate3 = ({ cvData }) => {
 const styles = StyleSheet.create({
   body: {
     fontWeight: "300",
-    fontFamily: "Roboto",
+    fontFamily: "Lora",
     height: "100%",
   },
 
@@ -175,17 +175,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 
-  left__bar: {
+  right__bar: {
     display: 'flex',
     flexDirection: 'column',
     height: "840px",
     width: "250px",
     padding: "10px",
     alignItems: "center",
-    backgroundColor: "#9EB2BD",
+    backgroundColor: "#191970",
   },
 
-  right__bar: {
+  left__bar: {
     width: "100%",
   },
 
@@ -201,17 +201,17 @@ const styles = StyleSheet.create({
 
   contact__title: {
     fontSize: '20px',
-    color: '#000080',
+    color: '#fff',
     marginBottom: '15px',
     paddingBottom: '10px',
-    borderBottomColor: '#2F4F4F',
-    borderBottomWidth: '2px',
+    borderBottomColor: '#fff',
+    borderBottomWidth: '3px',
     textAlign: 'center'
   },
 
   contact__item: {
     marginBottom: '15px',
-    color: '#2F4F4F',
+    color: '#fff',
   },
 
   skills: {
@@ -226,22 +226,21 @@ const styles = StyleSheet.create({
 
   skills__title: {
     fontSize: '20px',
-    color: '#000080',
+    color: '#fff',
     marginBottom: '15px',
     paddingBottom: '10px',
-    borderBottomColor: '#2F4F4F',
-    borderBottomWidth: '2px',
+    borderBottomColor: '#fff',
+    borderBottomWidth: '3px',
     // textAlign: 'center'
   },
 
   skills__item: {
     marginBottom: '15px',
     fontSize: '16px',
-    color: '#191970'
+    color: '#fff'
   },
 
   intro: {
-    backgroundColor: "#C4D4D7",
     width: "100%",
     padding: "20px",
     textAlign: "center",
@@ -337,4 +336,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CvTemplate3;
+export default CvTemplate5;
