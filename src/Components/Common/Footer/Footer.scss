@@ -1,4 +1,4 @@
-@import '../../../scss/variables';
+@import "../../../scss/variables";
 
 .footer {
   padding: 75px 0;
@@ -40,6 +40,10 @@
 
   .nav__link {
     color: $color1;
+
+    &.active:after {
+      display: none;
+    }
   }
 }
 
