@@ -9,6 +9,42 @@ import {
 } from "@react-pdf/renderer";
 import userImage from "../../../assets/user-image.png";
 
+const DefaultExpirienceItem = () => {
+  return (
+    <View style={styles.edu__item}>
+      <Text style={styles.edu__item_date}>2020 sep - 2021 sep</Text>
+      <View style={styles.edu__item_info}>
+        <Text>Google Co.</Text>
+        <Text>Frontend-devlop</Text>
+      </View>
+    </View>
+  );
+};
+
+const DefaultEducationItem = () => {
+  return (
+    <View style={styles.edu__item}>
+      <Text style={styles.edu__item_date}>2019 sep - 2020 sep</Text>
+      <View style={styles.edu__item_info}>
+        <Text>Wild code School</Text>
+        <Text>Frontend-developer</Text>
+      </View>
+    </View>
+  );
+};
+
+const DefaultSkillAray = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Git",
+  "React",
+  "Redux",
+  "Node.js",
+  "Figma",
+  "TypeScript",
+];
+
 const CvTemplate = ({ cvData }) => {
   return (
     <Document>
@@ -18,82 +54,86 @@ const CvTemplate = ({ cvData }) => {
             style={styles.intro__image}
             src={cvData.avatar === "" ? userImage : cvData.avatar[0]}
           />
-          {/* Intro Section  */}
-
           <View>
             <View style={styles.intro__name_job}>
               <Text style={styles.intro__name}>
-                {cvData.name} {cvData.surname}
+                {cvData.name === "" ? "Nazar" : cvData.name}{" "}
+                {cvData.surname === "" ? "Archakov" : cvData.surname}
               </Text>
-              <Text style={styles.intro__job}>{cvData.title}</Text>
+              <Text style={styles.intro__job}>
+                {cvData.title === "" ? "Frontend-developer" : cvData.title}
+              </Text>
             </View>
-
             <View style={styles.intro__info}>
-              {/* <Text style={styles.intro__info_item}>
-                Maksima Bogdanovicha 136/141
-              </Text> */}
-              <Text style={styles.intro__info_item}>{cvData.phone}</Text>
-              <Text style={styles.intro__info_item}>{cvData.email}</Text>
+              <Text style={styles.intro__info_item}>
+                {cvData.phone === "" ? "80291844650" : cvData.phone}
+              </Text>
+              <Text style={styles.intro__info_item}>
+                {cvData.email === "" ? "Email@mail.ru" : cvData.email}
+              </Text>
             </View>
           </View>
         </View>
-        {/* Intro Section End  */}
-        {/* Info Sections Start  */}
-        {/* About Section Start  */}
         <View style={styles.about}>
           <Text style={styles.about__title}>About</Text>
-          <Text style={styles.about__description}>{cvData.summary}</Text>
+          <Text style={styles.about__description}>
+            {cvData.summary === ""
+              ? "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore suscipit neque earum repellat laudantium dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium deserunt cum qui veniam alias laboriosam nesciunt."
+              : cvData.summary}
+          </Text>
         </View>
-        {/* About Section End  */}
-        {/* Education Section Start  */}
         <View style={styles.edu}>
           <Text style={styles.edu__title}>Experience</Text>
           <View style={styles.edu__items}>
-            {cvData.employmentHistory.map((elem) => (
-              <View style={styles.edu__item}>
-                <Text style={styles.edu__item_date}>
-                  {elem.dateStart} - {elem.dateEnd}
-                </Text>
-                <View style={styles.edu__item_info}>
-                  <Text>{elem.company}</Text>
-                  <Text>{elem.title}</Text>
+            {cvData.employmentHistory.length === 0 ? (
+              <DefaultExpirienceItem />
+            ) : (
+              cvData.employmentHistory.map((elem) => (
+                <View style={styles.edu__item}>
+                  <Text style={styles.edu__item_date}>
+                    {elem.dateStart} - {elem.dateEnd}
+                  </Text>
+                  <View style={styles.edu__item_info}>
+                    <Text>{elem.company}</Text>
+                    <Text>{elem.title}</Text>
+                  </View>
                 </View>
-              </View>
-            ))}
+              ))
+            )}
           </View>
         </View>
-        {/* Education Section End  */}
-        {/* Exp Section Start  */}
         <View style={styles.exp}>
           <Text style={styles.exp__title}>Education</Text>
-          {/* Experience Items  */}
           <View style={styles.exp__items}>
-            {cvData.educationHistory.map((elem) => (
-              <View style={styles.edu__item}>
-                <Text style={styles.edu__item_date}>
-                  {elem.dateStart} - {elem.dateEnd}
-                </Text>
-                <View style={styles.edu__item_info}>
-                  <Text>{elem.place}</Text>
-                  <Text>{elem.degree}</Text>
+            {cvData.educationHistory.length === 0 ? (
+              <DefaultEducationItem />
+            ) : (
+              cvData.educationHistory.map((elem) => (
+                <View style={styles.edu__item}>
+                  <Text style={styles.edu__item_date}>
+                    {elem.dateStart} - {elem.dateEnd}
+                  </Text>
+                  <View style={styles.edu__item_info}>
+                    <Text>{elem.place}</Text>
+                    <Text>{elem.degree}</Text>
+                  </View>
                 </View>
-              </View>
-            ))}
+              ))
+            )}
           </View>
         </View>
-        {/* Exp Section End  */}
-
-        {/* Skills Section Start  */}
         <View style={styles.skills}>
           <Text style={styles.skills__title}>Skills </Text>
           <View style={styles.skills__list}>
-            {cvData.skills.map((elem) => (
-              <Text style={styles.skills__title}>{elem}</Text>
-            ))}
+            {cvData.skills.length === 0
+              ? DefaultSkillAray.map((elem) => (
+                  <Text style={styles.skills__title}>{elem}</Text>
+                ))
+              : cvData.skills.map((elem) => (
+                  <Text style={styles.skills__title}>{elem}</Text>
+                ))}
           </View>
         </View>
-        {/* Skills Section End  */}
-        {/* Info Sections End  */}
       </Page>
     </Document>
   );
