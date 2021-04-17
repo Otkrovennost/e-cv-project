@@ -24,7 +24,9 @@ const CvTemplate2 = ({ cvData }) => {
       <Page wrap size="A4" style={styles.body}>
         <View
           style={{
-            backgroundColor: `${cvData.colorHash}`,
+            backgroundColor: cvData.colorHash
+              ? `${cvData.colorHash}`
+              : "#4C2C69",
             flexDirection: "row",
             padding: "20px",
             color: "white",
