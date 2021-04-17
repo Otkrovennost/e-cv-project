@@ -12,19 +12,6 @@ function CvCard({ name, image, getId, setIsOpened, isOpened }) {
           <div className="cv-card__image">
             <img src={image} alt="CV Template" />
           </div>
-          {/* <div className="cv-card__colors">
-            <div className="cv-card__color-outer">
-              <div className="cv-card__color-inner"></div>
-            </div>
-
-            <div className="cv-card__color-outer">
-              <div className="cv-card__color-inner"></div>
-            </div>
-
-            <div className="cv-card__color-outer">
-              <div className="cv-card__color-inner"></div>
-            </div>
-          </div> */}
           <button onClick={() => setIsOpened(true)} className="cv-card__button">
             Preview
           </button>
