@@ -4,5 +4,4 @@ export const AppRoute = {
   BUSINESS_CARD_PAGE: `/business_cards`,
   BUSINESS_CARD_CREATOR_PAGE: `/creator`,
   ABOUT_PAGE: `/about`,
-
 };

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 //  components
 import './BusinessCardPage.scss'
 
+import Footer from "../../Common/Footer/Footer";
+import Header from "../../Common/Header/Header";
 
 import Footer from '../../Common/Footer/Footer';
 import Header from '../../Common/Header/Header';
 import WelcomeSection from '../../Common/WelcomeSection/WelcomeSection';
 import BusinessCardTemplate from './BisnessCardTemplate/BusinessCardTemplate';
 // libraries 
-import { motion } from 'framer-motion';
 
 
 
@@ -27,15 +28,10 @@ const BusinessCardsPage = () => {
 
 
   return (
-
-    <motion.div
-      initial={{ translateX: '200%' }}
-      animate={{ translateX: '0%' }}
-      transition={{ type: 'tween', duration: 1 }}>
-
+    <div>
       <Header />
 
-      <div className='container'>
+      <div className="container">
         <WelcomeSection />
 
       </div>
@@ -44,7 +40,7 @@ const BusinessCardsPage = () => {
 
       </div>
       <Footer />
-    </motion.div>
+    </div>
   );
 };
 export default BusinessCardsPage;
