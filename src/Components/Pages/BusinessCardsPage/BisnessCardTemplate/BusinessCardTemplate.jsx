@@ -6,10 +6,11 @@ import {
   Document,
   View,
   StyleSheet,
+  Image
 } from '@react-pdf/renderer';
 
 import satisfyRegular from '../../../../assets/fonts/Satisfy-Regular.ttf';
-import cardBg from '../../../../assets/card-bg.png';
+import cardBg from '../../../../assets/card-bg.jpg';
 
 Font.register({
   family: 'Satisfy-Regular',
@@ -21,21 +22,24 @@ const BusinessCardTemplate = ({ card }) => {
     const styles = StyleSheet.create({
         body: {
           height: '100%',
-          padding: '5px 0',
+          boxSizing: 'border-box',
           fontFamily: "Satisfy-Regular",
-          // backgroundColor: '#6495ED',
+          zIndex: '1'
           // opacity: '0.5'
         },
+
+        content: {
+          height: '100%',
+          // paddingTop: '5px',
+          position: 'relative',
+        },
+
         card: {
-            // height: '100px',
-            // width: '250px',
             display: 'flex',
             flexDirection: "column",
             justifyContent: 'center',
             alignItems: 'center',
             fontSize: '7px',
-            // backgroundColor: '#E6E6FA'
-
         },
 
         card__item: {
@@ -43,11 +47,11 @@ const BusinessCardTemplate = ({ card }) => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           width: '100%',
-          color: '#CD853F'
+          color: '#CD853F',
         },
 
         card__item__title: {
-          color: '#C0C0C0',
+          color: '#fff',
           fontSize: '7px'
         },
 
@@ -56,25 +60,45 @@ const BusinessCardTemplate = ({ card }) => {
           textAlign: 'center'
         }, 
 
-        bg__block: {
+        first__block: {
           width: '100%',
-          padding: '0 5px 5px 5px',
-          borderBottomColor: '#C0C0C0',
-          borderBottomWidth: '1px',
-          borderBottomStyle: 'solid'
+          padding: '0 5px',
+          // borderBottomColor: '#CD853F',
+          // borderBottomWidth: '1px',
+          // borderBottomStyle: 'solid'
         }, 
 
-        text__block: {
+        second__block: {
           width: '100%',
-          padding: '5px 5px 0 5px',
+          padding: '0 5px',
+        },
+
+        image__block: {
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          top: '0',
+          right: '0',
+          bottom: '0',
+          left: '0',
+        },
+
+        image: {
+          position: 'absolute',
+          width: '100%',
+          height: '100%'
         }
     })
 
     return (
       <Document>
           <Page wrap size='A10' orientation='landscape' style={styles.body} >
+            <View style={styles.content}>
+            <View style={styles.image__block}>
+              <Image style={styles.image} src={cardBg}/>
+            </View>
             <View style={styles.card}>
-              <View style={styles.bg__block}>
+              <View style={styles.first__block}>
                 <View style={styles.card__item}>
                   <Text style={styles.card__item__title}>Name</Text>
                   <Text style={styles.name}>{card.name}</Text>
@@ -84,7 +108,7 @@ const BusinessCardTemplate = ({ card }) => {
                   <Text style={styles.profession}>{card.profession}</Text>
                 </View>
               </View>
-              <View style={styles.text__block}>
+              <View style={styles.second__block}>
                 <View style={styles.card__item}>
                   <Text style={styles.card__item__title}>Phone</Text>
                   <Text style={styles.phone}>{card.phone}</Text>
@@ -97,6 +121,7 @@ const BusinessCardTemplate = ({ card }) => {
                   <Text style={styles.extra}>{card.extra}</Text>
                 </View>  
               </View>
+            </View>
             </View>
           </Page>
       </Document>
