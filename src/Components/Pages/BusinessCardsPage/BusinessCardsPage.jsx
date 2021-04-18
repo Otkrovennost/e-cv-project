@@ -1,20 +1,18 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'
+import { AppRoute } from '../../../constants';
 //  components
-import "./BusinessCardPage.scss";
 import Footer from "../../Common/Footer/Footer";
 import Header from "../../Common/Header/Header";
 import WelcomeSection from "../../Common/WelcomeSection/WelcomeSection";
-import BusinessCardTemplate from "./BisnessCardTemplate/BusinessCardTemplate";
+
+import cardImage from '../../../assets/card-img.png';
+
 // libraries
 
+import "./BusinessCardPage.scss";
+
 const BusinessCardsPage = () => {
-  const [infoState, setInfostate] = useState({
-    name: "ibanko",
-    profession: "zaja",
-    phone: "+654543",
-    email: "mail@mail.com",
-    extra: "",
-  });
 
   return (
     <div>
@@ -24,7 +22,24 @@ const BusinessCardsPage = () => {
         <WelcomeSection />
       </div>
       <div>
-        <BusinessCardTemplate card={infoState} />
+        <div className="container">
+          <ul className="card__list">
+            <li className="card__item">
+              <div className="card__body">
+                <Link
+                  to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}
+                >
+                  <img className="card__img" src={cardImage} alt="Preview business card"/>
+                </Link>
+              </div>
+            </li>
+            <li classNmae="card__item">
+              <div className="card__body">
+              <img className="card__img" src={cardImage} alt="Preview business card"/>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       <Footer />
     </div>
