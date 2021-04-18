@@ -3,18 +3,18 @@ import React, { useState } from "react";
 import Footer from "../../../Common/Footer/Footer";
 import Header from "../../../Common/Header/Header";
 import InputCardCreator from "../InputCardCreator/InputCardCreator";
+import BusinessCardTemplate from '../BusinessCardTemplate/BusinessCardTemplate/BusinessCardTemplate';
 // libraries
 import {
-// Page,
-// Text,
-// Document,
-// View,
-// Image,
-// StyleSheet,
+  // Page,
+  // Text,
+  // Document,
+  // View,
+  // Image,
+  // StyleSheet,
   PDFViewer
 } from "@react-pdf/renderer";
 
-import BusinessCardTemplate from '../BisnessCardTemplate/BusinessCardTemplate';
 
 const BusinessCardsCreator = () => {
   // const [personStatePdf, setPersonStatePdf] = useState("");
@@ -34,17 +34,17 @@ const BusinessCardsCreator = () => {
     <div>
       <Header />
       <div className="container">
-        <div style={{height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <div style={{ height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <InputCardCreator
-            person={person} 
+            person={person}
             setPerson={setPerson}
           />
 
-          <PDFViewer style={{height: '400px'}}>
+          <PDFViewer style={{ height: '400px' }}>
             <BusinessCardTemplate
-              card={person} 
+              card={person}
             />
-          </PDFViewer> 
+          </PDFViewer>
         </div>
       </div>
       <Footer />

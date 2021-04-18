@@ -29,13 +29,13 @@ const BusinessCardsPage = () => {
                 <Link
                   to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}
                 >
-                  <img className="card__img" src={cardImage} alt="Preview business card"/>
+                  <img className="card__img" src={cardImage} alt="Preview business card" />
                 </Link>
               </div>
             </li>
-            <li classNmae="card__item">
+            <li className="card__item">
               <div className="card__body">
-              <img className="card__img" src={cardImage} alt="Preview business card"/>
+                <img className="card__img" src={cardImage} alt="Preview business card" />
               </div>
             </li>
           </ul>
