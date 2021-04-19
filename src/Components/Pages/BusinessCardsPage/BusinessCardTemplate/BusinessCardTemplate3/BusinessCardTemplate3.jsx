@@ -17,7 +17,7 @@ Font.register({
     src: satisfyRegular,
 });
 
-const BusinessCardTemplate2 = ({ card }) => {
+const BusinessCardTemplate3 = ({ card }) => {
 
     const styles = StyleSheet.create({
         body: {
@@ -130,4 +130,4 @@ const BusinessCardTemplate2 = ({ card }) => {
     )
 }
 
-export default BusinessCardTemplate2;
+export default BusinessCardTemplate3;

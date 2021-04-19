@@ -9,7 +9,9 @@ import cv_2_red from "../src/assets/cv2-assets/red-1.png";
 import cv_2_green from "../src/assets/cv2-assets/green-1.png";
 import cv_2_blue from "../src/assets/cv2-assets/blue-1.png";
 import cardImageFirst from '../src/assets/card-img.png';
-import cardImageSecond from '../src/assets/card-img-2.png';
+import cardImageSecond from '../src/assets/card-img-2.jpg';
+import cardImageThird from '../src/assets/card-img-3.png';
+
 
 export const cvCards = [
   {
@@ -96,6 +98,12 @@ export const businessCards = [
     id: "2",
     cardName: "BusinessCardTemplate2",
     cardImage: cardImageSecond,
+    subject: "businessCard",
+  },
+  {
+    id: "3",
+    cardName: "BusinessCardTemplate3",
+    cardImage: cardImageThird,
     subject: "businessCard",
   },
 ]
