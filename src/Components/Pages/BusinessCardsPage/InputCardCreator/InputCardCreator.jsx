@@ -13,11 +13,11 @@ import {
 } from '@material-ui/core';
 
 const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
-    const personArrKeys = [ "name", "profession", "phone", "email", "extra"];
+    const personArrKeys = ["name", "profession", "phone", "email", "extra"];
 
     const setKey = (key, value) => {
-      console.log(key)
-      setBusinessCardData({ ...businessCardData, [key]: value });
+        console.log(key)
+        setBusinessCardData({ ...businessCardData, [key]: value });
     };
 
     return (
@@ -38,7 +38,7 @@ const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
                     autoComplete="off"
                     type="text"
                     onBlur={({ target: { value } }) => {
-                      setKey(el, value);
+                        setKey(el, value);
                     }}
                 />)
             }
