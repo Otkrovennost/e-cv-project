@@ -13,18 +13,13 @@ import {
 } from '@material-ui/core';
 
 
-
-const InputCardCreator = ({ person, setPerson }) => {
-
-
-    const personArrKeys = Object.keys(person);
-
+const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
+    const personArrKeys = [ "name", "profession", "phone", "email", "extra"];
 
     const setKey = (key, value) => {
-        setPerson({ ...person, [key]: value });
+      console.log(key)
+      setBusinessCardData({ ...businessCardData, [key]: value });
     };
-
-    console.log(person)
 
 
     return (

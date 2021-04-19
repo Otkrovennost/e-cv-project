@@ -1,4 +1,3 @@
-import exampleCV from '../src/assets/cv-previews/yellow.svg';
 // import violetCv from '../src/assets/cv-previews/violet.png';
 import steelBlueCV from '../src/assets/cv-previews/cv-1.png';
 import blueColdCV from '../src/assets/cv-previews/cv-3.png';
@@ -9,6 +8,10 @@ import cv_2_violet from "../src/assets/cv-previews/violet.png";
 import cv_2_red from "../src/assets/cv2-assets/red-1.png";
 import cv_2_green from "../src/assets/cv2-assets/green-1.png";
 import cv_2_blue from "../src/assets/cv2-assets/blue-1.png";
+import cardImageFirst from '../src/assets/card-img.png';
+import cardImageSecond from '../src/assets/card-img-2.jpg';
+import cardImageThird from '../src/assets/card-img-3.png';
+
 
 export const cvCards = [
   {
@@ -83,3 +86,24 @@ export const cvCards = [
     subject: "CV",
   },
 ];
+
+export const businessCards = [
+  {
+    id: "1",
+    cardName: "BusinessCardTemplate",
+    cardImage: cardImageFirst,
+    subject: "businessCard",
+  },
+  {
+    id: "2",
+    cardName: "BusinessCardTemplate2",
+    cardImage: cardImageSecond,
+    subject: "businessCard",
+  },
+  {
+    id: "3",
+    cardName: "BusinessCardTemplate3",
+    cardImage: cardImageThird,
+    subject: "businessCard",
+  },
+]

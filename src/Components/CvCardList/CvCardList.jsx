@@ -3,7 +3,7 @@ import CvCard from "../CvCard/CvCard";
 import "./CvCardList.scss";
 import { cvCards } from "../../data";
 import { CardsContext } from "../../context/CvContext";
-import Modal from "../Common/Modal/Modal";
+import Modal from "../Common/Modal/Modal"; 
 
 function CvCardList({ props }) {
   const { cvClickHandler, selectedCv, setCvData, cvData } = useContext(
