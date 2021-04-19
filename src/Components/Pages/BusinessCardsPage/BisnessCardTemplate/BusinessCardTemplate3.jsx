@@ -9,26 +9,28 @@ import {
     Image
 } from '@react-pdf/renderer';
 
-import satisfyRegular from '../../../../../assets/fonts/Lora-Regular.ttf';
-import cardBg from '../../../../../assets/card-bg3.jpg';
+import loraFont from '../../../../assets/fonts/Lora-Regular.ttf';
+import cardBg from '../../../../assets/card-2-bg.jpg';
 
 Font.register({
-    family: 'Lora-Regular',
-    src: satisfyRegular,
+    family: 'Lora',
+    src: loraFont,
 });
 
-const BusinessCardTemplate3 = ({ card }) => {
+const BusinessCardTemplate3 = ({ businessCardData }) => {
 
     const styles = StyleSheet.create({
         body: {
             height: '100%',
             boxSizing: 'border-box',
-            fontFamily: "Lora-Regular",
+            fontFamily: "Lora",
             zIndex: '1'
+            // opacity: '0.5'
         },
 
         content: {
             height: '100%',
+            // paddingTop: '5px',
             position: 'relative',
         },
 
@@ -37,37 +39,32 @@ const BusinessCardTemplate3 = ({ card }) => {
             flexDirection: "column",
             justifyContent: 'center',
             alignItems: 'center',
-            fontSize: '8px',
+            fontSize: '6px',
         },
 
         card__item: {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
+            paddingBottom: '5px',
             width: '100%',
-            color: 'black',
+            color: '#00008B',
         },
 
         card__item__title: {
-            color: '#fff',
-        },
-        name: {
-            fontSize: '10',
-            margin: '8px 0 5px'
-
+            color: '#778899',
+            fontSize: '6px',
+            marginRight: '3px'
         },
 
         extra: {
-            color: 'black',
-            // textAlign: 'center'
+            color: '#00008B',
+            textAlign: 'center'
         },
 
         first__block: {
             width: '100%',
             padding: '0 5px',
-            // borderBottomColor: '#CD853F',
-            // borderBottomWidth: '1px',
-            // borderBottomStyle: 'solid'
         },
 
         second__block: {
@@ -102,25 +99,25 @@ const BusinessCardTemplate3 = ({ card }) => {
                     <View style={styles.card}>
                         <View style={styles.first__block}>
                             <View style={styles.card__item}>
-                                {/* <Text style={styles.card__item__title}>Name</Text> */}
-                                <Text style={styles.name}>{card.name}</Text>
+                                <Text style={styles.card__item__title}>Name</Text>
+                                <Text style={styles.name}>{businessCardData.name}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                {/* <Text style={styles.card__item__title}>Profession</Text> */}
-                                <Text style={styles.profession}>{card.profession}</Text>
+                                <Text style={styles.card__item__title}>Profession</Text>
+                                <Text style={styles.profession}>{businessCardData.profession}</Text>
                             </View>
                         </View>
                         <View style={styles.second__block}>
                             <View style={styles.card__item}>
-                                {/* <Text style={styles.card__item__title}>Phone</Text> */}
-                                <Text style={styles.phone}>{card.phone}</Text>
+                                <Text style={styles.card__item__title}>Phone</Text>
+                                <Text style={styles.phone}>{businessCardData.phone}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                {/* <Text style={styles.card__item__title}>Email</Text> */}
-                                <Text style={styles.email}>{card.email}</Text>
+                                <Text style={styles.card__item__title}>Email</Text>
+                                <Text style={styles.email}>{businessCardData.email}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                <Text style={styles.extra}>{card.extra}</Text>
+                                <Text style={styles.extra}>{businessCardData.extra}</Text>
                             </View>
                         </View>
                     </View>
