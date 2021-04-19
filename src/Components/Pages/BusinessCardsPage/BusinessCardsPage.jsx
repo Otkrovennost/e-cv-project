@@ -7,6 +7,7 @@ import Header from "../../Common/Header/Header";
 import WelcomeSection from "../../Common/WelcomeSection/WelcomeSection";
 
 import cardImage from '../../../assets/card-img.png';
+import cardImage2 from '../../../assets/card-img2.jpg';
 
 // libraries
 
@@ -35,7 +36,7 @@ const BusinessCardsPage = () => {
             </li>
             <li className="card__item">
               <div className="card__body">
-                <img className="card__img" src={cardImage} alt="Preview business card" />
+                <img className="card__img" src={cardImage2} alt="Preview business card" />
               </div>
             </li>
           </ul>
