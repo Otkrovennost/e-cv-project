@@ -1,66 +1,34 @@
-import React from 'react'
-import './BusinessCardList.scss'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
+import { businessCards } from "../../../../data";
+import { BusinessCardsContext } from "../../../../context/BusinessCardContext";
+// import { AppRoute } from '../../../../constants'
 
+import './BusinessCardList.scss';
 
-const BusinessCardList = () => {
+const BusinessCardList = ({props}) => {
+  const { cardClickHandler, selectedCard } = useContext(
+    BusinessCardsContext
+  );
 
-    return (
-        <div className="BusinessCardList">
-            {/* <BusinessCard props={[
-                {
-                    firstName: 'Michael',
-                    lastName: 'Jackson',
-                    position: 'developer',
-                    phone: '+98 23 231313',
-                    email: 'jackson@mail.com',
-                    cardStyle: 'green',
-                },
-                {
-                    firstName: 'Nikolaj',
-                    lastName: 'Smith',
-                    position: 'manager',
-                    phone: '+98 23 231313',
-                    email: 'nikolai@mail.com',
-                    cardStyle: 'yellow',
-                },
-                {
-                    firstName: 'Alice',
-                    lastName: 'Markova',
-                    position: 'designer',
-                    phone: '+98 23 231313',
-                    email: 'markova@gmail.com',
-                    cardStyle: 'green',
-                },
-                {
-                    firstName: 'Andy ',
-                    lastName: ' Flipp',
-                    position: 'web developer',
-                    phone: '+98 23 231313',
-                    email: 'flipp_1984@mail.com',
-                    cardStyle: 'green',
-                },
-                {
-                    firstName: 'Kate',
-                    lastName: 'Tyrcevich',
-                    position: 'lawyer',
-                    phone: '+98 23 231313',
-                    email: 'tyrcevich@yahoo.com',
-                    cardStyle: 'green',
-                },
-                {
-                    firstName: 'Vladilen',
-                    lastName: 'Minen',
-                    position: 'Frontend Developer',
-                    phone: '+98 23 231313',
-                    email: 'minin@mail.ru',
-                    cardStyle: 'green',
-                }
-
-            ]
-            } /> */}
-
-        </div>
-    )
+  return (
+    <ul className="card__list">
+      {businessCards.map((elem) => (
+        <li className="card__item" key={elem.id}>
+          <div className="card__body">
+          <Link 
+            onClick={(e) => {
+              cardClickHandler(e, elem)
+              props.history.push(`/creator/${elem.id}`);
+            }}
+          >
+            <img className="card__img" src={elem.cardImage} alt="Preview business card"/>
+          </Link>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
 }
 export default BusinessCardList;

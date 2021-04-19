@@ -27,7 +27,8 @@ function App(props) {
             render={(props) => <BusinessCardsPage {...props} />}
           />
           <Route
-            path={AppRoute.BUSINESS_CARD_CREATOR_PAGE}
+            // path={AppRoute.BUSINESS_CARD_CREATOR_PAGE}
+            path="/creator/:id"
             render={(props) => <BusinessCardsCreator {...props} />}
           />
           <Route

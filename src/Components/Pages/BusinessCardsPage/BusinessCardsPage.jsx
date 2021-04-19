@@ -1,30 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
+
 //  components
-import "./BusinessCardPage.scss";
 import Footer from "../../Common/Footer/Footer";
 import Header from "../../Common/Header/Header";
 import WelcomeSection from "../../Common/WelcomeSection/WelcomeSection";
-import BusinessCardTemplate from "./BisnessCardTemplate/BusinessCardTemplate";
-// libraries
+import BusinessCardList from '../BusinessCardsPage/BusinessCardList/BusinessCardList';
 
-const BusinessCardsPage = () => {
-  const [infoState, setInfostate] = useState({
-    name: "ibanko",
-    profession: "zaja",
-    phone: "+654543",
-    email: "mail@mail.com",
-    extra: "",
-  });
+import "./BusinessCardPage.scss";
+
+function BusinessCardsPage(props) {
 
   return (
     <div>
       <Header />
-
       <div className="container">
         <WelcomeSection />
       </div>
       <div>
-        <BusinessCardTemplate card={infoState} />
+        <div className="container">
+          <BusinessCardList
+            props={props}
+          />
+        </div>
       </div>
       <Footer />
     </div>

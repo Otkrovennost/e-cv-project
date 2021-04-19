@@ -9,28 +9,26 @@ import {
   Image
 } from '@react-pdf/renderer';
 
-import satisfyRegular from '../../../../assets/fonts/Satisfy-Regular.ttf';
-import cardBg from '../../../../assets/card-bg.jpg';
+import satisfyRegular from '../../../../assets/fonts/Roboto-Light.ttf';
+import cardBg from '../../../../assets/card-bg2.jpg';
 
 Font.register({
-  family: 'Satisfy-Regular',
+  family: 'Roboto-Light',
   src: satisfyRegular,
 });
 
-const BusinessCardTemplate = ({ businessCardData }) => {
+const BusinessCardTemplate2 = ({ businessCardData }) => {
 
   const styles = StyleSheet.create({
     body: {
       height: '100%',
       boxSizing: 'border-box',
-      fontFamily: "Satisfy-Regular",
+      fontFamily: "Roboto-Light",
       zIndex: '1'
-      // opacity: '0.5'
     },
 
     content: {
       height: '100%',
-      // paddingTop: '5px',
       position: 'relative',
     },
 
@@ -39,7 +37,7 @@ const BusinessCardTemplate = ({ businessCardData }) => {
       flexDirection: "column",
       justifyContent: 'center',
       alignItems: 'center',
-      fontSize: '7px',
+      fontSize: '8px',
     },
 
     card__item: {
@@ -47,17 +45,21 @@ const BusinessCardTemplate = ({ businessCardData }) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       width: '100%',
-      color: '#CD853F',
+      color: 'black',
     },
 
     card__item__title: {
       color: '#fff',
-      fontSize: '7px'
+    },
+    name: {
+      fontSize: '10',
+      margin: '8px 0 5px'
+
     },
 
     extra: {
-      color: '#CD853F',
-      textAlign: 'center'
+      color: 'black',
+      // textAlign: 'center'
     },
 
     first__block: {
@@ -100,21 +102,21 @@ const BusinessCardTemplate = ({ businessCardData }) => {
           <View style={styles.card}>
             <View style={styles.first__block}>
               <View style={styles.card__item}>
-                <Text style={styles.card__item__title}>Name</Text>
+                {/* <Text style={styles.card__item__title}>Name</Text> */}
                 <Text style={styles.name}>{businessCardData.name}</Text>
               </View>
               <View style={styles.card__item}>
-                <Text style={styles.card__item__title}>Profession</Text>
+                {/* <Text style={styles.card__item__title}>Profession</Text> */}
                 <Text style={styles.profession}>{businessCardData.profession}</Text>
               </View>
             </View>
             <View style={styles.second__block}>
               <View style={styles.card__item}>
-                <Text style={styles.card__item__title}>Phone</Text>
+                {/* <Text style={styles.card__item__title}>Phone</Text> */}
                 <Text style={styles.phone}>{businessCardData.phone}</Text>
               </View>
               <View style={styles.card__item}>
-                <Text style={styles.card__item__title}>Email</Text>
+                {/* <Text style={styles.card__item__title}>Email</Text> */}
                 <Text style={styles.email}>{businessCardData.email}</Text>
               </View>
               <View style={styles.card__item}>
@@ -128,4 +130,4 @@ const BusinessCardTemplate = ({ businessCardData }) => {
   )
 }
 
-export default BusinessCardTemplate;
+export default BusinessCardTemplate2;

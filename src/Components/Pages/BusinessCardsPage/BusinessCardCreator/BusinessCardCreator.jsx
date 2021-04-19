@@ -1,50 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 // components
 import Footer from "../../../Common/Footer/Footer";
 import Header from "../../../Common/Header/Header";
 import InputCardCreator from "../InputCardCreator/InputCardCreator";
+
 // libraries
 import {
-// Page,
-// Text,
-// Document,
-// View,
-// Image,
-// StyleSheet,
+  // Page,
+  // Text,
+  // Document,
+  // View,
+  // Image,
+  // StyleSheet,
   PDFViewer
 } from "@react-pdf/renderer";
 
-import BusinessCardTemplate from '../BisnessCardTemplate/BusinessCardTemplate';
+import { BusinessCardsContext } from "../../../../context/BusinessCardContext";
 
 const BusinessCardsCreator = () => {
-  // const [personStatePdf, setPersonStatePdf] = useState("");
-
-  // console.log(personStatePdf);
-  const [person, setPerson] = useState(
-    {
-      name: 'its your name',
-      profession: 'profession',
-      phone: 'phone call',
-      email: 'email',
-      extra: 'extra info',
-    }
+  const { businessCardData, setBusinessCardData, renderBusinessCard, selectedCard } = useContext(
+    BusinessCardsContext
   );
 
   return (
     <div>
       <Header />
       <div className="container">
-        <div style={{height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <div style={{ height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <InputCardCreator
-            person={person} 
-            setPerson={setPerson}
+            businessCardData={businessCardData}
+            setBusinessCardData={setBusinessCardData}
           />
 
-          <PDFViewer style={{height: '400px'}}>
-            <BusinessCardTemplate
-              card={person} 
-            />
-          </PDFViewer> 
+          <PDFViewer style={{ height: '400px' }}>
+            {renderBusinessCard(selectedCard.cardName)}
+          </PDFViewer>
         </div>
       </div>
       <Footer />
