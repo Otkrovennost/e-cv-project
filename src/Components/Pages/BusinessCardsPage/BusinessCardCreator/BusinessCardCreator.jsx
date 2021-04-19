@@ -3,9 +3,6 @@ import React, { useContext } from "react";
 import Footer from "../../../Common/Footer/Footer";
 import Header from "../../../Common/Header/Header";
 import InputCardCreator from "../InputCardCreator/InputCardCreator";
-import BusinessCardTemplate from '../BusinessCardTemplate/BusinessCardTemplate/BusinessCardTemplate';
-import BusinessCardTemplate2 from '../BusinessCardTemplate/BusinessCardTemplate2/BusinessCardTemplate2';
-
 
 // libraries
 import {
