@@ -15,6 +15,7 @@ import {
   // View,
   // Image,
   // StyleSheet,
+
   PDFViewer
 } from "@react-pdf/renderer";
 
@@ -23,6 +24,7 @@ import { BusinessCardsContext } from "../../../../context/BusinessCardContext";
 const BusinessCardsCreator = () => {
   const { businessCardData, setBusinessCardData, renderBusinessCard, selectedCard } = useContext(
     BusinessCardsContext
+
   );
 
   return (
@@ -31,12 +33,14 @@ const BusinessCardsCreator = () => {
       <div className="container">
         <div style={{ height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <InputCardCreator
+
             businessCardData={businessCardData}
             setBusinessCardData={setBusinessCardData}
           />
 
           <PDFViewer style={{ height: '400px' }}>
             {renderBusinessCard(selectedCard.cardName)}
+
           </PDFViewer>
         </div>
       </div>

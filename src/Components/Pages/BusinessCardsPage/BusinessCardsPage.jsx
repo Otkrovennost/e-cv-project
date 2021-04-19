@@ -10,6 +10,7 @@ import "./BusinessCardPage.scss";
 
 function BusinessCardsPage(props) {
 
+
   return (
     <div>
       <Header />
@@ -22,6 +23,7 @@ function BusinessCardsPage(props) {
             props={props}
           />
         </div>
+
       </div>
       <Footer />
     </div>

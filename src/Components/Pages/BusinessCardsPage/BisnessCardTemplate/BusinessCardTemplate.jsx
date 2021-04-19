@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   Font,
   Page,
@@ -125,6 +126,7 @@ const BusinessCardTemplate = ({ businessCardData }) => {
             </View>
           </Page>
       </Document>
+
     )
 }
 

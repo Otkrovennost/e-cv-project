@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react';
 
 import {
     // Button,
@@ -8,9 +8,10 @@ import {
     // List,
     // ListItem,
     // ListItemText,
-    TextField,
+    TextField
     // Typography,
 } from '@material-ui/core';
+
 
 const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
     const personArrKeys = [ "name", "profession", "phone", "email", "extra"];
@@ -19,6 +20,7 @@ const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
       console.log(key)
       setBusinessCardData({ ...businessCardData, [key]: value });
     };
+
 
     return (
         <div style={{
@@ -38,7 +40,7 @@ const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
                     autoComplete="off"
                     type="text"
                     onBlur={({ target: { value } }) => {
-                      setKey(el, value);
+                        setKey(el, value);
                     }}
                 />)
             }
