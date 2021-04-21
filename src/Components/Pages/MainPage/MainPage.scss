@@ -1,7 +1,7 @@
 @import "../../../scss/variables";
 
 .hero-wrapper {
-  background-image: url("../../../assets/layer-bg.svg");
+  // background-image: url("../../../assets/layer-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,27 +17,29 @@
 }
 
 .intro__title {
+  font-family: Limelight;
   margin-bottom: 25px;
   padding-top: 50px;
   font-weight: 600;
   font-size: 5rem;
   line-height: 1;
-  max-width: 400px;
-  color: black;
+  max-width: 450px;
+  color: $text-color;
 }
 
 .intro__description {
   margin-bottom: 30px;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   line-height: 1.4;
-  font-weight: 400;
-  color: black;
+  font-weight: 500;
+  color: $text-color;
+  max-width: 350px;
 }
 
 .intro__button {
   padding: 0.5em 1.6em;
   font-weight: 300;
-  font-size: 27px;
+  font-size: 20px;
   text-align: center;
   line-height: 33px;
   color: #fff;

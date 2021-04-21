@@ -23,11 +23,6 @@ const NavList = () => {
           CV Help &amp; Tips
         </NavLink>
       </li>
-      <li className="nav__item">
-        <NavLink className="nav__link" to={AppRoute.HELP_PAGE}>
-          Login | Register
-        </NavLink>
-      </li>
     </ul>
   );
 };
