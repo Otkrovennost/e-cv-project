@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './BuilderForm.scss';
+import React, { useState, useEffect, useRef } from "react";
+import "./BuilderForm.scss";
 import {
   Button,
   Box,
@@ -10,65 +10,65 @@ import {
   ListItemText,
   TextField,
   Typography,
-} from '@material-ui/core';
-import Chip from '@material-ui/core/Chip';
-import AddIcon from '@material-ui/icons/Add';
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+} from "@material-ui/core";
+import Chip from "@material-ui/core/Chip";
+import AddIcon from "@material-ui/icons/Add";
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-import AvatarCustom from '../Common/Avatar/Avatar';
+import AvatarCustom from "../Common/Avatar/Avatar";
 
 const useStyles = makeStyles((theme) => ({
   avatarBlock: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap",
   },
   sectionTitle: {
-    width: '100%',
+    width: "100%",
     marginBottom: 12,
     fontWeight: 600,
   },
   formItem: {
-    width: '45%',
+    width: "45%",
   },
   skillsSection: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap",
   },
   skillsItem: {
-    marginRight: '15px',
-    marginBottom: '15px',
+    marginRight: "15px",
+    marginBottom: "15px",
   },
   userSkillsSection: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
   },
   userSkillBlock: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '15px',
-    padding: '10px',
-    border: '1px solid rgba(0, 0, 0, 0.23)',
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "15px",
+    padding: "10px",
+    border: "1px solid rgba(0, 0, 0, 0.23)",
   },
   userSkill: {
-    width: '100%',
+    width: "100%",
   },
   userSkillIcon: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
   },
 }));
 
 const skillArray = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'Git',
-  'React',
-  'Redux',
-  'Node.js',
-  'Figma',
-  'TypeScript',
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Git",
+  "React",
+  "Redux",
+  "Node.js",
+  "Figma",
+  "TypeScript",
 ];
 
 const SkillItem = ({ value, addSkill }) => {
@@ -77,8 +77,8 @@ const SkillItem = ({ value, addSkill }) => {
     <Chip
       icon={<AddIcon />}
       label={value}
-      color='primary'
-      variant='outlined'
+      color="primary"
+      variant="outlined"
       clickable
       onClick={() => {
         addSkill(value);
@@ -96,8 +96,9 @@ const UserSkill = ({ value, deleteSkill }) => {
       <IconButton
         onClick={() => {
           deleteSkill(value);
-        }}>
-        <DeleteOutlineIcon color='primary' className={classes.userSkillIcon} />
+        }}
+      >
+        <DeleteOutlineIcon color="primary" className={classes.userSkillIcon} />
       </IconButton>
     </Grid>
   );
@@ -106,27 +107,28 @@ const UserSkill = ({ value, deleteSkill }) => {
 const NewUserSkill = ({ addSkill }) => {
   const classes = useStyles();
 
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   return (
-    <div className='form-group'>
+    <div className="form-group">
       <TextField
-        id='desired-job'
-        label='Enter skill'
+        id="desired-job"
+        label="Enter skill"
         value={value}
         onChange={(evt) => {
           setValue(evt.target.value);
         }}
-        variant='outlined'
-        style={{ width: '80%' }}
+        variant="outlined"
+        style={{ width: "80%" }}
       />
       <IconButton
         onClick={() => {
           addSkill(value);
-          setValue('');
+          setValue("");
         }}
-        style={{ padding: '15px' }}>
-        <AddIcon color='primary' className={classes.userSkillIcon} />
+        style={{ padding: "15px" }}
+      >
+        <AddIcon color="primary" className={classes.userSkillIcon} />
       </IconButton>
     </div>
   );
@@ -140,7 +142,7 @@ export default function BuilderForm({ cvData, setCvData }) {
   };
 
   const initialFileState = {
-    mainState: 'initial',
+    mainState: "initial",
     imageUploaded: 0,
     selectedFile: null,
   };
@@ -148,16 +150,16 @@ export default function BuilderForm({ cvData, setCvData }) {
   const [fileState, setFileState] = useState(initialFileState);
   const [skillsArray, setSkillsArray] = useState([]);
   const initEmployment = {
-    title: '',
-    company: '',
-    dateStart: '',
-    dateEnd: '',
+    title: "",
+    company: "",
+    dateStart: "",
+    dateEnd: "",
   };
   const initEducation = {
-    place: '',
-    degree: '',
-    dateStart: '',
-    dateEnd: '',
+    place: "",
+    degree: "",
+    dateStart: "",
+    dateEnd: "",
   };
   const [employmentHistory, setEmploymentHistory] = useState([]);
   const [educationHistory, setEducationHistory] = useState([]);
@@ -198,22 +200,24 @@ export default function BuilderForm({ cvData, setCvData }) {
       <ListItem
         key={i}
         style={{
-          border: '1px solid rgba(0, 0, 0, 0.23)',
-          marginBottom: '15px',
-        }}>
-        <Box style={{ display: 'flex', flexDirection: 'column' }}>
+          border: "1px solid rgba(0, 0, 0, 0.23)",
+          marginBottom: "15px",
+        }}
+      >
+        <Box style={{ display: "flex", flexDirection: "column" }}>
           <Typography
             style={{
-              fontWeight: '600',
-              fontSize: '20px',
-              fontStyle: 'italic',
-            }}>
+              fontWeight: "600",
+              fontSize: "20px",
+              fontStyle: "italic",
+            }}
+          >
             {title}
           </Typography>
           <ListItemText primary={company} />
-          <Box style={{ display: 'flex', alignItems: 'center' }}>
-            <ListItemText primary={dateStart} style={{ marginRight: '10px' }} />
-            <span style={{ marginRight: '10px' }}>-</span>
+          <Box style={{ display: "flex", alignItems: "center" }}>
+            <ListItemText primary={dateStart} style={{ marginRight: "10px" }} />
+            <span style={{ marginRight: "10px" }}>-</span>
             <ListItemText primary={dateEnd} />
           </Box>
         </Box>
@@ -227,22 +231,24 @@ export default function BuilderForm({ cvData, setCvData }) {
       <ListItem
         key={i}
         style={{
-          border: '1px solid rgba(0, 0, 0, 0.23)',
-          marginBottom: '15px',
-        }}>
-        <Box style={{ display: 'flex', flexDirection: 'column' }}>
+          border: "1px solid rgba(0, 0, 0, 0.23)",
+          marginBottom: "15px",
+        }}
+      >
+        <Box style={{ display: "flex", flexDirection: "column" }}>
           <Typography
             style={{
-              fontWeight: '600',
-              fontSize: '20px',
-              fontStyle: 'italic',
-            }}>
+              fontWeight: "600",
+              fontSize: "20px",
+              fontStyle: "italic",
+            }}
+          >
             {place}
           </Typography>
           <ListItemText primary={degree} />
-          <Box style={{ display: 'flex', alignItems: 'center' }}>
-            <ListItemText primary={dateStart} style={{ marginRight: '10px' }} />
-            <span style={{ marginRight: '10px' }}>-</span>
+          <Box style={{ display: "flex", alignItems: "center" }}>
+            <ListItemText primary={dateStart} style={{ marginRight: "10px" }} />
+            <span style={{ marginRight: "10px" }}>-</span>
             <ListItemText primary={dateEnd} />
           </Box>
         </Box>
@@ -261,7 +267,7 @@ export default function BuilderForm({ cvData, setCvData }) {
   const skillsEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    skillsEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    skillsEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -269,10 +275,10 @@ export default function BuilderForm({ cvData, setCvData }) {
   }, [skillsArray]);
 
   return (
-    <form className='form'>
-      <Grid container direction='column' spacing={1} alignItems='stretch'>
+    <form className="form">
+      <Grid container direction="column" spacing={1} alignItems="stretch">
         <Grid item className={classes.avatarBlock}>
-          <Typography variant='h6' className={classes.sectionTitle}>
+          <Typography variant="h6" className={classes.sectionTitle}>
             Personal Details
           </Typography>
           <AvatarCustom
@@ -283,196 +289,206 @@ export default function BuilderForm({ cvData, setCvData }) {
             setCvData={setCvData}
           />
         </Grid>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='desired-job'
-            label='Job title'
+            id="desired-job"
+            label="Job title"
             // value={title}
             onBlur={({ target: { value } }) => {
-              setKey('title', value);
+              setKey("title", value);
             }}
-            variant='outlined'
-            style={{ width: '100%' }}
+            variant="outlined"
+            style={{ width: "100%" }}
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='first-name'
-            label='First Name'
+            id="first-name"
+            label="First Name"
             // value={name}
             onBlur={({ target: { value } }) => {
-              setKey('name', value);
+              setKey("name", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
           <TextField
-            id='last-name'
-            label='Last Name'
+            id="last-name"
+            label="Last Name"
             // value={surname}
             onBlur={({ target: { value } }) => {
-              setKey('surname', value);
+              setKey("surname", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='email'
-            label='Email'
+            id="email"
+            label="Email"
             // value={email}
             onBlur={({ target: { value } }) => {
-              setKey('email', value);
+              setKey("email", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
           <TextField
-            id='phone'
-            label='Phone'
+            id="phone"
+            label="Phone"
             // value={phone}
             onBlur={({ target: { value } }) => {
-              setKey('phone', value);
+              setKey("phone", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
         </div>
-        <Typography variant='h6' className={classes.sectionTitle}>
+        <Typography variant="h6" className={classes.sectionTitle}>
           Professional Summary
         </Typography>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='about'
-            label='About yourself'
+            id="about"
+            label="About yourself"
             // value={summary}
             onBlur={({ target: { value } }) => {
-              setKey('summary', value);
+              setKey("summary", value);
             }}
-            placeholder='About yourself'
+            placeholder="About yourself"
             multiline
-            variant='outlined'
-            style={{ width: '100%' }}
+            variant="outlined"
+            style={{ width: "100%" }}
           />
         </div>
-        <Typography variant='h6' className={classes.sectionTitle}>
+        <Typography variant="h6" className={classes.sectionTitle}>
           Experience History
         </Typography>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='job-title'
-            label='Job Title'
+            id="job-title"
+            label="Job Title"
             value={employment.title}
             onChange={({ target: { value } }) => {
-              setEmploymentData('title', value);
+              setEmploymentData("title", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
           <TextField
-            id='organization'
-            label='Organization'
-            variant='outlined'
+            id="organization"
+            label="Organization"
+            variant="outlined"
             value={employment.company}
             onChange={({ target: { value } }) => {
-              setEmploymentData('company', value);
+              setEmploymentData("company", value);
             }}
             className={classes.formItem}
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='date-from'
-            type='date'
-            variant='outlined'
+            id="date-from"
+            type="date"
+            variant="outlined"
             value={employment.dateStart}
             onChange={({ target: { value } }) => {
-              setEmploymentData('dateStart', value);
+              setEmploymentData("dateStart", value);
             }}
             className={classes.formItem}
           />
           <TextField
-            id='date-to'
-            type='date'
-            size='medium'
-            variant='outlined'
+            id="date-to"
+            type="date"
+            size="medium"
+            variant="outlined"
             value={employment.dateEnd}
             onChange={({ target: { value } }) => {
-              setEmploymentData('dateEnd', value);
+              setEmploymentData("dateEnd", value);
             }}
             className={classes.formItem}
           />
         </div>
         <Button
-          variant='contained'
-          color='primary'
-          style={{ marginBottom: '20px', width: '45%' }}
-          onClick={setEmploymentHistoryData}>
+          variant="contained"
+          color="primary"
+          style={{
+            marginBottom: "20px",
+            width: "45%",
+            backgroundColor: "#8bc29a",
+          }}
+          onClick={setEmploymentHistoryData}
+        >
           Add employment
         </Button>
-        <List style={{ marginBottom: '15px' }}>
+        <List style={{ marginBottom: "15px" }}>
           {employmentHistory.map(employmentItem)}
         </List>
-        <Typography variant='h6' className={classes.sectionTitle}>
+        <Typography variant="h6" className={classes.sectionTitle}>
           Education
         </Typography>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='education-place'
-            label='Place'
+            id="education-place"
+            label="Place"
             value={education.place}
             onChange={({ target: { value } }) => {
-              setEducationData('place', value);
+              setEducationData("place", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
           <TextField
-            id='education-degree'
-            label='Degree'
+            id="education-degree"
+            label="Degree"
             value={education.degree}
             onChange={({ target: { value } }) => {
-              setEducationData('degree', value);
+              setEducationData("degree", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <TextField
-            id='date-from'
-            type='date'
+            id="date-from"
+            type="date"
             value={education.dateStart}
             onChange={({ target: { value } }) => {
-              setEducationData('dateStart', value);
+              setEducationData("dateStart", value);
             }}
-            variant='outlined'
+            variant="outlined"
             className={classes.formItem}
           />
           <TextField
-            id='date-to'
-            type='date'
+            id="date-to"
+            type="date"
             value={education.dateEnd}
             onChange={({ target: { value } }) => {
-              setEducationData('dateEnd', value);
+              setEducationData("dateEnd", value);
             }}
-            size='medium'
-            variant='outlined'
+            size="medium"
+            variant="outlined"
             className={classes.formItem}
           />
         </div>
         <Button
-          variant='contained'
-          color='primary'
-          style={{ marginBottom: '20px', width: '45%' }}
-          onClick={setEducationHistoryData}>
+          variant="contained"
+          color="primary"
+          style={{
+            marginBottom: "20px",
+            width: "45%",
+            backgroundColor: "#8bc29a",
+          }}
+          onClick={setEducationHistoryData}
+        >
           Add education
         </Button>
-        <List style={{ marginBottom: '15px' }}>
+        <List style={{ marginBottom: "15px" }}>
           {educationHistory.map(educationItem)}
         </List>
-        <Typography variant='h6' className={classes.sectionTitle}>
+        <Typography variant="h6" className={classes.sectionTitle}>
           Skills
         </Typography>
         <Grid item className={classes.skillsSection}>
@@ -488,15 +504,20 @@ export default function BuilderForm({ cvData, setCvData }) {
             <React.Fragment>
               <NewUserSkill addSkill={addSkill} />
               <Button
-                variant='contained'
-                color='primary'
-                style={{ marginBottom: '20px', width: '45%' }}
+                variant="contained"
+                color="primary"
+                style={{
+                  marginBottom: "20px",
+                  width: "45%",
+                  backgroundColor: "#8bc29a",
+                }}
                 onClick={() => {
                   setCvData({
                     ...cvData,
                     skills: skillsArray,
                   });
-                }}>
+                }}
+              >
                 Add skills in cv
               </Button>
               <div ref={skillsEndRef} />
