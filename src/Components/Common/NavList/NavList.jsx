@@ -12,7 +12,7 @@ const NavList = ({ isNavOpened, setIsNavOpened }) => {
         onClick={() => setIsNavOpened(!isNavOpened)}
         className="nav__exit-icon"
       >
-        <i class="far fa-times-circle"></i>
+        <i className="far fa-times-circle"></i>
       </li>
       <li className="nav__item">
         <NavLink className="nav__link" to={AppRoute.CV_TEMPLATES_PAGE}>

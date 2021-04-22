@@ -36,18 +36,22 @@ export const cvCards = [
       {
         color: "red",
         hash: "#D6A1A1",
+        id: 1,
       },
       {
         color: "blue",
         hash: "#A1B3D6",
+        id: 2,
       },
       {
         color: "green",
         hash: "#A6D9A5",
+        id: 3,
       },
       {
         color: "purple",
         hash: "#4C2C69",
+        id: 4,
       },
     ],
     subject: "CV",

@@ -34,7 +34,7 @@ const Header = () => {
             onClick={() => setIsNavOpened(!isNavOpened)}
             className="header__burger-icon"
           >
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           </div>
         </header>
       </div>
