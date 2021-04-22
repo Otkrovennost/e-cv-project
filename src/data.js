@@ -1,17 +1,16 @@
 // import violetCv from '../src/assets/cv-previews/violet.png';
-import steelBlueCV from '../src/assets/cv-previews/cv-1.png';
-import blueColdCV from '../src/assets/cv-previews/cv-3.png';
-import greenCV from '../src/assets/cv-previews/cv-4.png';
-import blueDarkCV from '../src/assets/cv-previews/cv-5.png';
-import goldDarkCV from '../src/assets/cv-previews/cv-6.png';
+import steelBlueCV from "../src/assets/cv-previews/cv-1.png";
+import blueColdCV from "../src/assets/cv-previews/cv-3.png";
+import greenCV from "../src/assets/cv-previews/cv-4.png";
+import blueDarkCV from "../src/assets/cv-previews/cv-5.png";
+import goldDarkCV from "../src/assets/cv-previews/cv-6.png";
 import cv_2_violet from "../src/assets/cv-previews/violet.png";
 import cv_2_red from "../src/assets/cv2-assets/red-1.png";
 import cv_2_green from "../src/assets/cv2-assets/green-1.png";
 import cv_2_blue from "../src/assets/cv2-assets/blue-1.png";
-import cardImageFirst from '../src/assets/card-img.png';
-import cardImageSecond from '../src/assets/card-img-2.jpg';
-import cardImageThird from '../src/assets/card-img-3.png';
-
+import cardImageFirst from "../src/assets/card-img.png";
+import cardImageSecond from "../src/assets/card-img-2.jpg";
+import cardImageThird from "../src/assets/card-img-3.png";
 
 export const cvCards = [
   {
@@ -54,12 +53,12 @@ export const cvCards = [
     subject: "CV",
   },
   {
-    id: '3',
-    cvName: 'CvTemplate3',
-    cvTitle: 'Santiago',
+    id: "3",
+    cvName: "CvTemplate3",
+    cvTitle: "Santiago",
     cvImage: blueColdCV,
-    cvColors: ['#dskflf', '#dfd445', '#dfd445'],
-    subject: 'CV',
+    cvColors: ["#dskflf", "#dfd445", "#dfd445"],
+    subject: "CV",
   },
   {
     id: "4",
@@ -106,4 +105,4 @@ export const businessCards = [
     cardImage: cardImageThird,
     subject: "businessCard",
   },
-]
+];

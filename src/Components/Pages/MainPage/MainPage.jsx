@@ -4,7 +4,6 @@ import { mainPageAnimations } from "../../../animations";
 import Header from "../../Common/Header/Header";
 import "./MainPage.scss";
 import lottie from "lottie-web";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { AppRoute } from "../../../constants";
 
