@@ -8,6 +8,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import { makeStyles } from "@material-ui/core/styles";
 
 import Header from "../../Common/Header/Header";
+import Footer from "../../Common/Footer/Footer";
 import BuilderForm from "../../BuilderForm/BuilderForm";
 
 import { CardsContext } from "../../../context/CvContext.js";
@@ -61,6 +62,7 @@ export default function BuilderPage() {
           {isShownResume ? 'Return to cv-form' : 'Preview & Download'}
         </Button>
       </div>
+      <Footer/>
     </div>
   );
 }
