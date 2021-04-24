@@ -14,9 +14,7 @@ import {
 import Chip from "@material-ui/core/Chip";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-
 import { makeStyles } from "@material-ui/core/styles";
-
 import AvatarCustom from "../Common/Avatar/Avatar";
 
 const useStyles = makeStyles((theme) => ({
