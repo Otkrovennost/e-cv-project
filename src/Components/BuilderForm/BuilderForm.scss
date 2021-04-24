@@ -5,9 +5,17 @@
   direction: rtl;
   width: 50%;
 
+  @media(max-width: 960px) {
+    width: 100%;
+  }
+
   * {
     direction: ltr;
   }
+}
+
+.form-none {
+  display: none;
 }
 
 .form-group {
@@ -17,5 +25,6 @@
   margin-bottom: 20px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }

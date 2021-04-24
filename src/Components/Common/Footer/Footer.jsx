@@ -19,7 +19,10 @@ const Footer = () => {
         </nav>
         <div className='footer__dev'>
           <p className='footer__dev-desc'>
-            Created&nbsp;by Wild&nbsp;Code&nbsp;School Students
+            Created&nbsp;by Wild&nbsp;Code&nbsp;School 
+          </p>
+          <p className='footer__dev-desc'>
+            Students:
           </p>
           <ul className='footer__contacts'>
             <li className='footer__contacts-item'>
