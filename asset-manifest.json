@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/e-cv-project/static/css/main.b52baed3.chunk.css",
-    "main.js": "/e-cv-project/static/js/main.be38289e.chunk.js",
-    "main.js.map": "/e-cv-project/static/js/main.be38289e.chunk.js.map",
+    "main.css": "/e-cv-project/static/css/main.f5a5883c.chunk.css",
+    "main.js": "/e-cv-project/static/js/main.28f130c6.chunk.js",
+    "main.js.map": "/e-cv-project/static/js/main.28f130c6.chunk.js.map",
     "runtime-main.js": "/e-cv-project/static/js/runtime-main.44527e0b.js",
     "runtime-main.js.map": "/e-cv-project/static/js/runtime-main.44527e0b.js.map",
-    "static/js/2.3309e5a9.chunk.js": "/e-cv-project/static/js/2.3309e5a9.chunk.js",
-    "static/js/2.3309e5a9.chunk.js.map": "/e-cv-project/static/js/2.3309e5a9.chunk.js.map",
+    "static/js/2.3cfd691e.chunk.js": "/e-cv-project/static/js/2.3cfd691e.chunk.js",
+    "static/js/2.3cfd691e.chunk.js.map": "/e-cv-project/static/js/2.3cfd691e.chunk.js.map",
     "index.html": "/e-cv-project/index.html",
-    "static/css/main.b52baed3.chunk.css.map": "/e-cv-project/static/css/main.b52baed3.chunk.css.map",
-    "static/js/2.3309e5a9.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.3309e5a9.chunk.js.LICENSE.txt",
+    "static/css/main.f5a5883c.chunk.css.map": "/e-cv-project/static/css/main.f5a5883c.chunk.css.map",
+    "static/js/2.3cfd691e.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.3cfd691e.chunk.js.LICENSE.txt",
     "static/media/Lora-Regular.6b74b8d6.ttf": "/e-cv-project/static/media/Lora-Regular.6b74b8d6.ttf",
     "static/media/Roboto-Light.8be2d148.ttf": "/e-cv-project/static/media/Roboto-Light.8be2d148.ttf",
     "static/media/Satisfy-Regular.32a67135.ttf": "/e-cv-project/static/media/Satisfy-Regular.32a67135.ttf",
@@ -22,15 +22,15 @@
     "static/media/card-img.f4a005c3.png": "/e-cv-project/static/media/card-img.f4a005c3.png",
     "static/media/check-right.270b3cb8.png": "/e-cv-project/static/media/check-right.270b3cb8.png",
     "static/media/check-wrong.3b0ff165.png": "/e-cv-project/static/media/check-wrong.3b0ff165.png",
-    "static/media/MainPage.scss": "/e-cv-project/static/media/layer-bg.3a9b3e76.svg",
-    "static/media/logo2.4122443a.svg": "/e-cv-project/static/media/logo2.4122443a.svg",
+    "static/media/MainPage.scss": "/e-cv-project/static/media/layer-bg.da8dd3d3.svg",
+    "static/media/logo2.0f38259a.svg": "/e-cv-project/static/media/logo2.0f38259a.svg",
     "static/media/user-image.5cc7c627.png": "/e-cv-project/static/media/user-image.5cc7c627.png",
     "static/media/user-image.bb6871ef.jpeg": "/e-cv-project/static/media/user-image.bb6871ef.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.44527e0b.js",
-    "static/js/2.3309e5a9.chunk.js",
-    "static/css/main.b52baed3.chunk.css",
-    "static/js/main.be38289e.chunk.js"
+    "static/js/2.3cfd691e.chunk.js",
+    "static/css/main.f5a5883c.chunk.css",
+    "static/js/main.28f130c6.chunk.js"
   ]
 }
