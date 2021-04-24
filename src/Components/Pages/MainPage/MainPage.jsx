@@ -6,7 +6,6 @@ import './MainPage.scss';
 import lottie from 'lottie-web';
 import { NavLink } from 'react-router-dom';
 import { AppRoute } from '../../../constants';
-import Testing from '../../Testing';
 
 const MainPage = () => {
   const lottieContainer = useRef();
@@ -44,7 +43,6 @@ const MainPage = () => {
           </div>
           <div ref={lottieContainer} className="hero__lottie"></div>
         </div>
-        <Testing />
       </div>
     </motion.div>
   );

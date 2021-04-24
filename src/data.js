@@ -11,6 +11,7 @@ import cv_2_blue from '../src/assets/cv2-assets/blue-1.png';
 import cardImageFirst from '../src/assets/card-img.png';
 import cardImageSecond from '../src/assets/card-img-2.jpg';
 import cardImageThird from '../src/assets/card-img-3.png';
+import cardImageFourth from '../src/assets/card-img-4.jpg';
 
 export const cvCards = [
   {
