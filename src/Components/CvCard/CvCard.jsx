@@ -15,11 +15,9 @@ function CvCard({
       <div className="cv-card__text-content">
         <h4 className="cv-card__title">{name}</h4>
       </div>
-      <div className="cv-card__overlay">
-        <div className="cv-card__body">
-          <div className="cv-card__image">
-            <img src={image} alt="CV Template" />
-          </div>
+      <div className="cv-card__body">
+        <div className="cv-card__image">
+          <img src={image} alt="CV Template" />
           <button
             onClick={() => {
               setIsOpened(true);
@@ -33,6 +31,7 @@ function CvCard({
             Preview
           </button>
         </div>
+        <div className="cv-card__background"></div>
       </div>
     </div>
   );

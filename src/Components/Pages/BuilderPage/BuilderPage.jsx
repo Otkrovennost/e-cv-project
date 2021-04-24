@@ -11,11 +11,13 @@ export default function BuilderPage() {
   );
   return (
     <div className="builder-page">
-      <Header/>
+      <Header />
       <div className="container">
         <div className="builder-page__inner">
           <BuilderForm cvData={cvData} setCvData={setCvData} />
-          <PDFViewer>{renderCard(selectedCv.cvName)}</PDFViewer>
+          <div className="builder-page__pdf-viewer">
+            <PDFViewer>{renderCard(selectedCv.cvName)}</PDFViewer>
+          </div>
         </div>
       </div>
     </div>

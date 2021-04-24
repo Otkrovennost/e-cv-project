@@ -5,9 +5,15 @@ import { AppRoute } from "../../../constants";
 
 import "./NavList.scss";
 
-const NavList = () => {
+const NavList = ({ isNavOpened, setIsNavOpened }) => {
   return (
-    <ul className="nav__list">
+    <ul className={isNavOpened ? "nav__list nav__list--active" : "nav__list"}>
+      <li
+        onClick={() => setIsNavOpened(!isNavOpened)}
+        className="nav__exit-icon"
+      >
+        <i className="far fa-times-circle"></i>
+      </li>
       <li className="nav__item">
         <NavLink className="nav__link" to={AppRoute.CV_TEMPLATES_PAGE}>
           CV Templates

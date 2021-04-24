@@ -62,7 +62,7 @@ function CvCardList({ props }) {
               {selectedCv?.cvColors.map((color) => {
                 return (
                   <div
-                    key={color.hash}
+                    key={color?.id}
                     onClick={() =>
                       setCvData({
                         ...cvData,

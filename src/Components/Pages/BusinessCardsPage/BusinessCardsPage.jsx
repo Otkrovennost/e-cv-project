@@ -1,38 +1,27 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom'
-import { AppRoute } from '../../../constants';
+import React from "react";
+
 //  components
-import "./BusinessCardPage.scss";
 import Footer from "../../Common/Footer/Footer";
 import Header from "../../Common/Header/Header";
 import WelcomeSection from "../../Common/WelcomeSection/WelcomeSection";
-import BusinessCardTemplate from "./BisnessCardTemplate/BusinessCardTemplate";
-import userImage from '../../../assets/user-image.jpeg'
-// libraries
+import BusinessCardList from '../BusinessCardsPage/BusinessCardList/BusinessCardList';
 
-const BusinessCardsPage = () => {
+import "./BusinessCardPage.scss";
 
-  const infoState = {
-    name: "ivanko",
-    profession: "zaja",
-    phone: "+654543",
-    email: "mail@mail.com",
-    extra: "",
-  };
+function BusinessCardsPage(props) {
 
   return (
     <div>
       <Header />
-
       <div className="container">
         <WelcomeSection />
       </div>
       <div>
-        <Link
-          to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}>
-          <img src={userImage} />
-          {/* <BusinessCardTemplate card={infoState} /> */}
-        </Link>
+        <div className="container">
+          <BusinessCardList
+            props={props}
+          />
+        </div>
       </div>
       <Footer />
     </div>

@@ -1,44 +1,39 @@
 @import "../../scss/variables";
 
-.cv-card__button {
-  position: absolute;
-  border: none;
-  background-color: $color2;
-  color: white;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 1000;
-  transition: 0.4s;
-}
-
 .cv-card {
   margin: 20px;
-  max-width: 262px;
+  max-width: 350px;
   width: 100%;
   position: relative;
-  transition: 0.2s;
 
-  &:hover {
-    transform: translateY(-3%);
+  &__button {
+    position: absolute;
+    border: none;
+    background-color: $color2;
+    color: white;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 0.2em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.2s;
   }
 
-  &:hover .cv-card__body {
-    background-color: rgba($color2, 0.6);
-  }
-
-  &:hover .cv-card__button {
-    opacity: 1;
+  &__background {
+    position: absolute;
+    background-color: $color2;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 7px;
   }
 
   &__image {
-    img {
-      max-width: 200px;
-      width: 100%;
-    }
-  }
-
-  &__body {
     position: relative;
     background-color: #ebebeb;
     border-radius: 7px;
@@ -47,8 +42,24 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 20px 20px;
     transition: 0.2s;
-    padding: 20px 0px;
+
+    &:hover {
+      transform: translate(-10px, -10px);
+    }
+
+    &:hover .cv-card__button {
+      opacity: 1;
+    }
+    img {
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    position: relative;
   }
 
   &__colors {
@@ -57,7 +68,7 @@
   }
 
   &__title {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: $text-color;
     font-weight: $regular;
   }
@@ -71,6 +82,7 @@
     left: 50%;
     margin: -5px 0px 0px -5px;
     transition: 0.2s;
+    cursor: pointer;
   }
 
   &__color-outer {
@@ -79,17 +91,5 @@
     height: 20px;
     width: 20px;
     position: relative;
-
-    &:hover {
-      background-color: rgba(#ffffff, 0.5);
-    }
-  }
-
-  &__color:nth-child(even) {
-    background-color: red;
-  }
-
-  &__color:nth-child(odd) {
-    background-color: yellow;
   }
 }

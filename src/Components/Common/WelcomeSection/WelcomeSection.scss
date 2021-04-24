@@ -1,10 +1,16 @@
-@import '../../../scss/variables';
+@import "../../../scss/variables";
 
 .welcome {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   color: $text-color;
+
+  @media (max-width: $laptops) {
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
 
   &__text {
     max-width: 404px;
