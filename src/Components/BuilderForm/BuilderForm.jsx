@@ -63,6 +63,17 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     color: 'rgb(139, 194, 154)'
   },
+  addInfoButton: {
+    marginBottom: "20px",
+    width: "45%",
+    backgroundColor: "#8bc29a",
+    '&:hover': {
+      backgroundColor: 'rgb(114, 172, 145)',
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    }
+  }
 }));
 
 const skillArray = [
@@ -416,11 +427,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         <Button
           variant="contained"
           color="primary"
-          style={{
-            marginBottom: "20px",
-            width: "45%",
-            backgroundColor: "#8bc29a",
-          }}
+          className={classes.addInfoButton}
           onClick={setEmploymentHistoryData}
         >
           Add employment
@@ -479,11 +486,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         <Button
           variant="contained"
           color="primary"
-          style={{
-            marginBottom: "20px",
-            width: "45%",
-            backgroundColor: "#8bc29a",
-          }}
+          className={classes.addInfoButton}
           onClick={setEducationHistoryData}
         >
           Add education
