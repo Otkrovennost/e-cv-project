@@ -18,4 +18,14 @@
 
 .builder-page__pdf-viewer {
   width: 50%;
+  display: block;
+
+  @media(max-width: 960px) {
+    display: none;
+  }
+}
+
+.builder-page__pdf-viewer-view {
+  display: block;
+  width: 100%;
 }

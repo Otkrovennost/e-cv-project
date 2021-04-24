@@ -14,9 +14,7 @@ import {
 import Chip from "@material-ui/core/Chip";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-
 import { makeStyles } from "@material-ui/core/styles";
-
 import AvatarCustom from "../Common/Avatar/Avatar";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,9 +26,14 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     marginBottom: 12,
     fontWeight: 600,
+    color: 'rgb(139, 194, 154)'
   },
   formItem: {
     width: "45%",
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+      marginBottom: '20px'
+    }
   },
   skillsSection: {
     display: "flex",
@@ -39,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
   skillsItem: {
     marginRight: "15px",
     marginBottom: "15px",
+    color: 'rgb(139, 194, 154)',
+    border: '1px solid rgb(139, 194, 154)'
   },
   userSkillsSection: {
     display: "flex",
@@ -56,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
   userSkillIcon: {
     marginLeft: "auto",
+    color: 'rgb(139, 194, 154)'
   },
 }));
 
@@ -75,9 +81,8 @@ const SkillItem = ({ value, addSkill }) => {
   const classes = useStyles();
   return (
     <Chip
-      icon={<AddIcon />}
+      icon={<AddIcon  style={{color: 'rgb(139, 194, 154)'}}/>}
       label={value}
-      color="primary"
       variant="outlined"
       clickable
       onClick={() => {
@@ -134,7 +139,7 @@ const NewUserSkill = ({ addSkill }) => {
   );
 };
 
-export default function BuilderForm({ cvData, setCvData }) {
+export default function BuilderForm({ cvData, setCvData, isShownResume }) {
   const classes = useStyles();
 
   const setKey = (key, value) => {
@@ -181,8 +186,6 @@ export default function BuilderForm({ cvData, setCvData }) {
       employmentHistory: [...employmentHistory, employment],
     });
     setEmployment(initEmployment);
-    console.log(employment);
-    console.log(employmentHistory);
   };
 
   const setEducationHistoryData = () => {
@@ -275,7 +278,7 @@ export default function BuilderForm({ cvData, setCvData }) {
   }, [skillsArray]);
 
   return (
-    <form className="form">
+    <form className={isShownResume ? "form-none" :"form"}>
       <Grid container direction="column" spacing={1} alignItems="stretch">
         <Grid item className={classes.avatarBlock}>
           <Typography variant="h6" className={classes.sectionTitle}>

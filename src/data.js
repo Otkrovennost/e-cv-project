@@ -109,4 +109,10 @@ export const businessCards = [
     cardImage: cardImageThird,
     subject: 'businessCard',
   },
+  {
+    id: '4',
+    cardName: 'BusinessCardTemplate4',
+    cardImage: cardImageFourth,
+    subject: 'businessCard',
+  },
 ];
