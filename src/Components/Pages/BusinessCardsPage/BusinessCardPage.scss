@@ -1,5 +1,15 @@
 @import "../../../scss/variables";
 
+.businessCardsMain {
+  background-image: url(../../../assets/layer-bg.svg);
+  background-repeat: no-repeat;
+  background-position: -50% -20%;
+}
+
+.businessCardsBlock {
+  padding-top: 50px;
+}
+
 .card__list {
   display: flex;
   flex-wrap: wrap;

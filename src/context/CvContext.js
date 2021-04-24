@@ -1,32 +1,32 @@
-import { createContext, useState } from "react";
-import Loader from "../Components/Common/loader/Loader";
-import * as Cards from "../Components/CvTemplates/index";
+import { createContext, useState } from 'react';
+import Loader from '../Components/Common/loader/Loader';
+import * as Cards from '../Components/CvTemplates/index';
 export const CardsContext = createContext();
 
 const cvDataInit = {
-  avatar: "",
-  title: "",
-  name: "",
-  surname: "",
-  email: "",
-  phone: "",
-  summary: "",
+  avatar: '',
+  title: '',
+  name: '',
+  surname: '',
+  email: '',
+  phone: '',
+  summary: '',
   employmentHistory: [],
   educationHistory: [],
   skills: [],
-  colorHash: "",
-  color: "",
+  colorHash: '',
+  color: '',
 };
 
 const ContextProvider = ({ children }) => {
   const [cvData, setCvData] = useState(cvDataInit);
   const [selectedCv, setSelectedCv] = useState(
-    JSON.parse(localStorage.getItem("chosenTemplate"))
+    JSON.parse(localStorage.getItem('chosenTemplate'))
   );
 
   const cvClickHandler = (e, cvItem) => {
     setSelectedCv(cvItem);
-    localStorage.setItem("chosenTemplate", JSON.stringify(cvItem));
+    localStorage.setItem('chosenTemplate', JSON.stringify(cvItem));
   };
 
   const renderCard = (selectedCard) => {
