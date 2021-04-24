@@ -9,21 +9,21 @@ import {
     Image
 } from '@react-pdf/renderer';
 
-import satisfyRegular from '../../../../assets/fonts/Satisfy-Regular.ttf';
-import cardBg from '../../../../assets/card-bg.jpg';
+import loraFont from '../../../../assets/fonts/Lora-Regular.ttf';
+import cardBg from '../../../../assets/card-bg4.png';
 
 Font.register({
-    family: 'Satisfy-Regular',
-    src: satisfyRegular,
+    family: 'Lora',
+    src: loraFont,
 });
 
-const BusinessCardTemplate = ({ businessCardData }) => {
+const BusinessCardTemplate4 = ({ businessCardData }) => {
 
     const styles = StyleSheet.create({
         body: {
             height: '100%',
             boxSizing: 'border-box',
-            fontFamily: "Satisfy-Regular",
+            fontFamily: "Lora",
             zIndex: '1'
             // opacity: '0.5'
         },
@@ -39,33 +39,32 @@ const BusinessCardTemplate = ({ businessCardData }) => {
             flexDirection: "column",
             justifyContent: 'center',
             alignItems: 'center',
-            fontSize: '7px',
+            fontSize: '6px',
         },
 
         card__item: {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
+            paddingBottom: '5px',
             width: '100%',
-            color: '#CD853F',
+            color: 'purpl',
         },
 
         card__item__title: {
-            color: '#fff',
-            fontSize: '7px'
+            color: '#778899',
+            fontSize: '6px',
+            marginRight: '3px'
         },
 
         extra: {
-            color: '#CD853F',
+            color: '#00008B',
             textAlign: 'center'
         },
 
         first__block: {
             width: '100%',
             padding: '0 5px',
-            // borderBottomColor: '#CD853F',
-            // borderBottomWidth: '1px',
-            // borderBottomStyle: 'solid'
         },
 
         second__block: {
@@ -100,25 +99,25 @@ const BusinessCardTemplate = ({ businessCardData }) => {
                     <View style={styles.card}>
                         <View style={styles.first__block}>
                             <View style={styles.card__item}>
-                                <Text style={styles.card__item__title}>Name</Text>
+                                <Text style={styles.card__item__title}></Text>
                                 <Text style={styles.name}>{businessCardData.name}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                <Text style={styles.card__item__title}>Profession</Text>
+                                <Text style={styles.card__item__title}></Text>
                                 <Text style={styles.profession}>{businessCardData.profession}</Text>
                             </View>
                         </View>
                         <View style={styles.second__block}>
                             <View style={styles.card__item}>
-                                <Text style={styles.card__item__title}>Phone</Text>
+                                <Text style={styles.card__item__title}></Text>
                                 <Text style={styles.phone}>{businessCardData.phone}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                <Text style={styles.card__item__title}>Email</Text>
+                                <Text style={styles.card__item__title}></Text>
                                 <Text style={styles.email}>{businessCardData.email}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                <Text style={styles.extra}>{businessCardData.extra}</Text>
+                                <Text style={styles.extra}></Text>
                             </View>
                         </View>
                     </View>
@@ -128,4 +127,4 @@ const BusinessCardTemplate = ({ businessCardData }) => {
     )
 }
 
-export default BusinessCardTemplate;
+export default BusinessCardTemplate4;

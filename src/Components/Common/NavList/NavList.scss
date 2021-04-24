@@ -1,17 +1,50 @@
-@import '../../../scss/variables';
+@import "../../../scss/variables";
+
+.nav__exit-icon {
+  display: none;
+
+  @media (max-width: $laptops) {
+    display: block;
+    color: white;
+    font-size: 3rem;
+    position: relative;
+    left: 55px;
+    bottom: 40px;
+  }
+}
 
 .nav__list {
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
+
+  @media (max-width: $laptops) {
+    flex-direction: column;
+    background-color: $color2;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 200;
+    justify-content: center;
+    display: none;
+  }
+}
+
+.nav__list--active {
+  display: flex;
 }
 
 .nav__item {
-  margin-left: 40px;
+  margin-right: 40px;
   transition: all 0.3s;
+
+  @media (max-width: $laptops) {
+    margin: 10px 10px;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -26,8 +59,12 @@
   color: $text-color;
   transition: 0.2s;
 
+  @media (max-width: $laptops) {
+    color: $color1;
+  }
+
   &::after {
-    content: '';
+    content: "";
     position: relative;
     left: 0;
     bottom: 0;
@@ -45,7 +82,7 @@
   }
 
   &.active:after {
-    content: '';
+    content: "";
     position: relative;
     left: 0;
     bottom: 0;

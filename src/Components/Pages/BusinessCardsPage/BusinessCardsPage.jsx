@@ -11,12 +11,12 @@ import "./BusinessCardPage.scss";
 function BusinessCardsPage(props) {
 
   return (
-    <div>
+    <div className="businessCardsMain">
       <Header />
       <div className="container">
         <WelcomeSection />
       </div>
-      <div>
+      <div className="businessCardsBlock">
         <div className="container">
           <BusinessCardList
             props={props}

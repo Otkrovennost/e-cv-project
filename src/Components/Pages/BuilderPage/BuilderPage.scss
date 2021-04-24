@@ -1,5 +1,8 @@
 .builder-page {
   height: 100%;
+  background-image: url(../../../assets/layer-bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 
 .builder-page__inner {
@@ -14,4 +17,18 @@
   background-color: white;
   position: relative;
   z-index: 100;
+}
+
+.builder-page__pdf-viewer {
+  width: 50%;
+  display: block;
+
+  @media(max-width: 960px) {
+    display: none;
+  }
+}
+
+.builder-page__pdf-viewer-view {
+  display: block;
+  width: 100%;
 }

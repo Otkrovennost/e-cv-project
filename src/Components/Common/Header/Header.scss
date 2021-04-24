@@ -1,13 +1,39 @@
-@import '../../../scss/variables';
+@import "../../../scss/variables";
 
 .header {
-  padding: 30px 0 0 0;
+  padding: 15px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__burger-icon {
+    display: none;
+
+    @media (max-width: $laptops) {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__line {
+    display: block;
+    background-color: $text-color;
+    height: 60px;
+    width: 1px;
+  }
 }
 
 .nav {
   display: flex;
   font-weight: 300;
   align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
 }
 
 .logo {
@@ -28,4 +54,8 @@
     font-size: 15px;
     line-height: 1.1;
   }
+}
+
+.fa-bars, .fa-times-circle {
+  cursor: pointer;
 }
