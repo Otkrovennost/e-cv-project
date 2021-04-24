@@ -1,15 +1,7 @@
-import React from "react";
-import "./CvCard.scss";
+import React from 'react';
+import './CvCard.scss';
 
-function CvCard({
-  name,
-  image,
-  getId,
-  setIsOpened,
-  isOpened,
-  setCvData,
-  cvData,
-}) {
+function CvCard({ name, image, getId, setIsOpened, setCvData, cvData }) {
   return (
     <div onClick={getId} className="cv-card">
       <div className="cv-card__text-content">
@@ -17,13 +9,13 @@ function CvCard({
       </div>
       <div className="cv-card__body">
         <div className="cv-card__image">
-          <img src={image} alt="CV Template" />
+          <img src={`data:image/jpeg;base64, ${image}`} alt="CV Template" />
           <button
             onClick={() => {
               setIsOpened(true);
               setCvData({
                 ...cvData,
-                color: "",
+                color: '',
               });
             }}
             className="cv-card__button"
