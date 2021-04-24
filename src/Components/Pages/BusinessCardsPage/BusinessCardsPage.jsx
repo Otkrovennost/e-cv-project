@@ -7,16 +7,18 @@ import Footer from "../../Common/Footer/Footer";
 import Header from "../../Common/Header/Header";
 import WelcomeSection from "../../Common/WelcomeSection/WelcomeSection";
 import BusinessCardTemplate from "./BisnessCardTemplate/BusinessCardTemplate";
+import userImage from '../../../assets/user-image.jpeg'
 // libraries
 
 const BusinessCardsPage = () => {
-  const [infoState] = useState({
+
+  const infoState = {
     name: "ivanko",
     profession: "zaja",
     phone: "+654543",
     email: "mail@mail.com",
     extra: "",
-  });
+  };
 
   return (
     <div>
@@ -28,7 +30,8 @@ const BusinessCardsPage = () => {
       <div>
         <Link
           to={AppRoute.BUSINESS_CARD_CREATOR_PAGE}>
-          <BusinessCardTemplate card={infoState} />
+          <img src={userImage} />
+          {/* <BusinessCardTemplate card={infoState} /> */}
         </Link>
       </div>
       <Footer />
