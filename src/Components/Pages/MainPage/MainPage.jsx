@@ -1,21 +1,22 @@
-import { motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
-import { mainPageAnimations } from "../../../animations";
-import Header from "../../Common/Header/Header";
-import "./MainPage.scss";
-import lottie from "lottie-web";
-import { NavLink } from "react-router-dom";
-import { AppRoute } from "../../../constants";
+import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { mainPageAnimations } from '../../../animations';
+import Header from '../../Common/Header/Header';
+import './MainPage.scss';
+import lottie from 'lottie-web';
+import { NavLink } from 'react-router-dom';
+import { AppRoute } from '../../../constants';
+import Testing from '../../Testing';
 
 const MainPage = () => {
   const lottieContainer = useRef();
   useEffect(() => {
     lottie.loadAnimation({
       container: lottieContainer.current,
-      renderer: "svg",
+      renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: require("../../../animations/resume-animation.json"),
+      animationData: require('../../../animations/resume-animation.json'),
     });
   }, []);
   return (
@@ -43,6 +44,7 @@ const MainPage = () => {
           </div>
           <div ref={lottieContainer} className="hero__lottie"></div>
         </div>
+        <Testing />
       </div>
     </motion.div>
   );
