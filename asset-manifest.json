@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/e-cv-project/static/css/main.573e15d1.chunk.css",
-    "main.js": "/e-cv-project/static/js/main.5da359b6.chunk.js",
-    "main.js.map": "/e-cv-project/static/js/main.5da359b6.chunk.js.map",
+    "main.css": "/e-cv-project/static/css/main.9efc9c97.chunk.css",
+    "main.js": "/e-cv-project/static/js/main.3c629199.chunk.js",
+    "main.js.map": "/e-cv-project/static/js/main.3c629199.chunk.js.map",
     "runtime-main.js": "/e-cv-project/static/js/runtime-main.44527e0b.js",
     "runtime-main.js.map": "/e-cv-project/static/js/runtime-main.44527e0b.js.map",
     "static/js/2.900639b0.chunk.js": "/e-cv-project/static/js/2.900639b0.chunk.js",
     "static/js/2.900639b0.chunk.js.map": "/e-cv-project/static/js/2.900639b0.chunk.js.map",
     "index.html": "/e-cv-project/index.html",
-    "static/css/main.573e15d1.chunk.css.map": "/e-cv-project/static/css/main.573e15d1.chunk.css.map",
+    "static/css/main.9efc9c97.chunk.css.map": "/e-cv-project/static/css/main.9efc9c97.chunk.css.map",
     "static/js/2.900639b0.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.900639b0.chunk.js.LICENSE.txt",
     "static/media/Lora-Regular.6b74b8d6.ttf": "/e-cv-project/static/media/Lora-Regular.6b74b8d6.ttf",
     "static/media/Roboto-Light.8be2d148.ttf": "/e-cv-project/static/media/Roboto-Light.8be2d148.ttf",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.44527e0b.js",
     "static/js/2.900639b0.chunk.js",
-    "static/css/main.573e15d1.chunk.css",
-    "static/js/main.5da359b6.chunk.js"
+    "static/css/main.9efc9c97.chunk.css",
+    "static/js/main.3c629199.chunk.js"
   ]
 }
