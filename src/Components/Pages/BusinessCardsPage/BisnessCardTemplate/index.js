@@ -3,3 +3,4 @@ export { default as BusinessCardTemplate2 } from './BusinessCardTemplate2';
 export { default as BusinessCardTemplate3 } from './BusinessCardTemplate3';
 export { default as BusinessCardTemplate4 } from './BusinessCardTemplate4';
 export { default as BusinessCardTemplate5 } from './BusinessCardTemplate5';
+export { default as BusinessCardTemplate6 } from './BusinessCardTemplate6';

@@ -24,7 +24,7 @@ const BusinessCardTemplate5 = ({ businessCardData }) => {
             height: '100%',
             boxSizing: 'border-box',
             fontFamily: "Roboto-Light",
-            zIndex: '1'
+            zIndex: '1',
             // opacity: '0.5'
         },
 
@@ -32,6 +32,7 @@ const BusinessCardTemplate5 = ({ businessCardData }) => {
             height: '100%',
             // paddingTop: '5px',
             position: 'relative',
+
         },
 
         card: {
@@ -47,7 +48,7 @@ const BusinessCardTemplate5 = ({ businessCardData }) => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             width: '100%',
-            color: '#CD853F',
+            color: '#1d5346',
             paddingLeft: '27px',
         },
 
@@ -58,11 +59,10 @@ const BusinessCardTemplate5 = ({ businessCardData }) => {
         },
 
         extra: {
-            color: '#CD853F',
+            color: '#1d5346',
             paddingTop: '5px',
             fontSize: '6px',
-            paddingLeft: '0'
-            // textAlign: 'center'
+
         },
 
         first__block: {

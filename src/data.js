@@ -2,6 +2,8 @@ import cardImageFirst from '../src/assets/card-img.png';
 import cardImageSecond from '../src/assets/card-img-2.jpg';
 import cardImageThird from '../src/assets/card-img-3.png';
 import cardImageFourth from '../src/assets/card-img-4.jpg';
+import cardImageFifth from '../src/assets/card-img-5.jpg';
+import cardImageSixth from '../src/assets/card-img-6.jpg';
 
 export const businessCards = [
   {
@@ -31,7 +33,13 @@ export const businessCards = [
   {
     id: "5",
     cardName: "BusinessCardTemplate5",
-    cardImage: cardImageFourth,
+    cardImage: cardImageFifth,
+    subject: "businessCard",
+  },
+  {
+    id: "6",
+    cardName: "BusinessCardTemplate6",
+    cardImage: cardImageSixth,
     subject: "businessCard",
   },
 ];
