@@ -5,7 +5,7 @@ export const BusinessCardsContext = createContext();
 
 const businessCardDataInit = {
   name: 'it is your name',
-  profession: 'profession',
+  profession: 'position',
   phone: 'phone call',
   email: 'email',
   extra: 'extra info',

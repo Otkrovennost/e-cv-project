@@ -17,6 +17,8 @@ import {
 
 import { BusinessCardsContext } from "../../../../context/BusinessCardContext";
 
+import './BusinessCardCreator.scss';
+
 const BusinessCardsCreator = () => {
   const { businessCardData, setBusinessCardData, renderBusinessCard, selectedCard } = useContext(
     BusinessCardsContext
@@ -26,7 +28,7 @@ const BusinessCardsCreator = () => {
     <div>
       <Header />
       <div className="container">
-        <div style={{ height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className='creator'>
           <InputCardCreator
             businessCardData={businessCardData}
             setBusinessCardData={setBusinessCardData}
@@ -35,10 +37,12 @@ const BusinessCardsCreator = () => {
           <PDFViewer style={{ height: '400px' }}>
             {renderBusinessCard(selectedCard.cardName)}
           </PDFViewer>
+
+
         </div>
       </div>
       <Footer />
-    </div>
+    </div >
   );
 };
 export default BusinessCardsCreator;
