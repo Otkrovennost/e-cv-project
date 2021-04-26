@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { BusinessCardsContext } from "../../../../context/BusinessCardContext";
 import Loader from '../../../Common/loader/Loader';
 
+
 import './BusinessCardList.scss';
 
-const BusinessCardList = ({props}) => {
+const BusinessCardList = ({ props }) => {
   const { cardClickHandler, selectedCard } = useContext(
     BusinessCardsContext
   );
@@ -18,7 +19,7 @@ const BusinessCardList = ({props}) => {
       .then((data) => {
         setCvBusinessCards(data);
       });
-  }, []); 
+  }, []);
 
   console.log(cvBusinessCards)
 
@@ -29,21 +30,22 @@ const BusinessCardList = ({props}) => {
           {cvBusinessCards.map((elem) => (
             <li className="card__item" key={elem.id}>
               <div className="card__body">
-              <Link 
-                onClick={(e) => {
-                  cardClickHandler(e, elem)
-                  props.history.push(`/creator/${elem.id}`);
-                }}
-              >
-                <img className="card__img" src={`data:image/jpeg;base64, ${elem.cardImage}`} alt="Preview business card" />
-              </Link>
+                <Link
+                  onClick={(e) => {
+                    cardClickHandler(e, elem)
+                    props.history.push(`/creator/${elem.id}`);
+                  }}
+                >
+                  <img className="card__img" src={`data:image/jpeg;base64, ${elem.cardImage}`} alt="Preview business card" />
+                  {/* <img className="card__img" src={elem.cardImage} alt="Preview business card" /> */}
+                </Link>
               </div>
             </li>
           ))}
         </ul>)
         : (
-        <Loader/>
-      )}
+          <Loader />
+        )}
     </React.Fragment>
   )
 }
