@@ -32,13 +32,15 @@ const BusinessCardsCreator = () => {
             setBusinessCardData={setBusinessCardData}
           />
 
-          <PDFViewer style={{ height: '400px' }}>
+          <PDFViewer style={{ height: '400px', width: '520 px' }}>
             {renderBusinessCard(selectedCard.cardName)}
           </PDFViewer>
+
+
         </div>
       </div>
       <Footer />
-    </div>
+    </div >
   );
 };
 export default BusinessCardsCreator;

@@ -103,7 +103,7 @@ const BusinessCardTemplate3 = ({ businessCardData }) => {
                                 <Text style={styles.name}>{businessCardData.name}</Text>
                             </View>
                             <View style={styles.card__item}>
-                                <Text style={styles.card__item__title}>Profession</Text>
+                                <Text style={styles.card__item__title}>Position</Text>
                                 <Text style={styles.profession}>{businessCardData.profession}</Text>
                             </View>
                         </View>
