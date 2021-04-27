@@ -1,5 +1,7 @@
 .builder-page {
   height: 100%;
+  display: flex;
+  flex-direction: column;
   background-image: url(../../../assets/layer-bg.svg);
   background-repeat: no-repeat;
   background-position: bottom right;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import {
     // Button,
@@ -12,6 +12,20 @@ import {
     // Typography,
 } from '@material-ui/core';
 
+import {
+  ThemeProvider,
+  createMuiTheme,
+} from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
+
+import './InputCardCreator.scss';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+  },
+});
+
 const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
     const personArrKeys = ["name", "profession", "phone", "email", "extra"];
 
@@ -21,29 +35,23 @@ const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
     };
 
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '200px',
-            height: '500px',
-            justifyContent: 'space-around',
-            padding: '0 20px 20px 20px'
-        }}>
-
-            {personArrKeys.map(
-                (el, index) => <TextField
-                    label={el}
-                    key={index}
-                    variant="outlined"
-                    autoComplete="off"
-                    type="text"
-                    onBlur={({ target: { value } }) => {
-                        setKey(el, value);
-                    }}
-                />)
-            }
-
-        </div>
+      <div className="card-form">
+        <ThemeProvider theme={theme}>
+          {personArrKeys.map(
+            (el, index) => <TextField
+                label={el}
+                key={index}
+                variant="outlined"
+                autoComplete="off"
+                type="text"
+                style={{marginBottom: '20px'}}
+                onBlur={({ target: { value } }) => {
+                  setKey(el, value);
+                }}
+            />)
+          }
+        </ThemeProvider>
+      </div>
     )
 }
 export default InputCardCreator;

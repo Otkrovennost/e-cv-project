@@ -45,7 +45,9 @@ const BusinessCardList = ({ props }) => {
           ))}
         </ul>
       ) : (
-        <Loader />
+        <div className="cards__loader-block">
+          <Loader />
+        </div>
       )}
     </React.Fragment>
   );
