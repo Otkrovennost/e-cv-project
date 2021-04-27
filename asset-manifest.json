@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/e-cv-project/static/css/main.f1541f68.chunk.css",
-    "main.js": "/e-cv-project/static/js/main.6b7c689d.chunk.js",
-    "main.js.map": "/e-cv-project/static/js/main.6b7c689d.chunk.js.map",
+    "main.css": "/e-cv-project/static/css/main.655efd1e.chunk.css",
+    "main.js": "/e-cv-project/static/js/main.f414f401.chunk.js",
+    "main.js.map": "/e-cv-project/static/js/main.f414f401.chunk.js.map",
     "runtime-main.js": "/e-cv-project/static/js/runtime-main.44527e0b.js",
     "runtime-main.js.map": "/e-cv-project/static/js/runtime-main.44527e0b.js.map",
-    "static/js/2.14e74416.chunk.js": "/e-cv-project/static/js/2.14e74416.chunk.js",
-    "static/js/2.14e74416.chunk.js.map": "/e-cv-project/static/js/2.14e74416.chunk.js.map",
+    "static/js/2.8674146d.chunk.js": "/e-cv-project/static/js/2.8674146d.chunk.js",
+    "static/js/2.8674146d.chunk.js.map": "/e-cv-project/static/js/2.8674146d.chunk.js.map",
     "index.html": "/e-cv-project/index.html",
-    "static/css/main.f1541f68.chunk.css.map": "/e-cv-project/static/css/main.f1541f68.chunk.css.map",
-    "static/js/2.14e74416.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.14e74416.chunk.js.LICENSE.txt",
+    "static/css/main.655efd1e.chunk.css.map": "/e-cv-project/static/css/main.655efd1e.chunk.css.map",
+    "static/js/2.8674146d.chunk.js.LICENSE.txt": "/e-cv-project/static/js/2.8674146d.chunk.js.LICENSE.txt",
     "static/media/Lora-Regular.6b74b8d6.ttf": "/e-cv-project/static/media/Lora-Regular.6b74b8d6.ttf",
     "static/media/Roboto-Light.8be2d148.ttf": "/e-cv-project/static/media/Roboto-Light.8be2d148.ttf",
     "static/media/Satisfy-Regular.32a67135.ttf": "/e-cv-project/static/media/Satisfy-Regular.32a67135.ttf",
@@ -18,17 +18,20 @@
     "static/media/card-bg.90dd8758.jpg": "/e-cv-project/static/media/card-bg.90dd8758.jpg",
     "static/media/card-bg5.43eb7994.jpg": "/e-cv-project/static/media/card-bg5.43eb7994.jpg",
     "static/media/card-bg6.d8fa6a23.jpg": "/e-cv-project/static/media/card-bg6.d8fa6a23.jpg",
-    "static/media/check-right.270b3cb8.png": "/e-cv-project/static/media/check-right.270b3cb8.png",
-    "static/media/check-wrong.3b0ff165.png": "/e-cv-project/static/media/check-wrong.3b0ff165.png",
-    "static/media/CvTemplatesPage.scss": "/e-cv-project/static/media/layer-bg.3a9b3e76.svg",
+    "static/media/BusinessCardCreator.scss": "/e-cv-project/static/media/layer-bg.3a9b3e76.svg",
     "static/media/logo2.4122443a.svg": "/e-cv-project/static/media/logo2.4122443a.svg",
+    "static/media/offers-icon.896efc27.svg": "/e-cv-project/static/media/offers-icon.896efc27.svg",
     "static/media/user-image.5cc7c627.png": "/e-cv-project/static/media/user-image.5cc7c627.png",
-    "static/media/user-image.bb6871ef.jpeg": "/e-cv-project/static/media/user-image.bb6871ef.jpeg"
+    "static/media/user-image.bb6871ef.jpeg": "/e-cv-project/static/media/user-image.bb6871ef.jpeg",
+    "static/media/visible-icon.2721cc3f.svg": "/e-cv-project/static/media/visible-icon.2721cc3f.svg",
+    "static/media/with.f2f59b2a.svg": "/e-cv-project/static/media/with.f2f59b2a.svg",
+    "static/media/without.559dd77c.svg": "/e-cv-project/static/media/without.559dd77c.svg",
+    "static/media/worker-icon.106a4e7b.svg": "/e-cv-project/static/media/worker-icon.106a4e7b.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.44527e0b.js",
-    "static/js/2.14e74416.chunk.js",
-    "static/css/main.f1541f68.chunk.css",
-    "static/js/main.6b7c689d.chunk.js"
+    "static/js/2.8674146d.chunk.js",
+    "static/css/main.655efd1e.chunk.css",
+    "static/js/main.f414f401.chunk.js"
   ]
 }
