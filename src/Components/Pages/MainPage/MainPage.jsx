@@ -61,7 +61,12 @@ const MainPage = () => {
               <img src={withImage} alt="With E-CV" />
             </div>
           </div>
-          <button className="info__button big-btn">Start Editing</button>
+          <NavLink
+            className="advantages__button big-btn"
+            to={AppRoute.CV_TEMPLATES_PAGE}
+          >
+            Start Editing
+          </NavLink>
         </section>
         <section className="advantages">
           <div className="advantages__row">
@@ -102,7 +107,12 @@ const MainPage = () => {
               </p>
             </div>
           </div>
-          <button className="advantages__button big-btn">Get Templates</button>
+          <NavLink
+            className="advantages__button big-btn"
+            to={AppRoute.CV_TEMPLATES_PAGE}
+          >
+            Get Template
+          </NavLink>
         </section>
       </div>
     </>

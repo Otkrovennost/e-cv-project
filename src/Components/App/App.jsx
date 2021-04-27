@@ -10,12 +10,10 @@ import BusinessCardsPage from '../Pages/BusinessCardsPage/BusinessCardsPage';
 import BusinessCardsCreator from '../Pages/BusinessCardsPage/BusinessCardCreator/BusinessCardCreator';
 import CvTemplatesPage from '../Pages/CvTemplatesPage/CvTemplatesPage';
 import MainPage from '../Pages/MainPage/MainPage';
-import HelpAndTips from '../Pages/HelpAndTips/HelpAndTips';
 import axios from 'axios';
 import AuthPage from '../Pages/AuthPage/AuthPage';
 import UnauthorizedError from '../Common/UnauthorizedError/UnauthorizedError';
 import AuthContext from '../../context/AuthContext';
-import Header from '../Common/Header/Header';
 axios.defaults.withCredentials = true; // letting client to get cookies from the server
 
 function App(props) {
