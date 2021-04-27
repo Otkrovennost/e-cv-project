@@ -31,15 +31,15 @@ export const businessCards = [
     subject: 'businessCard',
   },
   {
-    id: "5",
-    cardName: "BusinessCardTemplate5",
+    id: '5',
+    cardName: 'BusinessCardTemplate5',
     cardImage: cardImageFifth,
-    subject: "businessCard",
+    subject: 'businessCard',
   },
   {
-    id: "6",
-    cardName: "BusinessCardTemplate6",
+    id: '6',
+    cardName: 'BusinessCardTemplate6',
     cardImage: cardImageSixth,
-    subject: "businessCard",
+    subject: 'businessCard',
   },
 ];

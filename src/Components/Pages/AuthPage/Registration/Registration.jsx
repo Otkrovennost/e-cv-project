@@ -4,7 +4,7 @@ import axios from 'axios';
 import AuthContext from '../../../../context/AuthContext';
 import { Button, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Success from '../../../Common/Success/Success';
+import Success from '../../../Common/Succes/Success';
 axios.defaults.withCredentials = true;
 
 const useStyles = makeStyles((theme) => ({
