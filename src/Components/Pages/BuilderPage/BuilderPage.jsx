@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 import { Button, IconButton } from '@material-ui/core';
 import AssignmentIcon from '@material-ui/icons/Assignment';
@@ -38,6 +38,15 @@ export default function BuilderPage() {
   const { renderCard, selectedCv, cvData, setCvData } = useContext(
     CardsContext
   );
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <div className="builder-page">
       <Header />
