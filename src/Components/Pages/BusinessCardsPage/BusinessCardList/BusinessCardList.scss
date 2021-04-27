@@ -53,6 +53,10 @@
 
 .card__img {
   width: 295px;
+
+  @media(max-width: 360px) {
+    width: 100%;
+  }
 }
 
 .cards__loader-block {
