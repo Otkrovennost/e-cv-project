@@ -5,7 +5,17 @@ import Registration from './Registration/Registration';
 import './AuthPage.scss';
 
 function AuthPage() {
+  
   const [isNewUser, setIsNewUser] = useState(true);
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <>
       <Header />
