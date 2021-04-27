@@ -45,7 +45,7 @@ const NavList = ({ isNavOpened, setIsNavOpened }) => {
               to={AppRoute.MAIN_PAGE}
               className="nav__link"
             >
-              <i class="far fa-user"></i>
+              <i className="far fa-user"></i>
             </NavLink>
           </li>
         </>
