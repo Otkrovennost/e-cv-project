@@ -12,10 +12,6 @@
     display: flex;
     flex-direction: column;
   }
-
-  &__item {
-    margin-bottom: 20px;
-  }
   &__row {
     display: flex;
     align-items: center;
@@ -27,4 +23,16 @@
     cursor: pointer;
     color: $text-color;
   }
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.error {
+  color: #e71616;
+  font-weight: 300;
+  margin-top: 3px;
+  font-size: 12px;
 }

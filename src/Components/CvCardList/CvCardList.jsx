@@ -17,7 +17,7 @@ function CvCardList({ props }) {
   console.log(loggedIn);
 
   useEffect(() => {
-    fetch('https://ecvapiserver.herokuapp.com/cv_templates')
+    fetch('http://localhost:5000/cv_templates')
       .then((res) => res.json())
       .then((data) => {
         setCvTemplates(data);

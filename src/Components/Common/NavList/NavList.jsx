@@ -10,7 +10,7 @@ const NavList = ({ isNavOpened, setIsNavOpened }) => {
 
   const logOut = async () => {
     console.log('here');
-    await axios.get('https://ecvapiserver.herokuapp.com/auth/logout');
+    await axios.get('http://localhost:5000/auth/logout');
     getLoggedIn();
   };
   return (

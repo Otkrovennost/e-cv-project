@@ -52,10 +52,7 @@ function Login({ setIsNewUser, isNewUser }) {
   const login = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        'https://ecvapiserver.herokuapp.com/auth/login',
-        loginData
-      );
+      await axios.post('http://localhost:5000/auth/login', loginData);
       getLoggedIn();
     } catch (error) {
       console.error(error);
