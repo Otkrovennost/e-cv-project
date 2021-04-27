@@ -56,7 +56,7 @@ function Registration({ setIsNewUser, isNewUser, props }) {
     e.preventDefault();
     console.log(registerData);
     try {
-      await axios.post('http://localhost:5000/auth', registerData);
+      await axios.post('https://ecvapiserver.herokuapp.com/auth', registerData);
       getLoggedIn();
     } catch (error) {
       console.error(error);
