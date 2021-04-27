@@ -12,7 +12,7 @@ const BusinessCardList = ({ props }) => {
   const [cvBusinessCards, setCvBusinessCards] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/business_cards')
+    fetch('https://ecvapiserver.herokuapp.com/business_cards')
       .then((res) => res.json())
       .then((data) => {
         setCvBusinessCards(data);
