@@ -18,13 +18,13 @@ function WelcomeSection() {
           <div className='steps-block__item step'>
             <h3 className='step__number'>01</h3>
             <h4 className='step__title'>Choose</h4>
-            <p className='step__desc'>Choose any template you like !</p>
+            <p className='step__desc'>Choose any template you like!</p>
           </div>
           <div className='steps-block__item step'>
             <h3 className='step__number'>02</h3>
             <h4 className='step__title'>Fill In</h4>
             <p className='step__desc'>
-              Provide all needed information for CV completness
+              Provide all needed information for CV completeness!
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@ function WelcomeSection() {
             <h3 className='step__number'>03</h3>
             <h4 className='step__title'>Download</h4>
             <p className='step__desc'>
-              After finishing your template - just download it !
+              After finishing your template - just download it!
             </p>
           </div>
           <div className='steps-block__item step'>

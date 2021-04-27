@@ -1,20 +1,25 @@
+import React, { useEffect, useRef } from 'react';
+
 import { motion } from 'framer-motion';
+import lottie from 'lottie-web';
+
+import Header from '../../Common/Header/Header';
 import Footer from '../../Common/Footer/Footer';
 import offerIcon from '../../../assets/offers-icon.svg';
 import visibleIcon from '../../../assets/visible-icon.svg';
-
 import workerIcon from '../../../assets/worker-icon.svg';
-
 import withImage from '../../../assets/with.svg';
 import withoutImage from '../../../assets/without.svg';
-import React, { useEffect, useRef } from 'react';
-import Header from '../../Common/Header/Header';
-import './MainPage.scss';
-import lottie from 'lottie-web';
+
 import { NavLink } from 'react-router-dom';
 import { AppRoute } from '../../../constants';
+
+import './MainPage.scss';
+
 const MainPage = () => {
+
   const lottieContainer = useRef();
+
   useEffect(() => {
     lottie.loadAnimation({
       container: lottieContainer.current,
@@ -24,6 +29,15 @@ const MainPage = () => {
       animationData: require('../../../animations/resume-animation.json'),
     });
   }, []);
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <div className="main-page">
       <Header />
