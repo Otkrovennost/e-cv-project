@@ -80,10 +80,10 @@ function CvCardList({ props }) {
                   Start Editing
                 </button>
                 <div className="cv-card__colors">
-                  {selectedCv?.cvColors.map((color) => {
+                  {selectedCv?.cvColors.map((color, index, self) => {
                     return (
                       <div
-                        key={color?.id}
+                        key={color}
                         onClick={() =>
                           setCvData({
                             ...cvData,
