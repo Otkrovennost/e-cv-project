@@ -18,7 +18,17 @@ function CvCard({ name, image, getId, setIsOpened, setCvData, cvData }) {
         <h4 className="cv-card__title">{name}</h4>
       </div>
       <div className="cv-card__body">
-        <div className="cv-card__image">
+        <div 
+          className="cv-card__image"
+          onClick={() => {
+            setIsOpened(true);
+            setCvData({
+              ...cvData,
+              color: '',
+            });
+          }}
+
+        >
           <img src={`data:image/jpeg;base64, ${image}`} alt="CV Template" />
           <button className="cv-card__button">Preview</button>
         </div>

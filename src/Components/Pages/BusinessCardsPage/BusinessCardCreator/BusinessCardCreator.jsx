@@ -6,12 +6,6 @@ import InputCardCreator from "../InputCardCreator/InputCardCreator";
 
 // libraries
 import {
-  // Page,
-  // Text,
-  // Document,
-  // View,
-  // Image,
-  // StyleSheet,
   PDFViewer
 } from "@react-pdf/renderer";
 
@@ -25,7 +19,7 @@ const BusinessCardsCreator = () => {
   );
 
   return (
-    <div>
+    <div className="creator-block">
       <Header />
       <div className="container">
         <div className='creator'>
@@ -33,12 +27,11 @@ const BusinessCardsCreator = () => {
             businessCardData={businessCardData}
             setBusinessCardData={setBusinessCardData}
           />
-
-          <PDFViewer style={{ height: '400px' }}>
-            {renderBusinessCard(selectedCard.cardName)}
-          </PDFViewer>
-
-
+          <div className="creator__pdf">
+            <PDFViewer style={{ height: '350px', width: '100%'}}>
+              {renderBusinessCard(selectedCard.cardName)}
+            </PDFViewer>
+          </div>
         </div>
       </div>
       <Footer />

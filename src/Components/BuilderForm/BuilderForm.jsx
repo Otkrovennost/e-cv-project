@@ -16,6 +16,18 @@ import AddIcon from '@material-ui/icons/Add';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { makeStyles } from '@material-ui/core/styles';
 import AvatarCustom from '../Common/Avatar/Avatar';
+import {
+  ThemeProvider,
+  createMuiTheme,
+} from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+  },
+});
+
 
 const useStyles = makeStyles((theme) => ({
   avatarBlock: {
@@ -127,17 +139,19 @@ const NewUserSkill = ({ addSkill }) => {
 
   return (
     <div className="form-group">
-      <TextField
-        autoComplete="off"
-        id="desired-job"
-        label="Enter skill"
-        value={value}
-        onChange={(evt) => {
-          setValue(evt.target.value);
-        }}
-        variant="outlined"
-        style={{ width: '80%' }}
-      />
+      <ThemeProvider theme={theme}>
+        <TextField
+          autoComplete="off"
+          id="desired-job"
+          label="Enter skill"
+          value={value}
+          onChange={(evt) => {
+            setValue(evt.target.value);
+          }}
+          variant="outlined"
+          style={{ width: '80%'}}
+        />
+      </ThemeProvider>
       <IconButton
         onClick={() => {
           addSkill(value);
@@ -292,6 +306,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
   return (
     <form className={isShownResume ? 'form-none' : 'form'}>
       <Grid container direction="column" spacing={1} alignItems="stretch">
+      <ThemeProvider theme={theme}>
         <Grid item className={classes.avatarBlock}>
           <Typography variant="h6" className={classes.sectionTitle}>
             Personal Details
@@ -315,6 +330,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             style={{ width: '100%' }}
+  
           />
         </div>
         <div className="form-group">
@@ -328,6 +344,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
           <TextField
             autoComplete="off"
@@ -339,6 +356,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
         </div>
         <div className="form-group">
@@ -352,6 +370,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
           <TextField
             autoComplete="off"
@@ -363,6 +382,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
         </div>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -381,6 +401,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             multiline
             variant="outlined"
             style={{ width: '100%' }}
+  
           />
         </div>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -397,6 +418,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
           <TextField
             autoComplete="off"
@@ -408,6 +430,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
               setEmploymentData('company', value);
             }}
             className={classes.formItem}
+  
           />
         </div>
         <div className="form-group">
@@ -421,6 +444,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
               setEmploymentData('dateStart', value);
             }}
             className={classes.formItem}
+  
           />
           <TextField
             autoComplete="off"
@@ -433,6 +457,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
               setEmploymentData('dateEnd', value);
             }}
             className={classes.formItem}
+  
           />
         </div>
         <Button
@@ -460,6 +485,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
           <TextField
             autoComplete="off"
@@ -471,6 +497,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
         </div>
         <div className="form-group">
@@ -484,6 +511,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             }}
             variant="outlined"
             className={classes.formItem}
+  
           />
           <TextField
             autoComplete="off"
@@ -496,6 +524,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             size="medium"
             variant="outlined"
             className={classes.formItem}
+  
           />
         </div>
         <Button
@@ -547,6 +576,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
             <React.Fragment />
           )}
         </Grid>
+        </ThemeProvider>
       </Grid>
     </form>
   );
