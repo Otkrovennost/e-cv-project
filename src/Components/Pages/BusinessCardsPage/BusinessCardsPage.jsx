@@ -3,7 +3,7 @@ import React from "react";
 //  components
 import Footer from "../../Common/Footer/Footer";
 import Header from "../../Common/Header/Header";
-import WelcomeSection from "../../Common/WelcomeSection/WelcomeSection";
+import BusinessWelcomeSection from "./BusinessWelcomeSection/BusinessWelcomeSection";
 import BusinessCardList from '../BusinessCardsPage/BusinessCardList/BusinessCardList';
 
 import "./BusinessCardPage.scss";
@@ -14,7 +14,7 @@ function BusinessCardsPage(props) {
     <div className="businessCardsMain">
       <Header />
       <div className="container">
-        <WelcomeSection />
+        <BusinessWelcomeSection />
       </div>
       <div className="businessCardsBlock">
         <div className="container">
