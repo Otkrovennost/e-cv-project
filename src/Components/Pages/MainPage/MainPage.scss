@@ -1,5 +1,11 @@
 @import '../../../scss/variables';
 
+.main-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .hero-wrapper {
   // background-image: url('../../../assets/layer-bg.svg');
   background-repeat: no-repeat;
@@ -80,7 +86,9 @@
   }
 }
 
-.info {
+.main-page .info {
+  margin-bottom: 50px;
+
   &__text-content {
     max-width: 840px;
     margin: 0 auto;
@@ -91,7 +99,7 @@
       font-size: 46px;
       font-weight: 500;
 
-      @media screen and (max-width: 768px) {
+      @media(max-width: $tablets) {
         font-size: 35px;
       }
     }
@@ -101,7 +109,7 @@
       margin-top: 30px;
       font-weight: 300;
 
-      @media screen and (max-width: 768px) {
+      @media(max-width: $tablets) {
         font-size: 20px;
       }
     }
@@ -112,7 +120,10 @@
     margin-top: 40px;
     justify-content: center;
     margin-bottom: 50px;
-    flex-wrap: wrap;
+
+    @media(max-width: $tablets) {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -122,6 +133,10 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+
+    @media(max-width: $tablets) {
+      margin-bottom: 40px;
+    }
 
     img {
       max-width: 500px;
@@ -157,12 +172,16 @@
   cursor: pointer;
 }
 
-.advantages {
-  margin: 100px 0px;
+.main-page .advantages {
+  margin-bottom: 50px;
+
   &__row {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    @media(max-width: $tablets) {
+      flex-wrap: wrap;
+    }
   }
 
   &__button {
@@ -173,10 +192,15 @@
 }
 
 .advantages-item {
-  max-width: 400px;
+  width: 30%;
   color: $text-color;
   text-align: center;
   margin-bottom: 40px;
+
+  @media(max-width: $tablets) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
   &__image {
     margin-bottom: 15px;
