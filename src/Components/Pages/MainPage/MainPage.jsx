@@ -25,10 +25,10 @@ const MainPage = () => {
     });
   }, []);
   return (
-    <>
+    <div className="main-page">
       <Header />
-      <div className="container">
-        <div className="hero">
+      <div className="main-page__content">
+        <div className="hero container">
           <div className="hero__intro">
             <motion.h1 className="intro__title">
               Choose and build your CV.
@@ -43,7 +43,7 @@ const MainPage = () => {
           </div>
           <div ref={lottieContainer} className="hero__lottie"></div>
         </div>
-        <section className="info">
+        <section className="info container">
           <div className="info__text-content info-text">
             <h3 className="info-text__title">Make more, manage less</h3>
             <p className="info-text__description">
@@ -68,7 +68,7 @@ const MainPage = () => {
             Start Editing
           </NavLink>
         </section>
-        <section className="advantages">
+        <section className="advantages container">
           <div className="advantages__row">
             <div className="advantages__item advantages-item">
               <img
@@ -115,7 +115,8 @@ const MainPage = () => {
           </NavLink>
         </section>
       </div>
-    </>
+      < Footer/>
+    </div>
   );
 };
 
