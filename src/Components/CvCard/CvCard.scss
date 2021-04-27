@@ -65,7 +65,7 @@
 
   &__colors {
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   &__title {
@@ -75,19 +75,20 @@
   }
 
   &__color-inner {
-    position: absolute;
     border-radius: 50%;
-    height: 10px;
-    width: 10px;
-    top: 50%;
-    left: 50%;
-    margin: -5px 0px 0px -5px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
     transition: 0.2s;
     cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__color-outer {
-    background-color: rgba(#ffffff, 0);
+    background-color: rgba(#634848, 0);
     border-radius: 50%;
     height: 20px;
     width: 20px;
