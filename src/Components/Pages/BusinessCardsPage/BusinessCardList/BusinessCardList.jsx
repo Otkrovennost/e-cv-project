@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../../../context/AuthContext';
 import { BusinessCardsContext } from '../../../../context/BusinessCardContext';
 import Loader from '../../../Common/loader/Loader';
 
@@ -18,10 +19,10 @@ const BusinessCardList = ({ props }) => {
       });
   }, []);
 
-  console.log(cvBusinessCards);
+  const { loggedIn, getLoggedIn } = useContext(AuthContext);
 
   return (
-    <React.Fragment>
+    <div className="business-cards">
       {cvBusinessCards ? (
         <ul className="card__list">
           {cvBusinessCards.map((elem) => (
@@ -30,7 +31,11 @@ const BusinessCardList = ({ props }) => {
                 <Link
                   onClick={(e) => {
                     cardClickHandler(e, elem);
-                    props.history.push(`/creator/${elem.id}`);
+                    if (loggedIn) {
+                      props.history.push(`/creator/${elem.id}`);
+                    } else {
+                      props.history.push(`/auth`);
+                    }
                   }}
                 >
                   <img
@@ -45,9 +50,11 @@ const BusinessCardList = ({ props }) => {
           ))}
         </ul>
       ) : (
-        <Loader />
+        <div className="cards__loader-block">
+          <Loader />
+        </div>
       )}
-    </React.Fragment>
+    </div>
   );
 };
 export default BusinessCardList;

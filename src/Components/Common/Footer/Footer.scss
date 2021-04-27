@@ -1,6 +1,7 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .footer {
+  margin-top: auto;
   padding: 45px 0;
   background-color: #9ebda6;
 
@@ -14,7 +15,7 @@
   align-items: center;
   color: $color1;
 
-  @media(max-width: $molibe-plus) {
+  @media (max-width: $molibe-plus) {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -38,7 +39,7 @@
     margin-right: 5%;
   }
 
-  @media(max-width: $molibe-plus) {
+  @media (max-width: $molibe-plus) {
     width: 50%;
     margin-bottom: 25px;
     align-self: center;
@@ -51,19 +52,20 @@
 }
 
 .footer__dev {
-  @media(max-width: $molibe-plus) {
+  @media (max-width: $molibe-plus) {
     width: 100%;
   }
 }
 
-.footer__dev-desc, .footer__dev-desc-st {
+.footer__dev-desc,
+.footer__dev-desc-st {
   width: 55%;
   margin-bottom: 15px;
   font-size: 20px;
   line-height: 23px;
   font-weight: 600;
-  
-  @media(max-width: $tablets) {
+
+  @media (max-width: $tablets) {
     width: 100%;
     text-align: center;
   }
@@ -87,13 +89,21 @@
   }
 }
 
+.cv-page .footer {
+  .nav__link {
+    &.active:after {
+      display: none;
+    }
+  }
+}
+
 .footer__contacts {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  @media(max-width: $tablets) {
+  @media (max-width: $tablets) {
     flex-wrap: wrap;
   }
 }
@@ -104,13 +114,13 @@
   align-items: center;
   min-width: 190px;
 
-  @media(max-width: $tablets) {
+  @media (max-width: $tablets) {
     width: 100%;
     justify-content: center;
     margin-bottom: 20px;
   }
-   
-  @media(max-width: $molibe-plus) {
+
+  @media (max-width: $molibe-plus) {
     width: 100%;
     flex-direction: column;
   }
@@ -124,7 +134,7 @@
   font-weight: 600;
   font-weight: 400;
 
-  @media(max-width: $tablets) {
+  @media (max-width: $tablets) {
     text-align: center;
   }
 }

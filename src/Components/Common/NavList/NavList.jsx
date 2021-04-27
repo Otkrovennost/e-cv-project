@@ -31,22 +31,16 @@ const NavList = ({ isNavOpened, setIsNavOpened }) => {
           Business Cards
         </NavLink>
       </li>
-      <li className="nav__item">
-        <NavLink className="nav__link" to={AppRoute.HELP_PAGE}>
-          CV Help &amp; Tips
-        </NavLink>
-      </li>
       {loggedIn === true && (
         <>
-          <li className="nav__item">
-            <NavLink
-              exact={true}
-              onClick={logOut}
-              to={AppRoute.MAIN_PAGE}
-              className="nav__link"
-            >
-              <i class="far fa-user"></i>
-            </NavLink>
+          <li className="nav__link">
+            <i className="far fa-user"></i> Profile
+            <ul className="nav__dropdown link-dropdown">
+              <li onClick={logOut} className="link-dropdown__item">
+                Logout
+              </li>
+              <li className="link-dropdown__item">Settings</li>
+            </ul>
           </li>
         </>
       )}

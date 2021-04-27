@@ -1,5 +1,8 @@
 .cv-page {
-  background-image: url(../../../assets/layer-bg.svg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // background-image: url(../../../assets/layer-bg.svg);
   background-repeat: no-repeat;
   background-position: -50% -20%;
 }
