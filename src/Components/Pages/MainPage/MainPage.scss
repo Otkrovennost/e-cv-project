@@ -16,6 +16,14 @@
   margin-top: 40px;
   margin-bottom: 40px;
   flex-shrink: 0;
+
+  @media screen and (max-width: 768px) {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 70px;
+  }
 }
 
 .intro__title {
@@ -24,17 +32,10 @@
   font-weight: 600;
   font-size: 5rem;
   line-height: 1;
-  max-width: 450px;
   color: $text-color;
-
-  @media (max-width: $laptops) {
-    font-size: 4rem;
-    max-width: 340px;
-  }
 
   @media (max-width: $mobile) {
     font-size: 3rem;
-    max-width: 280px;
   }
 }
 
@@ -44,16 +45,9 @@
   line-height: 1.4;
   font-weight: 500;
   color: $text-color;
-  max-width: 350px;
-
-  @media (max-width: $laptops) {
-    font-size: 1rem;
-    max-width: 300px;
-  }
 
   @media (max-width: $mobile) {
     font-size: 1rem;
-    max-width: 250px;
   }
 }
 
@@ -96,12 +90,20 @@
     h3 {
       font-size: 46px;
       font-weight: 500;
+
+      @media screen and (max-width: 768px) {
+        font-size: 35px;
+      }
     }
 
     p {
       font-size: 24px;
       margin-top: 30px;
       font-weight: 300;
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -110,6 +112,7 @@
     margin-top: 40px;
     justify-content: center;
     margin-bottom: 50px;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -118,10 +121,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
 
     img {
-      max-width: 1000px;
+      max-width: 500px;
       width: 100%;
+      min-width: 250px;
     }
   }
 
@@ -130,6 +135,7 @@
     font-weight: 500;
     color: $text-color;
     margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   &__button {
@@ -155,7 +161,8 @@
   margin: 100px 0px;
   &__row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   &__button {
@@ -168,6 +175,8 @@
 .advantages-item {
   max-width: 400px;
   color: $text-color;
+  text-align: center;
+  margin-bottom: 40px;
 
   &__image {
     margin-bottom: 15px;

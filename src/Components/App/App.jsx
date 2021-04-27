@@ -42,10 +42,6 @@ function App(props) {
             path="/builder/:id"
             render={(props) => <BuilderPage {...props} />}
           />
-          <Route
-            path={AppRoute.HELP_PAGE}
-            render={(props) => <HelpAndTips {...props} />}
-          />
           {loggedIn === false && (
             <Route path={AppRoute.AUTH_PAGE} render={(props) => <AuthPage />} />
           )}

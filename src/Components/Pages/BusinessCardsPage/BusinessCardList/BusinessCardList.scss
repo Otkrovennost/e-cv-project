@@ -1,4 +1,4 @@
-@import "../../../../scss/variables";
+@import '../../../../scss/variables';
 
 .BusinessCardList {
   width: 100%;
@@ -10,6 +10,7 @@
   background-color: bisque;
   background-size: cover;
   overflow-y: hidden;
+  margin-bottom: 50px;
 }
 .card__list {
   display: flex;
@@ -53,7 +54,6 @@
 .card__img {
   width: 295px;
 }
-
 
 .cards__loader-block {
   display: flex;

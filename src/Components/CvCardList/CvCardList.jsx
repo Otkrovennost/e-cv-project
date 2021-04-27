@@ -17,7 +17,7 @@ function CvCardList({ props }) {
   console.log(loggedIn);
 
   useEffect(() => {
-    fetch('https://ecvapiserver.herokuapp.com/cv_templates')
+    fetch('http://localhost:5000/cv_templates')
       .then((res) => res.json())
       .then((data) => {
         setCvTemplates(data);
@@ -80,7 +80,7 @@ function CvCardList({ props }) {
                   Start Editing
                 </button>
                 <div className="cv-card__colors">
-                  {selectedCv?.cvColors.map((color, index, self) => {
+                  {selectedCv?.cvColors?.map((color, index, self) => {
                     return (
                       <div
                         key={color}
@@ -91,13 +91,9 @@ function CvCardList({ props }) {
                             color: color.color,
                           })
                         }
-                        className="cv-card__color-outer"
-                      >
-                        <div
-                          style={{ backgroundColor: color.hash }}
-                          className="cv-card__color-inner"
-                        ></div>
-                      </div>
+                        style={{ backgroundColor: color.hash }}
+                        className="cv-card__color-inner"
+                      ></div>
                     );
                   })}
                 </div>

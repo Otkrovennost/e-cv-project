@@ -9,7 +9,7 @@ function AuthContextProvider(props) {
 
   const getLoggedIn = async () => {
     const loggedInResponse = await axios.get(
-      'https://ecvapiserver.herokuapp.com/auth/loggedIn'
+      'http://localhost:5000/auth/loggedIn'
     );
     setLoggedIn(loggedInResponse.data);
   };
