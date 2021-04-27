@@ -10,7 +10,6 @@ import BusinessCardsPage from '../Pages/BusinessCardsPage/BusinessCardsPage';
 import BusinessCardsCreator from '../Pages/BusinessCardsPage/BusinessCardCreator/BusinessCardCreator';
 import CvTemplatesPage from '../Pages/CvTemplatesPage/CvTemplatesPage';
 import MainPage from '../Pages/MainPage/MainPage';
-import HelpAndTips from '../Pages/HelpAndTips/HelpAndTips';
 import axios from 'axios';
 import AuthPage from '../Pages/AuthPage/AuthPage';
 import UnauthorizedError from '../Common/UnauthorizedError/UnauthorizedError';
@@ -41,10 +40,6 @@ function App(props) {
           <Route
             path="/builder/:id"
             render={(props) => <BuilderPage {...props} />}
-          />
-          <Route
-            path={AppRoute.HELP_PAGE}
-            render={(props) => <HelpAndTips {...props} />}
           />
           {loggedIn === false && (
             <Route path={AppRoute.AUTH_PAGE} render={(props) => <AuthPage />} />

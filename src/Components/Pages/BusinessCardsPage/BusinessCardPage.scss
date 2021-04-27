@@ -1,14 +1,15 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .businessCardsMain {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-image: url(../../../assets/layer-bg.svg);
+  // background-image: url(../../../assets/layer-bg.svg);
   background-repeat: no-repeat;
   background-position: left bottom;
 }
 
 .businessCardsBlock {
   padding-top: 50px;
+  margin-bottom: 80px;
 }

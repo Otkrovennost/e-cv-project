@@ -22,6 +22,14 @@
   margin-top: 40px;
   margin-bottom: 40px;
   flex-shrink: 0;
+
+  @media screen and (max-width: 768px) {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 70px;
+  }
 }
 
 .intro__title {
@@ -30,17 +38,10 @@
   font-weight: 600;
   font-size: 5rem;
   line-height: 1;
-  max-width: 450px;
   color: $text-color;
-
-  @media (max-width: $laptops) {
-    font-size: 4rem;
-    max-width: 340px;
-  }
 
   @media (max-width: $mobile) {
     font-size: 3rem;
-    max-width: 280px;
   }
 }
 
@@ -50,16 +51,9 @@
   line-height: 1.4;
   font-weight: 500;
   color: $text-color;
-  max-width: 350px;
-
-  @media (max-width: $laptops) {
-    font-size: 1rem;
-    max-width: 300px;
-  }
 
   @media (max-width: $mobile) {
     font-size: 1rem;
-    max-width: 250px;
   }
 }
 
@@ -138,14 +132,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
 
     @media(max-width: $tablets) {
       margin-bottom: 40px;
     }
 
     img {
-      max-width: 1000px;
+      max-width: 500px;
       width: 100%;
+      min-width: 250px;
     }
   }
 
@@ -154,6 +150,7 @@
     font-weight: 500;
     color: $text-color;
     margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   &__button {
@@ -197,6 +194,8 @@
 .advantages-item {
   width: 30%;
   color: $text-color;
+  text-align: center;
+  margin-bottom: 40px;
 
   @media(max-width: $tablets) {
     width: 100%;
