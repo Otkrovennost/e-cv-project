@@ -1,7 +1,7 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .hero-wrapper {
-  background-image: url("../../../assets/layer-bg.svg");
+  // background-image: url('../../../assets/layer-bg.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -14,11 +14,11 @@
 .hero__intro {
   max-width: 450px;
   margin-top: 40px;
+  margin-bottom: 40px;
   flex-shrink: 0;
 }
 
 .intro__title {
-  font-family: Limelight;
   margin-bottom: 25px;
   padding-top: 50px;
   font-weight: 600;
