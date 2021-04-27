@@ -37,7 +37,7 @@ const BusinessCardTemplate2 = ({ businessCardData }) => {
       flexDirection: "column",
       justifyContent: 'center',
       alignItems: 'center',
-      fontSize: '8px',
+      fontSize: '7px',
     },
 
     card__item: {

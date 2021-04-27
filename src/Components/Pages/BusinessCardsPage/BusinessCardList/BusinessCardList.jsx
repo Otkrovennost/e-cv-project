@@ -38,6 +38,7 @@ const BusinessCardList = ({ props }) => {
                     src={`data:image/jpeg;base64, ${elem.cardImage}`}
                     alt="Preview business card"
                   />
+                  {/* <img className="card__img" src={elem.cardImage} alt="Preview business card" /> */}
                 </Link>
               </div>
             </li>

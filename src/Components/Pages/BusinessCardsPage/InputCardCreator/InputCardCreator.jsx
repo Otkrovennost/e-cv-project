@@ -24,7 +24,7 @@ const InputCardCreator = ({ businessCardData, setBusinessCardData }) => {
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '30%',
+            width: '200px',
             height: '500px',
             justifyContent: 'space-around',
             padding: '0 20px 20px 20px'
