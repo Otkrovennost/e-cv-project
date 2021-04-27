@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.scss';
 import { Switch, Route, HashRouter, Redirect } from 'react-router-dom';
 import { AppRoute } from '../../constants';
@@ -11,8 +11,14 @@ import BusinessCardsCreator from '../Pages/BusinessCardsPage/BusinessCardCreator
 import CvTemplatesPage from '../Pages/CvTemplatesPage/CvTemplatesPage';
 import MainPage from '../Pages/MainPage/MainPage';
 import HelpAndTips from '../Pages/HelpAndTips/HelpAndTips';
+import axios from 'axios';
+import AuthPage from '../Pages/AuthPage/AuthPage';
+import UnauthorizedError from '../Common/UnauthorizedError/UnauthorizedError';
+import AuthContext from '../../context/AuthContext';
+axios.defaults.withCredentials = true; // letting client to get cookies from the server
 
 function App(props) {
+  const { loggedIn } = useContext(AuthContext);
   return (
     <HashRouter>
       <AnimatePresence exitBeforeEnter initial={false}>
@@ -38,6 +44,13 @@ function App(props) {
           <Route
             path={AppRoute.HELP_PAGE}
             render={(props) => <HelpAndTips {...props} />}
+          />
+          {loggedIn === false && (
+            <Route path={AppRoute.AUTH_PAGE} render={(props) => <AuthPage />} />
+          )}
+          <Route
+            path={AppRoute.UNAUTHORIZED}
+            render={(props) => <UnauthorizedError />}
           />
           <Redirect to={AppRoute.MAIN_PAGE} />
         </Switch>

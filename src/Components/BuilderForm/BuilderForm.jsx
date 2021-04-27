@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./BuilderForm.scss";
+import React, { useState, useEffect, useRef } from 'react';
+import './BuilderForm.scss';
 import {
   Button,
   Box,
@@ -10,89 +10,89 @@ import {
   ListItemText,
   TextField,
   Typography,
-} from "@material-ui/core";
-import Chip from "@material-ui/core/Chip";
-import AddIcon from "@material-ui/icons/Add";
-import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-import { makeStyles } from "@material-ui/core/styles";
-import AvatarCustom from "../Common/Avatar/Avatar";
+} from '@material-ui/core';
+import Chip from '@material-ui/core/Chip';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import { makeStyles } from '@material-ui/core/styles';
+import AvatarCustom from '../Common/Avatar/Avatar';
 
 const useStyles = makeStyles((theme) => ({
   avatarBlock: {
-    display: "flex",
-    flexWrap: "wrap",
+    display: 'flex',
+    flexWrap: 'wrap',
   },
   sectionTitle: {
-    width: "100%",
+    width: '100%',
     marginBottom: 12,
     fontWeight: 600,
-    color: 'rgb(139, 194, 154)'
+    color: 'rgb(139, 194, 154)',
   },
   formItem: {
-    width: "45%",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-      marginBottom: '20px'
-    }
+    width: '45%',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      marginBottom: '20px',
+    },
   },
   skillsSection: {
-    display: "flex",
-    flexWrap: "wrap",
+    display: 'flex',
+    flexWrap: 'wrap',
   },
   skillsItem: {
-    marginRight: "15px",
-    marginBottom: "15px",
+    marginRight: '15px',
+    marginBottom: '15px',
     color: 'rgb(139, 194, 154)',
-    border: '1px solid rgb(139, 194, 154)'
+    border: '1px solid rgb(139, 194, 154)',
   },
   userSkillsSection: {
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
   },
   userSkillBlock: {
-    display: "flex",
-    alignItems: "center",
-    marginBottom: "15px",
-    padding: "10px",
-    border: "1px solid rgba(0, 0, 0, 0.23)",
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '15px',
+    padding: '10px',
+    border: '1px solid rgba(0, 0, 0, 0.23)',
   },
   userSkill: {
-    width: "100%",
+    width: '100%',
   },
   userSkillIcon: {
-    marginLeft: "auto",
-    color: 'rgb(139, 194, 154)'
+    marginLeft: 'auto',
+    color: 'rgb(139, 194, 154)',
   },
   addInfoButton: {
-    marginBottom: "20px",
-    width: "45%",
-    backgroundColor: "#8bc29a",
+    marginBottom: '20px',
+    width: '45%',
+    backgroundColor: '#8bc29a',
     '&:hover': {
       backgroundColor: 'rgb(114, 172, 145)',
     },
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-    }
-  }
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
+  },
 }));
 
 const skillArray = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Git",
-  "React",
-  "Redux",
-  "Node.js",
-  "Figma",
-  "TypeScript",
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'Git',
+  'React',
+  'Redux',
+  'Node.js',
+  'Figma',
+  'TypeScript',
 ];
 
 const SkillItem = ({ value, addSkill }) => {
   const classes = useStyles();
   return (
     <Chip
-      icon={<AddIcon  style={{color: 'rgb(139, 194, 154)'}}/>}
+      icon={<AddIcon style={{ color: 'rgb(139, 194, 154)' }} />}
       label={value}
       variant="outlined"
       clickable
@@ -123,11 +123,12 @@ const UserSkill = ({ value, deleteSkill }) => {
 const NewUserSkill = ({ addSkill }) => {
   const classes = useStyles();
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   return (
     <div className="form-group">
       <TextField
+        autoComplete="off"
         id="desired-job"
         label="Enter skill"
         value={value}
@@ -135,14 +136,14 @@ const NewUserSkill = ({ addSkill }) => {
           setValue(evt.target.value);
         }}
         variant="outlined"
-        style={{ width: "80%" }}
+        style={{ width: '80%' }}
       />
       <IconButton
         onClick={() => {
           addSkill(value);
-          setValue("");
+          setValue('');
         }}
-        style={{ padding: "15px" }}
+        style={{ padding: '15px' }}
       >
         <AddIcon color="primary" className={classes.userSkillIcon} />
       </IconButton>
@@ -158,7 +159,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
   };
 
   const initialFileState = {
-    mainState: "initial",
+    mainState: 'initial',
     imageUploaded: 0,
     selectedFile: null,
   };
@@ -166,16 +167,16 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
   const [fileState, setFileState] = useState(initialFileState);
   const [skillsArray, setSkillsArray] = useState([]);
   const initEmployment = {
-    title: "",
-    company: "",
-    dateStart: "",
-    dateEnd: "",
+    title: '',
+    company: '',
+    dateStart: '',
+    dateEnd: '',
   };
   const initEducation = {
-    place: "",
-    degree: "",
-    dateStart: "",
-    dateEnd: "",
+    place: '',
+    degree: '',
+    dateStart: '',
+    dateEnd: '',
   };
   const [employmentHistory, setEmploymentHistory] = useState([]);
   const [educationHistory, setEducationHistory] = useState([]);
@@ -214,24 +215,24 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
       <ListItem
         key={i}
         style={{
-          border: "1px solid rgba(0, 0, 0, 0.23)",
-          marginBottom: "15px",
+          border: '1px solid rgba(0, 0, 0, 0.23)',
+          marginBottom: '15px',
         }}
       >
-        <Box style={{ display: "flex", flexDirection: "column" }}>
+        <Box style={{ display: 'flex', flexDirection: 'column' }}>
           <Typography
             style={{
-              fontWeight: "600",
-              fontSize: "20px",
-              fontStyle: "italic",
+              fontWeight: '600',
+              fontSize: '20px',
+              fontStyle: 'italic',
             }}
           >
             {title}
           </Typography>
           <ListItemText primary={company} />
-          <Box style={{ display: "flex", alignItems: "center" }}>
-            <ListItemText primary={dateStart} style={{ marginRight: "10px" }} />
-            <span style={{ marginRight: "10px" }}>-</span>
+          <Box style={{ display: 'flex', alignItems: 'center' }}>
+            <ListItemText primary={dateStart} style={{ marginRight: '10px' }} />
+            <span style={{ marginRight: '10px' }}>-</span>
             <ListItemText primary={dateEnd} />
           </Box>
         </Box>
@@ -245,24 +246,24 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
       <ListItem
         key={i}
         style={{
-          border: "1px solid rgba(0, 0, 0, 0.23)",
-          marginBottom: "15px",
+          border: '1px solid rgba(0, 0, 0, 0.23)',
+          marginBottom: '15px',
         }}
       >
-        <Box style={{ display: "flex", flexDirection: "column" }}>
+        <Box style={{ display: 'flex', flexDirection: 'column' }}>
           <Typography
             style={{
-              fontWeight: "600",
-              fontSize: "20px",
-              fontStyle: "italic",
+              fontWeight: '600',
+              fontSize: '20px',
+              fontStyle: 'italic',
             }}
           >
             {place}
           </Typography>
           <ListItemText primary={degree} />
-          <Box style={{ display: "flex", alignItems: "center" }}>
-            <ListItemText primary={dateStart} style={{ marginRight: "10px" }} />
-            <span style={{ marginRight: "10px" }}>-</span>
+          <Box style={{ display: 'flex', alignItems: 'center' }}>
+            <ListItemText primary={dateStart} style={{ marginRight: '10px' }} />
+            <span style={{ marginRight: '10px' }}>-</span>
             <ListItemText primary={dateEnd} />
           </Box>
         </Box>
@@ -281,7 +282,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
   const skillsEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    skillsEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    skillsEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -289,7 +290,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
   }, [skillsArray]);
 
   return (
-    <form className={isShownResume ? "form-none" :"form"}>
+    <form className={isShownResume ? 'form-none' : 'form'}>
       <Grid container direction="column" spacing={1} alignItems="stretch">
         <Grid item className={classes.avatarBlock}>
           <Typography variant="h6" className={classes.sectionTitle}>
@@ -305,33 +306,36 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         </Grid>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="desired-job"
             label="Job title"
             // value={title}
             onBlur={({ target: { value } }) => {
-              setKey("title", value);
+              setKey('title', value);
             }}
             variant="outlined"
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
           />
         </div>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="first-name"
             label="First Name"
             // value={name}
             onBlur={({ target: { value } }) => {
-              setKey("name", value);
+              setKey('name', value);
             }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
+            autoComplete="off"
             id="last-name"
             label="Last Name"
             // value={surname}
             onBlur={({ target: { value } }) => {
-              setKey("surname", value);
+              setKey('surname', value);
             }}
             variant="outlined"
             className={classes.formItem}
@@ -339,21 +343,23 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         </div>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="email"
             label="Email"
             // value={email}
             onBlur={({ target: { value } }) => {
-              setKey("email", value);
+              setKey('email', value);
             }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
+            autoComplete="off"
             id="phone"
             label="Phone"
             // value={phone}
             onBlur={({ target: { value } }) => {
-              setKey("phone", value);
+              setKey('phone', value);
             }}
             variant="outlined"
             className={classes.formItem}
@@ -364,16 +370,17 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         </Typography>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="about"
             label="About yourself"
             // value={summary}
             onBlur={({ target: { value } }) => {
-              setKey("summary", value);
+              setKey('summary', value);
             }}
             placeholder="About yourself"
             multiline
             variant="outlined"
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
           />
         </div>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -381,45 +388,49 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         </Typography>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="job-title"
             label="Job Title"
             value={employment.title}
             onChange={({ target: { value } }) => {
-              setEmploymentData("title", value);
+              setEmploymentData('title', value);
             }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
+            autoComplete="off"
             id="organization"
             label="Organization"
             variant="outlined"
             value={employment.company}
             onChange={({ target: { value } }) => {
-              setEmploymentData("company", value);
+              setEmploymentData('company', value);
             }}
             className={classes.formItem}
           />
         </div>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="date-from"
             type="date"
             variant="outlined"
             value={employment.dateStart}
             onChange={({ target: { value } }) => {
-              setEmploymentData("dateStart", value);
+              setEmploymentData('dateStart', value);
             }}
             className={classes.formItem}
           />
           <TextField
+            autoComplete="off"
             id="date-to"
             type="date"
             size="medium"
             variant="outlined"
             value={employment.dateEnd}
             onChange={({ target: { value } }) => {
-              setEmploymentData("dateEnd", value);
+              setEmploymentData('dateEnd', value);
             }}
             className={classes.formItem}
           />
@@ -432,7 +443,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         >
           Add employment
         </Button>
-        <List style={{ marginBottom: "15px" }}>
+        <List style={{ marginBottom: '15px' }}>
           {employmentHistory.map(employmentItem)}
         </List>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -440,21 +451,23 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         </Typography>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="education-place"
             label="Place"
             value={education.place}
             onChange={({ target: { value } }) => {
-              setEducationData("place", value);
+              setEducationData('place', value);
             }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
+            autoComplete="off"
             id="education-degree"
             label="Degree"
             value={education.degree}
             onChange={({ target: { value } }) => {
-              setEducationData("degree", value);
+              setEducationData('degree', value);
             }}
             variant="outlined"
             className={classes.formItem}
@@ -462,21 +475,23 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         </div>
         <div className="form-group">
           <TextField
+            autoComplete="off"
             id="date-from"
             type="date"
             value={education.dateStart}
             onChange={({ target: { value } }) => {
-              setEducationData("dateStart", value);
+              setEducationData('dateStart', value);
             }}
             variant="outlined"
             className={classes.formItem}
           />
           <TextField
+            autoComplete="off"
             id="date-to"
             type="date"
             value={education.dateEnd}
             onChange={({ target: { value } }) => {
-              setEducationData("dateEnd", value);
+              setEducationData('dateEnd', value);
             }}
             size="medium"
             variant="outlined"
@@ -491,7 +506,7 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
         >
           Add education
         </Button>
-        <List style={{ marginBottom: "15px" }}>
+        <List style={{ marginBottom: '15px' }}>
           {educationHistory.map(educationItem)}
         </List>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -513,9 +528,9 @@ export default function BuilderForm({ cvData, setCvData, isShownResume }) {
                 variant="contained"
                 color="primary"
                 style={{
-                  marginBottom: "20px",
-                  width: "45%",
-                  backgroundColor: "#8bc29a",
+                  marginBottom: '20px',
+                  width: '45%',
+                  backgroundColor: '#8bc29a',
                 }}
                 onClick={() => {
                   setCvData({

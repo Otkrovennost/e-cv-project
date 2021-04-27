@@ -4,12 +4,15 @@ import App from './Components/App/App.jsx';
 import './index.scss';
 import CardsContext from './context/CvContext';
 import BusinessCardsContext from './context/BusinessCardContext';
+import { AuthContextProvider } from './context/AuthContext';
 
 ReactDOM.render(
-  <CardsContext>
-    <BusinessCardsContext>
-      <App />
-    </BusinessCardsContext>
-  </CardsContext>,
+  <AuthContextProvider>
+    <CardsContext>
+      <BusinessCardsContext>
+        <App />
+      </BusinessCardsContext>
+    </CardsContext>
+  </AuthContextProvider>,
   document.getElementById('root')
 );

@@ -1,0 +1,15 @@
+@import '../../../../scss/variables';
+
+.login {
+  max-width: 600px;
+  width: 100%;
+
+  &__title {
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

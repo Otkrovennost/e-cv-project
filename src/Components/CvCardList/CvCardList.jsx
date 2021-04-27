@@ -4,13 +4,17 @@ import './CvCardList.scss';
 import { CardsContext } from '../../context/CvContext';
 import Modal from '../Common/Modal/Modal';
 import Loader from '../Common/loader/Loader';
+import AuthContext from '../../context/AuthContext';
 
 function CvCardList({ props }) {
   const { cvClickHandler, selectedCv, setCvData, cvData } = useContext(
     CardsContext
   );
+  const { loggedIn, getLoggedIn } = useContext(AuthContext);
   const [isOpened, setIsOpened] = useState(false);
   const [cvTemplates, setCvTemplates] = useState(null);
+
+  console.log(loggedIn);
 
   useEffect(() => {
     fetch('https://ecvapiserver.herokuapp.com/cv_templates')
@@ -65,7 +69,11 @@ function CvCardList({ props }) {
                 </p>
                 <button
                   onClick={() => {
-                    props.history.push(`/builder/${selectedCv?.id}`);
+                    if (loggedIn) {
+                      props.history.push(`/builder/${selectedCv?.id}`);
+                    } else {
+                      props.history.push(`/auth`);
+                    }
                   }}
                   className="modal__btn"
                 >
