@@ -17,7 +17,6 @@ import { AppRoute } from '../../../constants';
 import './MainPage.scss';
 
 const MainPage = () => {
-
   const lottieContainer = useRef();
 
   useEffect(() => {
@@ -59,7 +58,7 @@ const MainPage = () => {
         </div>
         <section className="info container">
           <div className="info__text-content info-text">
-            <h3 className="info-text__title">Make more, manage less</h3>
+            <h3 className="info-text__title">Make more, think less</h3>
             <p className="info-text__description">
               E-CV integrates and automates every step of your templates editing
               so it runs seamlessly - from idea to the download button.
@@ -92,8 +91,7 @@ const MainPage = () => {
               />
               <h4 className="advantages-item__title">Get More Offers</h4>
               <p className="advantages-item__description">
-                Leverage agile frameworks to provide a robust synopsis for high
-                level overviews.
+                Start getting more offers as a consisten and good worker
               </p>
             </div>
             <div className="advantages__item advantages-item">
@@ -102,10 +100,9 @@ const MainPage = () => {
                 src={offerIcon}
                 alt="Icon"
               />
-              <h4 className="advantages-item__title">Get More Offers</h4>
+              <h4 className="advantages-item__title">Grow as a worker</h4>
               <p className="advantages-item__description">
-                Leverage agile frameworks to provide a robust synopsis for high
-                level overviews.
+                Grow as a worker with this simple steps
               </p>
             </div>
             <div className="advantages__item advantages-item">
@@ -114,10 +111,9 @@ const MainPage = () => {
                 src={visibleIcon}
                 alt="Icon"
               />
-              <h4 className="advantages-item__title">Get More Offers</h4>
+              <h4 className="advantages-item__title">Be more visible</h4>
               <p className="advantages-item__description">
-                Leverage agile frameworks to provide a robust synopsis for high
-                level overviews.
+                Start being noticed by recruiters due to good and modern CV.
               </p>
             </div>
           </div>
@@ -129,7 +125,7 @@ const MainPage = () => {
           </NavLink>
         </section>
       </div>
-      < Footer/>
+      <Footer />
     </div>
   );
 };

@@ -47,12 +47,6 @@ const initialState = {
   email: '',
   password: '',
   passwordVerify: '',
-  emailError: 'Email can not be blank',
-  passwordError: 'Password can not be blank',
-  passwordVerifyError: '',
-  emailDirty: false,
-  passwordDirty: false,
-  passwordVerifyDirty: false,
 };
 
 function Registration({ setIsNewUser, isNewUser, props }) {
@@ -61,99 +55,18 @@ function Registration({ setIsNewUser, isNewUser, props }) {
   const classes = useStyles();
   const [registerData, setRegisterData] = useState(initialState);
 
-  console.log(registerData);
-
-  const blurHandler = (e) => {
-    switch (e.target.name) {
-      case 'email':
-        setRegisterData({
-          ...registerData,
-          emailDirty: true,
-        });
-        break;
-      case 'password':
-        setRegisterData({
-          ...registerData,
-          passwordDirty: true,
-        });
-        break;
-      case 'passwordVerify':
-        setRegisterData({
-          ...registerData,
-          passwordVerifyDirty: true,
-        });
-        break;
-    }
-  };
-
-  const emailHandler = (e) => {
-    console.log(e.target.value);
-    setRegisterData({
-      ...registerData,
-      email: e.target.value,
-    });
-    const re = /\S+@\S+\.\S+/;
-    if (!re.test(e.target.value)) {
-      setRegisterData({
-        ...registerData,
-        emailError: 'Invalid email',
-      });
-      return false;
-    } else {
-      setRegisterData({
-        ...registerData,
-        emailError: '',
-      });
-    }
-  };
-
-  const passwordHandler = (e) => {
-    setRegisterData({
-      ...registerData,
-      password: e.target.value,
-    });
-    if (e.target.value.length < 6) {
-      setRegisterData({
-        ...registerData,
-        passwordError: 'Password must be at least 6 characters',
-      });
-    } else {
-      setRegisterData({
-        ...registerData,
-        passwordError: '',
-        passwordVerifyError: '',
-      });
-    }
-  };
-
-  // const passwordVerifyHandler = (e) => {
-  //   setRegisterData({
-  //     ...registerData,
-  //     password: e.target.value,
-  //   });
-  //   if (e.target.value !== registerData.password) {
-  //     setRegisterData({
-  //       ...registerData,
-  //       passwordVerifyError: 'Passwords must match',
-  //     });
-  //   } else {
-  //     setRegisterData({
-  //       ...registerData,
-  //       passwordVerifyError: '',
-  //     });
-  //   }
-  // };
-
   const register = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/auth', registerData);
+      await axios.post('https://ecvapiserver.herokuapp.com/auth', registerData);
       getLoggedIn();
       // setRegisterData(initialState);
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log(registerData);
 
   return (
     <div className="registration">
@@ -165,8 +78,12 @@ function Registration({ setIsNewUser, isNewUser, props }) {
           <form onSubmit={register} className="registration__form">
             <div className="input-group">
               <TextField
-                onBlur={(e) => blurHandler(e)}
-                onChange={(e) => emailHandler(e)}
+                onChange={(e) =>
+                  setRegisterData({
+                    ...registerData,
+                    email: e.target.value,
+                  })
+                }
                 name="email"
                 variant="outlined"
                 autoComplete="off"
@@ -193,8 +110,12 @@ function Registration({ setIsNewUser, isNewUser, props }) {
             </div>
             <div className="input-group">
               <TextField
-                onBlur={(e) => blurHandler(e)}
-                onChange={(e) => passwordHandler(e)}
+                onChange={(e) =>
+                  setRegisterData({
+                    ...registerData,
+                    password: e.target.value,
+                  })
+                }
                 name="password"
                 type="password"
                 variant="outlined"
@@ -224,8 +145,12 @@ function Registration({ setIsNewUser, isNewUser, props }) {
             </div>
             <div className="input-group">
               <TextField
-                onBlur={(e) => blurHandler(e)}
-                // onChange={(e) => passwordVerifyHandler(e)}
+                onChange={(e) =>
+                  setRegisterData({
+                    ...registerData,
+                    passwordVerify: e.target.value,
+                  })
+                }
                 name="passwordVerify"
                 type="password"
                 autoComplete="off"
