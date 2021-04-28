@@ -5,6 +5,7 @@ import { CardsContext } from '../../context/CvContext';
 import Modal from '../Common/Modal/Modal';
 import Loader from '../Common/loader/Loader';
 import AuthContext from '../../context/AuthContext';
+import uuid from 'uuid/v5';
 
 function CvCardList({ props }) {
   const { cvClickHandler, selectedCv, setCvData, cvData } = useContext(
@@ -62,10 +63,10 @@ function CvCardList({ props }) {
               <div className="modal__text">
                 <h3 className="modal__title">{selectedCv?.cvTitle}</h3>
                 <p className="modal__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Temporibus corrupti, nobis adipisci sed vero ipsam sapiente?
-                  Autem libero odit fuga eveniet animi omnis qui adipisci enim,
-                  facere, atque consequuntur. Laborum.
+                  Simple and effective resume template. It consists of 4 parts,
+                  where you can fill in: about section, education section,
+                  experience section and skills section. Also you can fiil in
+                  your contact data.
                 </p>
                 <button
                   onClick={() => {
