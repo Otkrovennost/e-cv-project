@@ -1,4 +1,4 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .nav__exit-icon {
   display: none;
@@ -52,46 +52,42 @@
 }
 
 .nav__link {
-  margin: 0px;
+  // margin: 0px;
   font-size: 19px;
   line-height: 22px;
   text-decoration: none;
   color: $text-color;
   transition: 0.2s;
+  cursor: pointer;
+
+  &:nth-child(4):hover .link-dropdown {
+    opacity: 1;
+  }
+
+  &:nth-child(4) {
+    position: relative;
+  }
 
   @media (max-width: $laptops) {
     color: $color1;
   }
 
-  &::after {
-    content: "";
-    position: relative;
-    left: 0;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: $text-color;
-    transform: scaleX(0);
-    transition: all 0.3s;
-    margin-top: 3px;
+  &.active {
+    color: lighten($text-color, 30%);
   }
+}
 
-  &:hover::after {
-    transform: scaleX(1);
-  }
+.link-dropdown {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  opacity: 0;
+  top: 30px;
+  transition: 0.2s;
+  z-index: 100;
 
-  &.active:after {
-    content: "";
-    position: relative;
-    left: 0;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: $text-color;
-    transform: scaleX(1);
-    transition: all 0.3s;
-    margin-top: 3px;
+  &__item {
+    margin-bottom: 10px;
   }
 }

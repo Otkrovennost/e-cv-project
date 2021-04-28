@@ -1,0 +1,38 @@
+@import '../../../../scss/variables';
+.registration {
+  padding: 1em;
+  border-radius: 0.5em;
+  &__title {
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+  max-width: 500px;
+  width: 100%;
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    margin-left: 2%;
+    cursor: pointer;
+    color: $text-color;
+  }
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.error {
+  color: #e71616;
+  font-weight: 300;
+  margin-top: 3px;
+  font-size: 12px;
+}

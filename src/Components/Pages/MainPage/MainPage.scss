@@ -1,7 +1,13 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 .hero-wrapper {
-  background-image: url("../../../assets/layer-bg.svg");
+  // background-image: url('../../../assets/layer-bg.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -14,27 +20,28 @@
 .hero__intro {
   max-width: 450px;
   margin-top: 40px;
+  margin-bottom: 40px;
   flex-shrink: 0;
+
+  @media screen and (max-width: 768px) {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 70px;
+  }
 }
 
 .intro__title {
-  font-family: Limelight;
   margin-bottom: 25px;
   padding-top: 50px;
   font-weight: 600;
   font-size: 5rem;
   line-height: 1;
-  max-width: 450px;
   color: $text-color;
-
-  @media (max-width: $laptops) {
-    font-size: 4rem;
-    max-width: 340px;
-  }
 
   @media (max-width: $mobile) {
     font-size: 3rem;
-    max-width: 280px;
   }
 }
 
@@ -44,16 +51,9 @@
   line-height: 1.4;
   font-weight: 500;
   color: $text-color;
-  max-width: 350px;
-
-  @media (max-width: $laptops) {
-    font-size: 1rem;
-    max-width: 300px;
-  }
 
   @media (max-width: $mobile) {
     font-size: 1rem;
-    max-width: 250px;
   }
 }
 
@@ -83,5 +83,142 @@
 
   @media screen and (max-width: 768px) {
     display: none;
+  }
+}
+
+.main-page .info {
+  margin-bottom: 50px;
+
+  &__text-content {
+    max-width: 840px;
+    margin: 0 auto;
+    text-align: center;
+    color: $text-color;
+
+    h3 {
+      font-size: 46px;
+      font-weight: 500;
+
+      @media(max-width: $tablets) {
+        font-size: 35px;
+      }
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 30px;
+      font-weight: 300;
+
+      @media(max-width: $tablets) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @media(max-width: $tablets) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    margin: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @media(max-width: $tablets) {
+      margin-bottom: 40px;
+    }
+
+    img {
+      max-width: 500px;
+      width: 100%;
+      min-width: 250px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 23px;
+    font-weight: 500;
+    color: $text-color;
+    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.big-btn {
+  max-width: 300px;
+  background-color: $color2;
+  border: none;
+  padding: 0.9em 0;
+  width: 100%;
+  margin: 0 auto;
+  color: white;
+  border-radius: 0.5em;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: darken($color2, 10%);
+  }
+}
+
+.main-page .advantages {
+  margin-bottom: 50px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    
+    @media(max-width: $tablets) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.advantages-item {
+  width: 30%;
+  color: $text-color;
+  text-align: center;
+  margin-bottom: 40px;
+
+  @media(max-width: $tablets) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-weight: 300;
+    margin-bottom: 11px;
   }
 }

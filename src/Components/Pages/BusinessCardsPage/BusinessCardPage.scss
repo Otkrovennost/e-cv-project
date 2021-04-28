@@ -1,49 +1,15 @@
-@import "../../../scss/variables";
+@import '../../../scss/variables';
 
 .businessCardsMain {
-  background-image: url(../../../assets/layer-bg.svg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // background-image: url(../../../assets/layer-bg.svg);
   background-repeat: no-repeat;
-  background-position: -50% -20%;
+  background-position: left bottom;
 }
 
 .businessCardsBlock {
   padding-top: 50px;
-}
-
-.card__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.card__item {
-  position: relative;
-  margin: 0 20px 20px 0;
-
-  &:hover {
-    transform: translateY(-3%);
-  }
-
-  &:hover .card__body {
-    background-color: rgba($color2, 0.6);
-  }
-}
-
-.card__body {
-  position: relative;
-  background-color: #ebebeb;
-  border-radius: 7px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.2s;
-  padding: 20px;
-}
-
-.card__img {
-  width: 295px;
+  margin-bottom: 80px;
 }

@@ -1,8 +1,14 @@
 .builder-page {
   height: 100%;
-  background-image: url(../../../assets/layer-bg.svg);
+  display: flex;
+  flex-direction: column;
+  // background-image: url(../../../assets/layer-bg.svg);
   background-repeat: no-repeat;
   background-position: bottom right;
+}
+
+.builder-page__container {
+  height: 100%;
 }
 
 .builder-page__inner {
@@ -23,7 +29,7 @@
   width: 50%;
   display: block;
 
-  @media(max-width: 960px) {
+  @media (max-width: 960px) {
     display: none;
   }
 }

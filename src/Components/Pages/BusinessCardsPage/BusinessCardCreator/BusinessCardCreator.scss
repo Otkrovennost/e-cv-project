@@ -1,0 +1,36 @@
+@import "../../../../scss/variables";
+
+.creator-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: url(../../../../assets/layer-bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.creator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 580px) {
+  .creator {
+    flex-direction: column;
+    margin: 0;
+  }
+  input {
+    padding: 0;
+  }
+}
+
+.creator__pdf {
+  width: 50%;
+
+  @media (max-width: $tablets) {
+    width: 100%;
+  }
+}

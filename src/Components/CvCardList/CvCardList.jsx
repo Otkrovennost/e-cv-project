@@ -4,13 +4,18 @@ import './CvCardList.scss';
 import { CardsContext } from '../../context/CvContext';
 import Modal from '../Common/Modal/Modal';
 import Loader from '../Common/loader/Loader';
+import AuthContext from '../../context/AuthContext';
+import uuid from 'uuid/v5';
 
 function CvCardList({ props }) {
   const { cvClickHandler, selectedCv, setCvData, cvData } = useContext(
     CardsContext
   );
+  const { loggedIn, getLoggedIn } = useContext(AuthContext);
   const [isOpened, setIsOpened] = useState(false);
   const [cvTemplates, setCvTemplates] = useState(null);
+
+  console.log(loggedIn);
 
   useEffect(() => {
     fetch('https://ecvapiserver.herokuapp.com/cv_templates')
@@ -58,24 +63,28 @@ function CvCardList({ props }) {
               <div className="modal__text">
                 <h3 className="modal__title">{selectedCv?.cvTitle}</h3>
                 <p className="modal__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Temporibus corrupti, nobis adipisci sed vero ipsam sapiente?
-                  Autem libero odit fuga eveniet animi omnis qui adipisci enim,
-                  facere, atque consequuntur. Laborum.
+                  Simple and effective resume template. It consists of 4 parts,
+                  where you can fill in: about section, education section,
+                  experience section and skills section. Also you can fiil in
+                  your contact data.
                 </p>
                 <button
                   onClick={() => {
-                    props.history.push(`/builder/${selectedCv?.id}`);
+                    if (loggedIn) {
+                      props.history.push(`/builder/${selectedCv?.id}`);
+                    } else {
+                      props.history.push(`/auth`);
+                    }
                   }}
                   className="modal__btn"
                 >
                   Start Editing
                 </button>
                 <div className="cv-card__colors">
-                  {selectedCv?.cvColors.map((color) => {
+                  {selectedCv?.cvColors?.map((color, index, self) => {
                     return (
                       <div
-                        key={color?.id}
+                        key={color}
                         onClick={() =>
                           setCvData({
                             ...cvData,
@@ -83,13 +92,9 @@ function CvCardList({ props }) {
                             color: color.color,
                           })
                         }
-                        className="cv-card__color-outer"
-                      >
-                        <div
-                          style={{ backgroundColor: color.hash }}
-                          className="cv-card__color-inner"
-                        ></div>
-                      </div>
+                        style={{ backgroundColor: color.hash }}
+                        className="cv-card__color-inner"
+                      ></div>
                     );
                   })}
                 </div>
