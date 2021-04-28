@@ -17,14 +17,14 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  registration__item: {
-    marginBottom: '20px',
-  },
   cssLabel: {
     color: 'black',
     '&$cssFocused': {
       color: `#8bc29a !important`,
     },
+  },
+  registration__item: {
+    width: '100%',
   },
 
   cssOutlinedInput: {
@@ -49,16 +49,45 @@ function Login({ setIsNewUser, isNewUser }) {
     password: '',
   });
 
+  const validate = () => {
+    let isError = false;
+    const errors = {
+      emailError: '',
+      passwordError: '',
+    };
+
+    if (!loginData.email.includes('@')) {
+      isError = true;
+      errors.emailError = 'Invalid email';
+    }
+
+    if (loginData.password.length < 6) {
+      isError = true;
+      errors.passwordError = 'Password must be at least 6 characters';
+    }
+
+    setLoginData({
+      ...loginData,
+      ...errors,
+    });
+
+    return isError;
+  };
+
   const login = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post(
-        'https://ecvapiserver.herokuapp.com/auth/login',
-        loginData
-      );
-      getLoggedIn();
-    } catch (error) {
-      console.error(error);
+    const isValid = validate();
+
+    if (!isValid) {
+      try {
+        await axios.post(
+          'https://ecvapiserver.herokuapp.com/auth/login',
+          loginData
+        );
+        getLoggedIn();
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -69,61 +98,69 @@ function Login({ setIsNewUser, isNewUser }) {
       <h2 className="login__title">Log In</h2>
 
       <form onSubmit={login} className="login__form">
-        <TextField
-          onChange={(e) =>
-            setLoginData({
-              ...loginData,
-              email: e.target.value,
-            })
-          }
-          name="email"
-          variant="outlined"
-          label="Email"
-          autoComplete="off"
-          className={classes.registration__item}
-          InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-              focused: classes.cssFocused,
-            },
-          }}
-          InputProps={{
-            classes: {
-              root: classes.cssOutlinedInput,
-              focused: classes.cssFocused,
-              notchedOutline: classes.notchedOutline,
-            },
-            inputMode: 'numeric',
-          }}
-        />
-        <TextField
-          onChange={(e) =>
-            setLoginData({
-              ...loginData,
-              password: e.target.value,
-            })
-          }
-          name="password"
-          variant="outlined"
-          label="Password"
-          autoComplete="off"
-          type="password"
-          className={classes.registration__item}
-          InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-              focused: classes.cssFocused,
-            },
-          }}
-          InputProps={{
-            classes: {
-              root: classes.cssOutlinedInput,
-              focused: classes.cssFocused,
-              notchedOutline: classes.notchedOutline,
-            },
-            inputMode: 'numeric',
-          }}
-        />
+        <div className="input-group">
+          <TextField
+            onChange={(e) =>
+              setLoginData({
+                ...loginData,
+                email: e.target.value,
+              })
+            }
+            name="email"
+            variant="outlined"
+            label="Email"
+            autoComplete="off"
+            className={classes.registration__item}
+            InputLabelProps={{
+              classes: {
+                root: classes.cssLabel,
+                focused: classes.cssFocused,
+              },
+            }}
+            InputProps={{
+              classes: {
+                root: classes.cssOutlinedInput,
+                focused: classes.cssFocused,
+                notchedOutline: classes.notchedOutline,
+              },
+              inputMode: 'numeric',
+            }}
+          />
+          <p className="email-error error">{loginData.emailError}</p>
+        </div>
+
+        <div className="input-group">
+          <TextField
+            onChange={(e) =>
+              setLoginData({
+                ...loginData,
+                password: e.target.value,
+              })
+            }
+            name="password"
+            variant="outlined"
+            label="Password"
+            autoComplete="off"
+            type="password"
+            className={classes.registration__item}
+            InputLabelProps={{
+              classes: {
+                root: classes.cssLabel,
+                focused: classes.cssFocused,
+              },
+            }}
+            InputProps={{
+              classes: {
+                root: classes.cssOutlinedInput,
+                focused: classes.cssFocused,
+                notchedOutline: classes.notchedOutline,
+              },
+              inputMode: 'numeric',
+            }}
+          />
+          <p className="email-error error">{loginData.passwordError}</p>
+        </div>
+
         <div className="registration__row">
           <Button className={classes.registration__button} type="submit">
             Login
