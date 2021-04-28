@@ -33,7 +33,7 @@ const NavList = ({ isNavOpened, setIsNavOpened }) => {
       </li>
       {loggedIn === true && (
         <>
-          <li className="nav__link">
+          <li className="nav__item nav__link">
             <i className="far fa-user"></i> Profile
             <ul className="nav__dropdown link-dropdown">
               <li onClick={logOut} className="link-dropdown__item">

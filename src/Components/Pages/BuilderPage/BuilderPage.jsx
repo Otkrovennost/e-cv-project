@@ -50,7 +50,7 @@ export default function BuilderPage() {
   return (
     <div className="builder-page">
       <Header />
-      <div className="container" style={{ position: 'relative' }}>
+      <div className="builder-page__container container" style={{ position: 'relative' }}>
         <div className="builder-page__inner">
           <BuilderForm
             cvData={cvData}
