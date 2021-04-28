@@ -47,10 +47,12 @@ const initialState = {
   email: '',
   password: '',
   passwordVerify: '',
-  emailError: '',
-  passwordError: '',
+  emailError: 'Email can not be blank',
+  passwordError: 'Password can not be blank',
   passwordVerifyError: '',
-  basicError: '',
+  emailDirty: false,
+  passwordDirty: false,
+  passwordVerifyDirty: false,
 };
 
 function Registration({ setIsNewUser, isNewUser, props }) {
@@ -59,53 +61,97 @@ function Registration({ setIsNewUser, isNewUser, props }) {
   const classes = useStyles();
   const [registerData, setRegisterData] = useState(initialState);
 
-  const validation = () => {
-    let emailError = '';
-    let passwordError = '';
-    let passwordVerifyError = '';
+  console.log(registerData);
 
-    if (!registerData.email.includes('@')) {
-      emailError = 'Type in valid email';
-      setRegisterData({
-        ...registerData,
-        emailError,
-      });
-      return false;
+  const blurHandler = (e) => {
+    switch (e.target.name) {
+      case 'email':
+        setRegisterData({
+          ...registerData,
+          emailDirty: true,
+        });
+        break;
+      case 'password':
+        setRegisterData({
+          ...registerData,
+          passwordDirty: true,
+        });
+        break;
+      case 'passwordVerify':
+        setRegisterData({
+          ...registerData,
+          passwordVerifyDirty: true,
+        });
+        break;
     }
-    if (registerData.password.length < 6) {
-      passwordError = 'Password must be at least 6 symbols';
-      setRegisterData({
-        ...registerData,
-        passwordError,
-      });
-      return false;
-    }
-
-    console.log(registerData);
-
-    if (registerData.password !== registerData.passwordVerify) {
-      passwordVerifyError = 'Passwords should match';
-      setRegisterData({
-        ...registerData,
-        passwordVerifyError,
-      });
-      return false;
-    }
-
-    return true;
   };
+
+  const emailHandler = (e) => {
+    console.log(e.target.value);
+    setRegisterData({
+      ...registerData,
+      email: e.target.value,
+    });
+    const re = /\S+@\S+\.\S+/;
+    if (!re.test(e.target.value)) {
+      setRegisterData({
+        ...registerData,
+        emailError: 'Invalid email',
+      });
+      return false;
+    } else {
+      setRegisterData({
+        ...registerData,
+        emailError: '',
+      });
+    }
+  };
+
+  const passwordHandler = (e) => {
+    setRegisterData({
+      ...registerData,
+      password: e.target.value,
+    });
+    if (e.target.value.length < 6) {
+      setRegisterData({
+        ...registerData,
+        passwordError: 'Password must be at least 6 characters',
+      });
+    } else {
+      setRegisterData({
+        ...registerData,
+        passwordError: '',
+        passwordVerifyError: '',
+      });
+    }
+  };
+
+  // const passwordVerifyHandler = (e) => {
+  //   setRegisterData({
+  //     ...registerData,
+  //     password: e.target.value,
+  //   });
+  //   if (e.target.value !== registerData.password) {
+  //     setRegisterData({
+  //       ...registerData,
+  //       passwordVerifyError: 'Passwords must match',
+  //     });
+  //   } else {
+  //     setRegisterData({
+  //       ...registerData,
+  //       passwordVerifyError: '',
+  //     });
+  //   }
+  // };
 
   const register = async (e) => {
     e.preventDefault();
-    const isValid = validation();
-    if (isValid) {
-      try {
-        await axios.post('http://localhost:5000/auth', registerData);
-        getLoggedIn();
-        setRegisterData(initialState);
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+      await axios.post('http://localhost:5000/auth', registerData);
+      getLoggedIn();
+      // setRegisterData(initialState);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -116,16 +162,11 @@ function Registration({ setIsNewUser, isNewUser, props }) {
       ) : (
         <>
           <h2 className="registration__title">Registration</h2>
-          <p className="error">{registerData.basicError}</p>
           <form onSubmit={register} className="registration__form">
             <div className="input-group">
               <TextField
-                onChange={(e) =>
-                  setRegisterData({
-                    ...registerData,
-                    email: e.target.value,
-                  })
-                }
+                onBlur={(e) => blurHandler(e)}
+                onChange={(e) => emailHandler(e)}
                 name="email"
                 variant="outlined"
                 autoComplete="off"
@@ -146,16 +187,14 @@ function Registration({ setIsNewUser, isNewUser, props }) {
                   inputMode: 'numeric',
                 }}
               />
-              <p className="email-error error">{registerData.emailError}</p>
+              {registerData.emailDirty && registerData.emailError && (
+                <p className="email-error error">{registerData.emailError}</p>
+              )}
             </div>
             <div className="input-group">
               <TextField
-                onChange={(e) =>
-                  setRegisterData({
-                    ...registerData,
-                    password: e.target.value,
-                  })
-                }
+                onBlur={(e) => blurHandler(e)}
+                onChange={(e) => passwordHandler(e)}
                 name="password"
                 type="password"
                 variant="outlined"
@@ -177,18 +216,16 @@ function Registration({ setIsNewUser, isNewUser, props }) {
                   inputMode: 'numeric',
                 }}
               />
-              <p className="password-error error">
-                {registerData.passwordError}
-              </p>
+              {registerData.passwordDirty && registerData.passwordError && (
+                <p className="email-error error">
+                  {registerData.passwordError}
+                </p>
+              )}
             </div>
             <div className="input-group">
               <TextField
-                onChange={(e) =>
-                  setRegisterData({
-                    ...registerData,
-                    passwordVerify: e.target.value,
-                  })
-                }
+                onBlur={(e) => blurHandler(e)}
+                // onChange={(e) => passwordVerifyHandler(e)}
                 name="passwordVerify"
                 type="password"
                 autoComplete="off"
@@ -210,9 +247,12 @@ function Registration({ setIsNewUser, isNewUser, props }) {
                   inputMode: 'numeric',
                 }}
               />
-              <p className="password_verify-error error">
-                {registerData.passwordVerifyError}
-              </p>
+              {registerData.passwordVerifyDirty &&
+                registerData.passwordVerifyError && (
+                  <p className="email-error error">
+                    {registerData.passwordVerifyError}
+                  </p>
+                )}
             </div>
             <div className="registration__row">
               <Button className={classes.registration__button} type="submit">
