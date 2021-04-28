@@ -39,7 +39,6 @@ const NavList = ({ isNavOpened, setIsNavOpened }) => {
               <li onClick={logOut} className="link-dropdown__item">
                 Logout
               </li>
-              <li className="link-dropdown__item">Settings</li>
             </ul>
           </li>
         </>

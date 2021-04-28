@@ -47,6 +47,9 @@ const initialState = {
   email: '',
   password: '',
   passwordVerify: '',
+  emailError: '',
+  passwordError: '',
+  passwordVerifyError: '',
 };
 
 function Registration({ setIsNewUser, isNewUser, props }) {
@@ -55,14 +58,61 @@ function Registration({ setIsNewUser, isNewUser, props }) {
   const classes = useStyles();
   const [registerData, setRegisterData] = useState(initialState);
 
+  const validate = () => {
+    let isError = false;
+    const errors = {
+      emailError: '',
+      passwordError: '',
+      passwordVerifyError: '',
+    };
+
+    if (!registerData.email.includes('@')) {
+      isError = true;
+      errors.emailError = 'Invalid email';
+    }
+
+    if (registerData.password.length < 6) {
+      isError = true;
+      errors.passwordError = 'Password must be at least 6 characters';
+    }
+
+    if (registerData.password !== registerData.passwordVerify) {
+      isError = true;
+      errors.passwordVerifyError = 'Passwords do not match';
+    }
+
+    setRegisterData({
+      ...registerData,
+      ...errors,
+    });
+
+    return isError;
+  };
+
+  console.log(registerData);
+
   const register = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post('https://ecvapiserver.herokuapp.com/auth', registerData);
-      getLoggedIn();
-      // setRegisterData(initialState);
-    } catch (error) {
-      console.log(error);
+    const isError = validate();
+
+    if (!isError) {
+      try {
+        await axios.post(
+          'https://ecvapiserver.herokuapp.com/auth',
+          registerData
+        );
+        getLoggedIn();
+        setRegisterData({
+          email: '',
+          password: '',
+          passwordVerify: '',
+          emailError: '',
+          passwordError: '',
+          passwordVerifyError: '',
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -104,9 +154,7 @@ function Registration({ setIsNewUser, isNewUser, props }) {
                   inputMode: 'numeric',
                 }}
               />
-              {registerData.emailDirty && registerData.emailError && (
-                <p className="email-error error">{registerData.emailError}</p>
-              )}
+              <p className="email-error error">{registerData.emailError}</p>
             </div>
             <div className="input-group">
               <TextField
@@ -137,11 +185,7 @@ function Registration({ setIsNewUser, isNewUser, props }) {
                   inputMode: 'numeric',
                 }}
               />
-              {registerData.passwordDirty && registerData.passwordError && (
-                <p className="email-error error">
-                  {registerData.passwordError}
-                </p>
-              )}
+              <p className="email-error error">{registerData.passwordError}</p>
             </div>
             <div className="input-group">
               <TextField
@@ -172,12 +216,9 @@ function Registration({ setIsNewUser, isNewUser, props }) {
                   inputMode: 'numeric',
                 }}
               />
-              {registerData.passwordVerifyDirty &&
-                registerData.passwordVerifyError && (
-                  <p className="email-error error">
-                    {registerData.passwordVerifyError}
-                  </p>
-                )}
+              <p className="email-error error">
+                {registerData.passwordVerifyError}
+              </p>
             </div>
             <div className="registration__row">
               <Button className={classes.registration__button} type="submit">
